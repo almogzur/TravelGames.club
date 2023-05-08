@@ -33,7 +33,7 @@ export async function getStaticPaths() {
   //  Fetch all published pages for the current model.
   //  Using the `fields` option will limit the size of the response
   //  and only return the `data.url` field from the matching pages.
-  const pages = await builder.getAll('page', {
+  const pages = await builder.getAll('Blog', {
     fields: 'data.url', // only request the `data.url` field
     options: { noTargeting: true },
     limit: 0,
@@ -67,7 +67,7 @@ export default function Page({ page }) {
         <title>{page?.data.title}</title>
         <meta property="og:image" content={page?.data.image} />
       </Head>
-      <BuilderComponent model="Blog" content={page} />
+      <BuilderComponent model="Page" content={page} />
     </>
   );
 }
