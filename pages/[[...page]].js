@@ -14,7 +14,7 @@ export async function getStaticProps({ params }) {
   // Use the `userAttributes` field for targeting content.
   // For more, see https://www.builder.io/c/docs/targeting-with-builder
   const page = await builder
-    .get('page', {
+    .get('Blog', {
       userAttributes: {
         urlPath: '/' + (params?.page?.join('/') || ''),
       },
@@ -33,7 +33,7 @@ export async function getStaticPaths() {
   //  Fetch all published pages for the current model.
   //  Using the `fields` option will limit the size of the response
   //  and only return the `data.url` field from the matching pages.
-  const pages = await builder.getAll('Blog', {
+  const pages = await builder.getAll('page', {
     fields: 'data.url', // only request the `data.url` field
     options: { noTargeting: true },
     limit: 0,
@@ -67,7 +67,7 @@ export default function Page({ page }) {
         <title>{page?.data.title}</title>
         <meta property="og:image" content={page?.data.image} />
       </Head>
-      <BuilderComponent model="Page" content={page} />
+      <BuilderComponent model="Blog" content={page} />
     </>
   );
 }
