@@ -67,7 +67,7 @@ export default function Page({ page }) {
         <title>{page?.data.title}</title>
         <meta property="og:image" content={page?.data.image} />
       </Head>
-      <BuilderComponent model="page" content={page} />
+      <BuilderComponent model="Blog" content={page} />
     </>
   );
 }
