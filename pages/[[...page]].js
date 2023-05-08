@@ -14,7 +14,7 @@ export async function getStaticProps({ params }) {
   // Use the `userAttributes` field for targeting content.
   // For more, see https://www.builder.io/c/docs/targeting-with-builder
   const page = await builder
-    .get('Blog', {
+    .get('page', {
       userAttributes: {
         urlPath: '/' + (params?.page?.join('/') || ''),
       },
