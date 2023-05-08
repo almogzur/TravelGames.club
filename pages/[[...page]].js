@@ -67,18 +67,7 @@ export default function Page({ page }) {
         <title>{page?.data.title}</title>
         <meta property="og:image" content={page?.data.image} />
       </Head>
-      <div style={{ padding: 50, textAlign: 'center' }}>
-        {/* Put your header or main layout here */}
-        Your header
-      </div>
-
-      {/* Render the Builder page */}
       <BuilderComponent model="page" content={page} />
-
-      <div style={{ padding: 50, textAlign: 'center' }}>
-        {/* Put your footer or main layout here */}
-        Your footer
-      </div>
     </>
   );
 }
