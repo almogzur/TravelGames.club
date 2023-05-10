@@ -3,8 +3,7 @@ import DefaultErrorPage from 'next/error';
 import Head from 'next/head';
 import React from 'react';
 import { BuilderComponent, builder, useIsPreviewing, Builder } from '@builder.io/react';
-
-
+import Link from 'next/link';
 // Initialize the Builder SDK with your organization's API Key
 // Find the API Key on: https://builder.io/account/settings
 builder.init("a3d0d381e56c45e8881e0794fc804b1a");
@@ -67,6 +66,9 @@ export default function Page({ page }) {
         <title>{page?.data.title}</title>
         <meta property="og:image" content={page?.data.image} />
       </Head>
+      <nav>
+        <Link href={"/home"}>Home</Link>
+      </nav>
       <BuilderComponent model="Blog" content={page} />
     </>
   );
