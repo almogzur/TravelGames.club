@@ -4,6 +4,8 @@ import Head from 'next/head';
 import React from 'react';
 import { BuilderComponent, builder, useIsPreviewing, Builder } from '@builder.io/react';
 import Link from 'next/link';
+import Header from '@/components/Header';
+
 // Initialize the Builder SDK with your organization's API Key
 // Find the API Key on: https://builder.io/account/settings
 builder.init("a3d0d381e56c45e8881e0794fc804b1a");
@@ -29,13 +31,8 @@ export async function getStaticProps({ params }) {
 }
 
 export async function getStaticPaths() {
-  //  Fetch all published pages for the current model.
-  //  Using the `fields` option will limit the size of the response
-  //  and only return the `data.url` field from the matching pages.
   const pages = await builder.getAll('page', {
-    fields: 'data.url', // only request the `data.url` field
     options: { noTargeting: true },
-    limit: 0,
   });
 
   return {
@@ -66,10 +63,8 @@ export default function Page({ page }) {
         <title>{page?.data.title}</title>
         <meta property="og:image" content={page?.data.image} />
       </Head>
-      <nav>
-        <Link href={"/home"}>Home</Link>
-      </nav>
-      <BuilderComponent model="Blog" content={page} />
+      <Header/>
+      <BuilderComponent model="page" content={page} />
     </>
   );
 }

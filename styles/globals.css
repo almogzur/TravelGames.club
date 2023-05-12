@@ -5,3 +5,7 @@
   --yall:#ffd000;
    --org:#ff9145;
 }
+body{
+  padding:0;
+  margin:0
+}
