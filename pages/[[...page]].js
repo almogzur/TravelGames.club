@@ -2,9 +2,10 @@ import { useRouter } from 'next/router';
 import DefaultErrorPage from 'next/error';
 import Head from 'next/head';
 import React from 'react';
-import { BuilderComponent, builder, useIsPreviewing, Builder } from '@builder.io/react';
+import { BuilderComponent, builder, useIsPreviewing, Builder ,} from '@builder.io/react';
 import Link from 'next/link';
 import Header from '@/components/Header';
+import '@builder.io/widgets';
 
 // Initialize the Builder SDK with your organization's API Key
 // Find the API Key on: https://builder.io/account/settings
