@@ -1,34 +1,33 @@
-import { useEffect } from "react"
+import { useEffect, useState } from "react"
 import { builder ,BuilderComponent } from '@builder.io/react';
-import Image from "next/image";
-
-
+import Footer from "../components/Footer";
+import Card from './Card'
 
 export default function PostLoop({prodacts}){
+
+   const [isActive,setIsActive]=useState(false)
 
     useEffect(()=>{
         console.log(prodacts)
     },[prodacts])
 
-
-
-  return(  
-    
-        prodacts.map((prodact,i)=>{
-          return(
-            <div key={prodact.name} className="box-container">
-                 <div key={i} className="card">
-                     <div className="card-header">
-                     <Image src={prodact.data.mainImg} width={200} height={200} alt=""/>
-                     </div>
-                      <div className="card-body">
-                      <h2>{prodact.data.publicOn}</h2>
-                      <p>{prodact.data.introduction}</p>
-                      
-                     </div>
-            </div>
-         </div>
-            )
-  })
-  )
+return <>
+  { !isActive?
+    <>
+    <BuilderComponent model="page"/>
+    <div className="box-container">
+      {prodacts.map((prodact,i)=>{
+       return <Card  key={i} prodact={prodact} setIsActive={setIsActive} />
+      })}
+    </div>
+    <BuilderComponent model="page"/>
+    <Footer/>
+    </>
+    :isActive
 }
+</>
+  
+  
+}
+
+

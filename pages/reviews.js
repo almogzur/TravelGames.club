@@ -1,5 +1,6 @@
 // pages/your-page.jsx
-import Header from '@/components/Header';
+import Footer from '../components/Footer';
+import Header from '../components/Header';
 import ProdactsLopp from '../components/ProdactsLopp'
 import { builder ,BuilderComponent } from '@builder.io/react';
 
@@ -20,9 +21,9 @@ export async function getStaticProps() {
 export default function Reviews({ prodacts }) {
   return (
     <>
-
         <Header/>
         <ProdactsLopp prodacts={prodacts}/>
+        <Footer/>
       {/* Put the rest of your page here. */}
      
     </>

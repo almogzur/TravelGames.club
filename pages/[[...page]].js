@@ -4,7 +4,7 @@ import Head from 'next/head';
 import React from 'react';
 import { BuilderComponent, builder, useIsPreviewing, Builder ,} from '@builder.io/react';
 import Link from 'next/link';
-import Header from '@/components/Header';
+import Header from '../components/Header';
 import '@builder.io/widgets';
 
 // Initialize the Builder SDK with your organization's API Key

@@ -1,5 +1,8 @@
 export default function Footer (){
     return (
-        <div>Footer</div>
+        <div style={{
+            background:"lightblue",
+            hieght:"50px"
+        }}></div>
     )
 }
