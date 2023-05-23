@@ -3,6 +3,7 @@
 import '../styles/globals.css'
 import '../styles/hearer.css'
 import '../styles/card.css'
+import '../styles/carusel.css'
 
     function MyApp({ Component, pageProps }) {
       return <Component {...pageProps} />

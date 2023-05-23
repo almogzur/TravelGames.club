@@ -1,88 +1,85 @@
 import Image from "next/image";
 import styled from "styled-components";
 import CircumIcon from "@klarr-agency/circum-icons-react"; // React
+import Carusel from './Carusel'
+
+/* Data Schema
+name √
+headline √
+subhadline √
+intro √
+publicOn 
+body √
+mainimg √
+
+photos 
+pepole asmk
+call to action
+relayed
+catgory
+discount
+stars
+link
+price
+*/
 
 
-export default function ProdactPage({prodact, setIsActive}) {
-  const data = prodact.data
+export default function ProdactPage({review}) {
+
+ 
+  const data = review.data
+  const photos = review.data.photos
+  console.log(photos)
     return (
-      <Div maxWidth={1200}>
+      <MainDiv maxWidth={1200}>
         <Section>
-        <button 
-           style={{width:"100px",height:"50px", background:"none",border:"none"}}
-           onClick={()=>setIsActive(null)}
-           >
-           <CircumIcon name="turn_l_1"/>
-           </button>
-          <Div2>
+        <PageHade>
             <p>{data.name}</p>
-          </Div2>
-          <Div3>
-          
-            <Div4 className="builder-columns">
-              <Column className="builder-column">
-                <Div5>
-                  <Div6>
+        </PageHade>
+         <MainWrapper>         
+            <SectionWrapper className="builder-columns">
+              <ColumnA className="builder-column">
+                <ColumnAWrapper>
+                {  data.discount ?
+                  <Discount>
                     <p>
-                      10% <br /> OFF
+                      {data.discount} % <br /> OFF
                     </p>
-                  </Div6>
-                  <Div7>
-                 <Image src={data.mainImg} fill alt=""/>
+                  </Discount>
+                  :null
+                }
+                  <ProdactImageDiv>
+                    <Image src={data.mainImg} fill alt=""/>
                     <Imagesizer className="builder-image-sizer" />
-                  </Div7>
-                  <Div8>
-                    <Div9>
-                      <p>12 BOTTLES PER PACK</p>
-                      <p>vegan * soy-free * gluten-free * low-sugar</p>
-                    </Div9>
-                    <Div10>
-                      <p>SEE NUTRITION FACTS</p>
-                    </Div10>
-                  </Div8>
-                </Div5>
-              </Column>
-               <Column2 className="builder-column">
-                <Div11>
-                  <Div12>
-                    <p>BARCODE 12-PACK</p>
-                  </Div12>
-                  <Div13>
-                    <Div14>
-                      <p>
-                        BEST <br /> SELLER
-                      </p>
-                    </Div14>
-                  </Div13>
-                </Div11>
-                <Div15>
-                  <p>FUNCTIONAL performance BEVERAGE</p>
-                </Div15>
-                <Div16>
-                  <p>*****</p>
-                </Div16>
-                <Div17>
+                  </ProdactImageDiv>
+                  <DieatelsWrapper>
+                    <ProdactDieatels>
+                      <p>12 {data.discription}</p>
+                    </ProdactDieatels>
+                    <LinkDiv>
+                      <p>{data.link}</p>
+                    </LinkDiv>
+                  </DieatelsWrapper>
+                </ColumnAWrapper>
+              </ColumnA>
+               <ColumnB className="builder-column">
+                <IntroWrapper>
+                  <Intro>
+                    <p>{data.intro}</p>
+                  </Intro>
+                </IntroWrapper>
+                <ProdactheadLine>
+                  <p>{data.headline}</p>
+                </ProdactheadLine>
+                <SubHading>
+                  <p>{data.subhadline}</p>
+                </SubHading>
+                <ArticalBody>
                   <p>
-                    barcode is an adaptogen-packed, coconut-water based
-                    perfromance beverage. Drink it WHILE YOU’RE workING OUT or
-                    hanging out- barcode is for everyone.{" "}
+                    {data.body}
                   </p>
-                </Div17>
-                <Div18>
-                  <p>You get:</p>
-                </Div18>
-                <Div19>
-                  <p>1 WATERMELON 12-pack</p>
-                </Div19>
-                <Div20>
-                  <Div21>
-                    <p>12 BOTTLES PER PACK</p>
-                    <p>vegan * soy-free * gluten-free * low-sugar</p>
-                  </Div21>
-                  <Div22>
-                    <p>SEE NUTRITION FACTS</p>
-                  </Div22>
-                </Div20>
+                </ArticalBody>
+             <Carusel photos={photos[0]} />
                 <Div23>
                   <Div24>
                     <p>$48</p>
@@ -91,16 +88,16 @@ export default function ProdactPage({prodact, setIsActive}) {
                     <p>$43</p>
                   </Div25>
                 </Div23>
-                <Button>SAVE 10% AND CHECKOUT NOW</Button>
-              </Column2>
-            </Div4>
-          </Div3>
+                <Button>{data.callToAction}</Button>
+              </ColumnB>
+            </SectionWrapper>
+         </MainWrapper>
         </Section>
-      </Div>
+      </MainDiv>
     );
   }
   
-  const Div = styled.div`
+  const MainDiv = styled.div`
     display: flex;
     flex-direction: column;
     position: relative;
@@ -127,7 +124,7 @@ export default function ProdactPage({prodact, setIsActive}) {
     margin-right: auto;
   `;
   
-  const Div2 = styled.div`
+  const PageHade = styled.div`
     display: flex;
     flex-direction: column;
     position: relative;
@@ -145,14 +142,14 @@ export default function ProdactPage({prodact, setIsActive}) {
     }
   `;
   
-  const Div3 = styled.div`
+  const MainWrapper = styled.div`
     display: flex;
     flex-direction: column;
     position: relative;
-    margin-top: 0px;
+    margin-top: 15px;
   `;
   
-  const Div4 = styled.div`
+  const SectionWrapper = styled.div`
     display: flex;
     @media (max-width: 999px) {
       flex-direction: column;
@@ -160,7 +157,7 @@ export default function ProdactPage({prodact, setIsActive}) {
     }
   `;
   
-  const Column = styled.div`
+  const ColumnA = styled.div`
     display: flex;
     flex-direction: column;
     line-height: normal;
@@ -171,24 +168,25 @@ export default function ProdactPage({prodact, setIsActive}) {
     }
   `;
   
-  const Div5 = styled.div`
+  const ColumnAWrapper = styled.div`
     display: flex;
     flex-direction: column;
     position: relative;
   `;
   
-  const Div6 = styled.div`
+  const Discount = styled.div`
     display: flex;
     flex-direction: column;
     position: relative;
-    margin-top: 0px;
+    margin:5px;
+    margin-bottom:10px;
     height: auto;
     width: 115px;
     border-radius: 100px;
     background-color: rgba(0, 0, 0, 1);
     margin-left: auto;
     justify-content: center;
-    right: 0px;
+    right: 39%;
     top: 0px;
     line-height: 138.4%;
     text-align: center;
@@ -202,7 +200,7 @@ export default function ProdactPage({prodact, setIsActive}) {
     }
   `;
   
-  const Div7 = styled.div`
+  const ProdactImageDiv = styled.div`
     display: flex;
     flex-direction: column;
     position: relative;
@@ -215,16 +213,6 @@ export default function ProdactPage({prodact, setIsActive}) {
     overflow: hidden;
   `;
   
-  const ProdactImage = styled.img`
-    object-fit: contain;
-    object-position: center;
-    position: absolute;
-    height: 100%;
-    width: 100%;
-    top: 0;
-    left: 0;
-  `;
-  
   const Imagesizer = styled.div`
     width: 100%;
     padding-top: 100%;
@@ -232,7 +220,7 @@ export default function ProdactPage({prodact, setIsActive}) {
     font-size: 0;
   `;
   
-  const Div8 = styled.div`
+  const DieatelsWrapper = styled.div`
     display: flex;
     flex-direction: column;
     position: relative;
@@ -247,7 +235,7 @@ export default function ProdactPage({prodact, setIsActive}) {
     }
   `;
   
-  const Div9 = styled.div`
+  const ProdactDieatels = styled.div`
     display: flex;
     flex-direction: column;
     position: relative;
@@ -267,7 +255,7 @@ export default function ProdactPage({prodact, setIsActive}) {
     }
   `;
   
-  const Div10 = styled.div`
+  const LinkDiv = styled.div`
     display: flex;
     flex-direction: column;
     position: relative;
@@ -286,7 +274,7 @@ export default function ProdactPage({prodact, setIsActive}) {
     }
   `;
   
-  const Column2 = styled.div`
+  const ColumnB = styled.div`
     display: flex;
     flex-direction: column;
     line-height: normal;
@@ -297,13 +285,13 @@ export default function ProdactPage({prodact, setIsActive}) {
     }
   `;
   
-  const Div11 = styled.div`
+  const IntroWrapper = styled.div`
     display: flex;
     flex-direction: row;
     position: relative;
   `;
   
-  const Div12 = styled.div`
+  const Intro = styled.div`
     display: flex;
     flex-direction: column;
     position: relative;
@@ -323,53 +311,7 @@ export default function ProdactPage({prodact, setIsActive}) {
     }
   `;
   
-  const Div13 = styled.div`
-    display: flex;
-    flex-direction: column;
-    position: relative;
-    background-color: rgba(0, 0, 0, 1);
-    margin-left: 20px;
-    border-radius: 100px;
-    width: 72px;
-    height: 70px;
-    @media (max-width: 991px) {
-      display: none;
-    }
-    @media (max-width: 640px) {
-      display: flex;
-    }
-  `;
-  
-  const Div14 = styled.div`
-    display: flex;
-    flex-direction: column;
-    position: relative;
-    margin-top: auto;
-    height: auto;
-    width: 70px;
-    border-radius: 100px;
-    background-color: rgba(236, 70, 70, 1);
-    margin-left: auto;
-    margin-right: auto;
-    margin-bottom: auto;
-    text-align: center;
-    line-height: normal;
-    color: rgba(0, 0, 0, 1);
-    font-family: Roboto, sans-serif;
-    font-size: 13px;
-    text-transform: uppercase;
-    @media (max-width: 991px) {
-      display: flex;
-    }
-    @media (max-width: 640px) {
-      font-size: 13px;
-      line-height: 22px;
-      margin-bottom: auto;
-      margin-top: auto;
-    }
-  `;
-  
-  const Div15 = styled.div`
+  const ProdactheadLine = styled.div`
     display: flex;
     flex-direction: column;
     position: relative;
@@ -389,7 +331,7 @@ export default function ProdactPage({prodact, setIsActive}) {
     }
   `;
   
-  const Div16 = styled.div`
+  const SubHading = styled.div`
     display: flex;
     flex-direction: column;
     position: relative;
@@ -414,7 +356,7 @@ export default function ProdactPage({prodact, setIsActive}) {
     }
   `;
   
-  const Div17 = styled.div`
+  const ArticalBody = styled.div`
     display: flex;
     flex-direction: column;
     position: relative;
@@ -434,102 +376,19 @@ export default function ProdactPage({prodact, setIsActive}) {
     }
   `;
   
-  const Div18 = styled.div`
-    display: flex;
-    flex-direction: column;
-    position: relative;
-    margin-top: 30px;
-    text-align: left;
-    line-height: 138.4%;
-    height: auto;
-    color: rgba(0, 0, 0, 1);
-    font-family: Roboto, sans-serif;
-    font-size: 16px;
-    text-transform: uppercase;
-    @media (max-width: 640px) {
-      font-size: 15px;
-      line-height: 155%;
-      margin-bottom: 0px;
-      margin-top: 20px;
-    }
-  `;
-  
-  const Div19 = styled.div`
-    display: flex;
-    flex-direction: column;
-    position: relative;
-    margin-top: 16px;
-    text-align: left;
-    line-height: 138.4%;
-    height: auto;
-    color: rgba(0, 0, 0, 1);
-    font-family: Roboto, sans-serif;
-    font-size: 16px;
-    text-transform: uppercase;
-    @media (max-width: 991px) {
-      padding-bottom: 30px;
-    }
-    @media (max-width: 640px) {
-      font-size: 15px;
-      line-height: 155%;
-      margin-bottom: 0px;
-      margin-top: 20px;
-    }
-  `;
-  
-  const Div20 = styled.div`
-    display: none;
-    flex-direction: column;
-    position: relative;
-    margin-top: 0px;
-    height: auto;
-    border-top: 1px solid #000000;
-    border-bottom: 1px solid #000000;
-    padding-bottom: 33px;
-    padding-top: 33px;
-    @media (max-width: 991px) {
-      display: flex;
-    }
-  `;
-  
-  const Div21 = styled.div`
-    display: flex;
-    flex-direction: column;
-    position: relative;
-    margin-top: 0px;
-    text-align: left;
-    line-height: 23px;
-    height: auto;
-    color: rgba(0, 0, 0, 1);
-    font-family: Roboto, sans-serif;
-    font-size: 16px;
-    text-transform: uppercase;
-    @media (max-width: 640px) {
-      font-size: 15px;
-      line-height: 155%;
-      margin-bottom: 0px;
-      margin-top: 0px;
-    }
-  `;
-  
-  const Div22 = styled.div`
-    display: flex;
-    flex-direction: column;
-    position: relative;
-    margin-top: 15px;
-    text-align: left;
-    line-height: 23px;
-    height: auto;
-    color: rgba(0, 0, 0, 1);
-    font-family: Roboto, sans-serif;
-    font-size: 16px;
-    @media (max-width: 640px) {
-      font-size: 15px;
-      line-height: 155%;
-      margin-bottom: 0px;
-      margin-top: 20px;
-    }
-  `;
+  const Div7 = styled.div`
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  margin-top: 0px;
+  text-align: center;
+  line-height: normal;
+  height: auto;
+  min-height: 20px;
+  min-width: 20px;
+  overflow: hidden;
+`;
+
   
   const Div23 = styled.div`
     display: flex;
