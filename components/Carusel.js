@@ -39,9 +39,9 @@ const objLength = Object.entries(photos).length
 
 useEffect(()=>{
 
-     console.log(objLength)
+    
 
-  },[objLength , photos])
+  },[])
 
 return (
 <>

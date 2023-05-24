@@ -2,6 +2,7 @@ import Image from "next/image";
 import styled from "styled-components";
 import CircumIcon from "@klarr-agency/circum-icons-react"; // React
 import Carusel from './Carusel'
+import { useState } from "react";
 
 /* Data Schema
 name √
@@ -24,11 +25,11 @@ price
 */
 
 
-export default function ProdactPage({review}) {
+export default function ProdactPage({review }) {
 
- 
-  const data = review.data
-  const photos = review.data.photos
+ const [ data , setData ] = useState( review.data? review.data:backupdata.data)
+
+  const photos = data.photos
   console.log(photos)
     return (
       <MainDiv maxWidth={1200}>

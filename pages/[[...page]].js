@@ -6,6 +6,7 @@ import { BuilderComponent, builder, useIsPreviewing, Builder ,} from '@builder.i
 import Link from 'next/link';
 import Header from '../components/Header';
 import '@builder.io/widgets';
+import Footer from '../components/Footer'
 
 // Initialize the Builder SDK with your organization's API Key
 // Find the API Key on: https://builder.io/account/settings
@@ -66,6 +67,7 @@ export default function Page({ page }) {
       </Head>
       <Header/>
       <BuilderComponent model="page" content={page} />
+      <Footer/>
     </>
   );
 }
