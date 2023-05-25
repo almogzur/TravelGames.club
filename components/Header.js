@@ -18,7 +18,7 @@ const NavMenu = () => {
 
 
          <NavigationMenu.Item>
-          <NavigationMenu.Link className="NavigationMenuLink nav_link" href="reviews">
+          <NavigationMenu.Link className="NavigationMenuLink nav_link" href="/reviews">
             Reviews
           </NavigationMenu.Link>
          </NavigationMenu.Item>

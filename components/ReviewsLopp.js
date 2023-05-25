@@ -6,10 +6,10 @@ import Card from './Card'
 export default function ReviewsLoop({reviews}){
 
     useEffect(()=>{
-        //console.log(reviews)
+     //   console.log( reviews)
     },[reviews])
 
-return (
+ return (
        <div className="box-container">
           {
             reviews.map((review,i)=>{
@@ -18,6 +18,7 @@ return (
           }
        </div>
   )
+  
     
 
   

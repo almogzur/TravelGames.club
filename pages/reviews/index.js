@@ -26,26 +26,40 @@ export async function getStaticProps() {
 }
 
 
+
+ /* -- Categoty sort names --
+Outdoor and Adventure Equipment:  OAE
+Travel Gear and Accessories: TGA
+Tech and Gadgets: TG
+Travel Books and Guides: TBG
+*/
+
 export default function Reviews({ reviews }) {
+  
+  const [ category , setCategory ] = useState(false)
+  const [ filterdReviews , setFilterdReviews ] = useState({})
 
+  useEffect(()=>{
+    const sortByCategoty = (reviewsObj) => { 
+      let  arr = []
+        if(!category){return reviewsObj}
+           reviewsObj.map((review)=>{if(review.data.catgory === category){arr=[...arr,review] }
+ })
+    return arr
+ }
+    const sorted = sortByCategoty(reviews)
 
-  const [ category , setCategory ] = useState(null)
+    setFilterdReviews(sorted)
 
-  const sortByCategoty = (reviews , category) => {
-
-    reviews.map((review)=>{
-       
-    })
-
-  }
-
-  console.log(reviews)
+    console.log(category , sorted) 
+  },[category, setCategory, reviews])
 
   return (
+    
     <>
         <Header/>
         <CategoryBar setCategory={setCategory} category={category}/>
-        <ProdactsLopp reviews={reviews} />
+        <ProdactsLopp reviews={Object.keys(filterdReviews).length > 0 ? filterdReviews : reviews} />
         <Footer/>
       {/* Put the rest of your page here. */}
      

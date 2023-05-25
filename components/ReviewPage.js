@@ -12,7 +12,6 @@ intro √
 publicOn 
 body √
 mainimg √
-
 photos 
 pepole asmk
 call to action
@@ -28,9 +27,8 @@ price
 export default function ProdactPage({review }) {
 
  const [ data , setData ] = useState( review.data? review.data:backupdata.data)
-
   const photos = data.photos
-  console.log(photos)
+//  console.log(photos)
     return (
       <MainDiv maxWidth={1200}>
         <Section>

@@ -3,6 +3,7 @@ import { BuilderComponent, builder } from '@builder.io/react';
 import ProductPage from "../../components/ReviewPage"
 import { useEffect, useState } from 'react';
 import { useRouter } from 'next/router';
+import Header from "../../components/Header.js"
 
 
 // Replace with your Public API Key.
@@ -28,9 +29,7 @@ export async function getStaticProps({ params }) {
     revalidate: 5,
   };
 }
-
 // quray the db for the selected review
-
 export  async function getStaticPaths() {
   return {
     paths:[],
@@ -40,10 +39,12 @@ export  async function getStaticPaths() {
   
 export default  function Page({ reviewDetails }) {
 
-
    if(!reviewDetails){
   <div>Loading...</div>
    }else{
-    return <ProductPage review={reviewDetails}/>
+    return <>
+   <Header/>
+   <ProductPage review={reviewDetails}/>
+   </>
    }
 }
