@@ -35,31 +35,41 @@ Travel Books and Guides: TBG
 */
 
 export default function Reviews({ reviews }) {
-  
+
   const [ category , setCategory ] = useState(false)
+
+
   const [ filterdReviews , setFilterdReviews ] = useState({})
 
   useEffect(()=>{
+   // console.log(category)
+
     const sortByCategoty = (reviewsObj) => { 
       let  arr = []
-        if(!category){return reviewsObj}
-           reviewsObj.map((review)=>{if(review.data.catgory === category){arr=[...arr,review] }
- })
-    return arr
- }
+        if(category === false ){return reviewsObj}
+        else if (category !== false){
+            reviewsObj.map(
+                  (review)=>{
+                //console.log(review.data.category)
+                    if(review.data.category === category){
+                            arr.push(review)
+                          }
+             })
+             }
+       return arr
+  }
     const sorted = sortByCategoty(reviews)
 
     setFilterdReviews(sorted)
 
-    console.log(category , sorted) 
-  },[category, setCategory, reviews])
+  },[category, reviews ])
 
   return (
-    
     <>
+  
         <Header/>
         <CategoryBar setCategory={setCategory} category={category}/>
-        <ProdactsLopp reviews={Object.keys(filterdReviews).length > 0 ? filterdReviews : reviews} />
+        <ProdactsLopp reviews={filterdReviews.length >= 1 ? filterdReviews : reviews} />
         <Footer/>
       {/* Put the rest of your page here. */}
      

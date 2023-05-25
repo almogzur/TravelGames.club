@@ -25,7 +25,9 @@ Travel Books and Guides: TBG
         case "Outdoor and Adventure Equipment": setCategory("OAE") ; 
          break;
         case "Travel Books and Guides": setCategory("TBG") ;
-        break; 
+         break; 
+        case "All": setCategory(false); 
+        break;
         default : throw new Error("no category value")
         
       }
@@ -58,6 +60,13 @@ return (
   <NavigationMenu.Item>
    <NavigationMenu.Link onClick={(e)=>click(e)} value={"TBG"} className="NavigationMenuLink nav_link" >
    Travel Books and Guides
+   </NavigationMenu.Link>
+  </NavigationMenu.Item>
+
+
+  <NavigationMenu.Item>
+   <NavigationMenu.Link onClick={(e)=>click(e)} value={"All"} className="NavigationMenuLink nav_link" >
+  All
    </NavigationMenu.Link>
   </NavigationMenu.Item>
 
