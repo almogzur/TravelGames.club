@@ -46,7 +46,7 @@ export default function Reviews({ reviews }) {
 
     const sortByCategoty = (reviewsObj) => { 
       let  arr = []
-        if(category === false ){return reviewsObj}
+        if(!category ){return reviewsObj}
         else if (category !== false){
             reviewsObj.map(
                   (review)=>{
@@ -66,7 +66,6 @@ export default function Reviews({ reviews }) {
 
   return (
     <>
-  
         <Header/>
         <CategoryBar setCategory={setCategory} category={category}/>
         <ProdactsLopp reviews={filterdReviews.length >= 1 ? filterdReviews : reviews} />

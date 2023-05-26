@@ -38,7 +38,7 @@ export async function getStaticPaths() {
   });
 
   return {
-    paths: pages.map(page => `${page.data?.url}`),
+    paths: [],
     fallback: true,
   };
 }

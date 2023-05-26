@@ -1,8 +1,5 @@
 import React from 'react';
 import * as NavigationMenu from '@radix-ui/react-navigation-menu';
-import classNames from 'classnames';
-import { CaretDownIcon } from '@radix-ui/react-icons';
-
 
 const NavMenu = () => {
   return (
@@ -11,12 +8,14 @@ const NavMenu = () => {
        <NavigationMenu.List className="NavigationMenuList">
        
          <NavigationMenu.Item>
+      
           <NavigationMenu.Link className="NavigationMenuLink nav_link" href="/">
             Home
+            
           </NavigationMenu.Link>
+          
          </NavigationMenu.Item>
-
-
+     
          <NavigationMenu.Item>
           <NavigationMenu.Link className="NavigationMenuLink nav_link" href="/reviews">
             Reviews
@@ -33,9 +32,6 @@ const NavMenu = () => {
       
        </NavigationMenu.List>
 
-      <div className="ViewportPosition">
-        <NavigationMenu.Viewport className="NavigationMenuViewport" />
-      </div>
     </NavigationMenu.Root>
   );
 };
