@@ -84,7 +84,7 @@ export default function ProdactPage({ review }) {
     display: flex;
     flex-direction: column;
     position: relative;
-    margin-top: -30px;
+    margin-top: -5px;
     padding-left: 20px;
     padding-right: 20px;
     padding-top: 80px;
@@ -97,14 +97,11 @@ export default function ProdactPage({ review }) {
   `;
   
   const Section = styled.section`
-    width: 100%;
     align-self: stretch;
     flex-grow: 1;
     max-width: 1200px;
     display: flex;
     flex-direction: column;
-    margin-left: auto;
-    margin-right: auto;
   `;
   
   const PageHade = styled.div`

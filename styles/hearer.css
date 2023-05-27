@@ -8,13 +8,12 @@
 .nav_link{
   width:100px;
   text-align:center;
-  
 }
 
 .NavigationMenuRoot {
   display: flex;
   justify-content: center;
-  width:100%;
+  width:100vw;
   background:#e8e9e4;
 }
 
@@ -85,7 +84,7 @@
 }
 @media only screen and (min-width: 600px) {
   .NavigationMenuContent {
-    width: 100%;
+    width: auto;
   }
 }
 
@@ -126,7 +125,7 @@
 }
 @media only screen and (min-width: 600px) {
   .NavigationMenuViewport {
-    width: 100%;
+    width: var(--radix-navigation-menu-viewport-width);
   }
 }
 
