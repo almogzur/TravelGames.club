@@ -23,34 +23,26 @@ link
 price
 */
 
+export default function ProdactPage({ review }) {
 
-export default function ProdactPage({review }) {
+ const [ data  ] = useState( review.data)
 
- const [ data , setData ] = useState( review.data? review.data:backupdata.data)
   const photos = data.photos
 //  console.log(photos)
     return (
-      <MainDiv maxWidth={1200}>
+       <MainDiv maxWidth={1200}>
         <Section>
         <PageHade>
-            <p>{data.name}</p>
+            <h1>{data.name.toUpperCase()}</h1>
         </PageHade>
-         <MainWrapper>         
-            <SectionWrapper className="builder-columns">
-              <ColumnA className="builder-column">
+        <Subhade>
+          <h1>{data.subhadline}</h1>
+        </Subhade>
+        <MainWrapper>         
+          <SectionWrapper >
+              <ColumnA >
                 <ColumnAWrapper>
-                {  data.discount ?
-                  <Discount>
-                    <p>
-                      {data.discount} % <br /> OFF
-                    </p>
-                  </Discount>
-                  :null
-                }
-                  <ProdactImageDiv>
-                    <Image src={data.mainImg} fill alt=""/>
-                    <Imagesizer className="builder-image-sizer" />
-                  </ProdactImageDiv>
+                <Carusel photos={photos[0]} />
                   <DieatelsWrapper>
                     <ProdactDieatels>
                       <p>12 {data.discription}</p>
@@ -61,7 +53,7 @@ export default function ProdactPage({review }) {
                   </DieatelsWrapper>
                 </ColumnAWrapper>
               </ColumnA>
-               <ColumnB className="builder-column">
+               <ColumnB >
                 <IntroWrapper>
                   <Intro>
                     <p>{data.intro}</p>
@@ -78,19 +70,18 @@ export default function ProdactPage({review }) {
                     {data.body}
                   </p>
                 </ArticalBody>
-             <Carusel photos={photos[0]} />
-                <Div23>
-                  <Div24>
+                <PriceWrapper>
+                  <OldPrice>
                     <p>$48</p>
-                  </Div24>
-                  <Div25>
+                  </OldPrice>
+                  <NewPrice>
                     <p>$43</p>
-                  </Div25>
-                </Div23>
+                  </NewPrice>
+                </PriceWrapper>
                 <Button>{data.callToAction}</Button>
               </ColumnB>
-            </SectionWrapper>
-         </MainWrapper>
+          </SectionWrapper>
+        </MainWrapper>
         </Section>
       </MainDiv>
     );
@@ -124,22 +115,21 @@ export default function ProdactPage({review }) {
   `;
   
   const PageHade = styled.div`
-    display: flex;
-    flex-direction: column;
-    position: relative;
-    margin-top: 0px;
+    margin-top: -25px;
     line-height: 35px;
-    height: auto;
-    text-align: left;
-    font-size: 24px;
+    text-align: center;
+    font-size: 34px;
     font-family: Roboto, sans-serif;
     font-weight: bold;
-    color: rgba(0, 0, 0, 1);
     @media (max-width: 640px) {
       line-height: 30px;
       font-size: 21px;
     }
   `;
+
+  const Subhade = styled.div`
+
+  `
   
   const MainWrapper = styled.div`
     display: flex;
@@ -171,32 +161,6 @@ export default function ProdactPage({review }) {
     display: flex;
     flex-direction: column;
     position: relative;
-  `;
-  
-  const Discount = styled.div`
-    display: flex;
-    flex-direction: column;
-    position: relative;
-    margin:5px;
-    margin-bottom:10px;
-    height: auto;
-    width: 115px;
-    border-radius: 100px;
-    background-color: rgba(0, 0, 0, 1);
-    margin-left: auto;
-    justify-content: center;
-    right: 39%;
-    top: 0px;
-    line-height: 138.4%;
-    text-align: center;
-    font-size: 25px;
-    color: rgba(255, 255, 255, 1);
-    @media (max-width: 640px) {
-      width: 80px;
-      height: 80px;
-      line-height: 140%;
-      font-size: 17px;
-    }
   `;
   
   const ProdactImageDiv = styled.div`
@@ -375,21 +339,8 @@ export default function ProdactPage({review }) {
     }
   `;
   
-  const Div7 = styled.div`
-  display: flex;
-  flex-direction: column;
-  position: relative;
-  margin-top: 0px;
-  text-align: center;
-  line-height: normal;
-  height: auto;
-  min-height: 20px;
-  min-width: 20px;
-  overflow: hidden;
-`;
-
   
-  const Div23 = styled.div`
+  const PriceWrapper = styled.div`
     display: flex;
     flex-direction: row;
     position: relative;
@@ -403,7 +354,7 @@ export default function ProdactPage({review }) {
     }
   `;
   
-  const Div24 = styled.div`
+  const OldPrice = styled.div`
     display: flex;
     flex-direction: column;
     position: relative;
@@ -425,7 +376,7 @@ export default function ProdactPage({review }) {
     }
   `;
   
-  const Div25 = styled.div`
+  const NewPrice = styled.div`
     display: flex;
     flex-direction: column;
     position: relative;
@@ -453,14 +404,13 @@ export default function ProdactPage({review }) {
     flex-direction: column;
     position: relative;
     margin-top: 51px;
-    appearance: none;
     padding-top: 15px;
     padding-bottom: 15px;
     padding-left: 25px;
     padding-right: 25px;
-    background-color: rgba(0, 0, 0, 1);
-    color: white;
-    border-radius: px;
+    background:#e8e9e4;
+    color: black;
+    border-radius: 15px;
     text-align: center;
     cursor: pointer;
     line-height: 35px;

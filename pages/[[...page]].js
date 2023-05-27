@@ -3,7 +3,6 @@ import DefaultErrorPage from 'next/error';
 import Head from 'next/head';
 import React from 'react';
 import { BuilderComponent, builder, useIsPreviewing, Builder ,} from '@builder.io/react';
-import Link from 'next/link';
 import Header from '../components/Header';
 import '@builder.io/widgets';
 import Footer from '../components/Footer'

@@ -1,12 +1,12 @@
 'use client'
 import  {motion, AnimatePresence} from 'framer-motion'
-import { useEffect, useState } from 'react'
+import { useState } from 'react'
 import CircumIcon from "@klarr-agency/circum-icons-react"
 
 const variants = {
   enter: (direction) => {
     return {
-      x: direction > 0 ? 200 : -200,
+      x: direction > 0 ? 0 : 0,
       opacity: 0
     };
   },
@@ -37,23 +37,15 @@ const objLength = Object.entries(photos).length
     setCurrentPhoto(currentPhoto < objLength ? currentPhoto + 1 : 1 ) 
   }
 
-useEffect(()=>{
-
-    
-
-  },[])
 
 return (
-<>
-   <AnimatePresence initial={"enter"} >
-     <div className=''>
-        <div className=''>
-        
+     <AnimatePresence initial={"enter"} >
+       <div className='gallerywrapeer'>
           <motion.img 
+            height={500}
+            width={500}
              key={currentPhoto}
              src={photos[currentPhoto]}
-             style={{  borderRadius:"0px" , width:"30vw"}}
-          
              variants={variants}
              initial="enter"
              animate="center"
@@ -63,14 +55,10 @@ return (
                   opacity: { duration: 1 },
                   zIndex:0
                }}
-          /> 
-        </div>
-     
-     </div>
+           /> 
+       </div>
+       <button className ="scrool" onClick = { upClick } ><CircumIcon  name="square_more"/></button>
    </AnimatePresence>
-   <button className = "btnleft" onClick = { upClick } > left</button>
-</>
-
 )
 
 }

@@ -1,16 +1,15 @@
 // pages/collections/[collection].jsx
 import { BuilderComponent, builder } from '@builder.io/react';
-import ProductPage from "../../components/ReviewPage"
+import ReviewPage from '../../components/ReviewPage'
 import { useEffect, useState } from 'react';
 import { useRouter } from 'next/router';
 import Header from "../../components/Header.js"
 
 
-// Replace with your Public API Key.
 builder.init("a3d0d381e56c45e8881e0794fc804b1a");
 
 // url name is passed to static props as the name of the file as key 
-//and get the vlau from Link prodact 
+//and get the vlau from Link review 
 
 export async function getStaticProps({ params }) {
 
@@ -29,7 +28,7 @@ export async function getStaticProps({ params }) {
     revalidate: 5,
   };
 }
-// quray the db for the selected review
+
 export  async function getStaticPaths() {
   return {
     paths:[],
@@ -44,7 +43,7 @@ export default  function Page({ reviewDetails }) {
    }else{
     return <>
    <Header/>
-   <ProductPage review={reviewDetails}/>
+   <ReviewPage review={reviewDetails}/>
    </>
    }
 }

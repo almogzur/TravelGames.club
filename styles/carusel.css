@@ -1,0 +1,12 @@
+.gallerywrapeer{
+   height:550px;
+}
+
+.scrool{
+    border:none;
+    width:100px;
+    height:70px;
+    margin-bottom:15px;
+    background:#e8e9e4;
+    border-radius: 15px;
+}
