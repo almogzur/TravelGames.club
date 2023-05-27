@@ -90,10 +90,7 @@ export default function ProdactPage({ review }) {
     padding-top: 80px;
     padding-bottom: 80px;
     background-color: rgba(255, 255, 255, 1);
-    @media (max-width: 640px) {
-      padding-top: 60px;
-      padding-bottom: 60px;
-    }
+
   `;
   
   const Section = styled.section`
@@ -168,12 +165,6 @@ export default function ProdactPage({ review }) {
     overflow: hidden;
   `;
   
-  const Imagesizer = styled.div`
-    width: 100%;
-    padding-top: 100%;
-    pointer-events: none;
-    font-size: 0;
-  `;
   
   const DieatelsWrapper = styled.div`
     display: flex;
@@ -185,9 +176,7 @@ export default function ProdactPage({ review }) {
     border-bottom: 1px solid #000000;
     padding-bottom: 33px;
     padding-top: 33px;
-    @media (max-width: 991px) {
-      display: none;
-    }
+
   `;
   
   const ProdactDieatels = styled.div`

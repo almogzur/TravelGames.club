@@ -3,8 +3,8 @@ import * as NavigationMenu from '@radix-ui/react-navigation-menu';
 
 const NavMenu = () => {
   return (
-    <nav>
-    <NavigationMenu.Root className="NavigationMenuRoot">
+   
+    <NavigationMenu.Root style={{width:"100vw"}} className="NavigationMenuRoot">
 
        <NavigationMenu.List className="NavigationMenuList">
        
@@ -30,7 +30,7 @@ const NavMenu = () => {
        </NavigationMenu.List>
 
     </NavigationMenu.Root>
-    </nav>
+  
   );
 };
 
