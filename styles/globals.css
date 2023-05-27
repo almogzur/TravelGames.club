@@ -8,6 +8,8 @@
 body{
   padding:5px;
   margin:0;
+  height:100vh;
+  weight:100vw;
 
 }
  .text-center{

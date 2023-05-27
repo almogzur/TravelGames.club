@@ -16,21 +16,17 @@ const NavMenu = () => {
           </NavigationMenu.Link>
           
          </NavigationMenu.Item>
-     
          <NavigationMenu.Item>
           <NavigationMenu.Link className="NavigationMenuLink nav_link" href="/reviews">
             Reviews
           </NavigationMenu.Link>
          </NavigationMenu.Item>
-
-
          <NavigationMenu.Item>
           <NavigationMenu.Link className="NavigationMenuLink nav_link" href="/about">
             About
           </NavigationMenu.Link>
          </NavigationMenu.Item>
 
-      
        </NavigationMenu.List>
 
     </NavigationMenu.Root>
