@@ -7,7 +7,6 @@ import * as NavigationMenu from '@radix-ui/react-navigation-menu';
 
 export default function CategoryBar ({category,setCategory} ){
 
-
  /* -- Categoty sort names --
 Outdoor and Adventure Equipment:  OAE
 Travel Gear and Accessories: TGA
@@ -29,19 +28,19 @@ Travel Books and Guides: TBG
         case "All": setCategory(false); 
         break;
         default : throw new Error("no category value")
-        
       }
 
     }
 
 return (
-<NavigationMenu.Root className="NavigationMenuRoot">
+<NavigationMenu.Root className="NavigationMenuRoot" >
 
  <NavigationMenu.List className="NavigationMenuList">
 
   <NavigationMenu.Item >
-   <NavigationMenu.Link  onClick={(e)=>click(e)} value={"TGA"}  className="NavigationMenuLink nav_link"  >
+   <NavigationMenu.Link   onClick={(e)=>click(e)} value={"TGA"}  className="NavigationMenuLink nav_link"  >
    Travel Gear and Accessories
+   
    </NavigationMenu.Link>
   </NavigationMenu.Item>
 
