@@ -12,10 +12,10 @@
 }
 
 .NavigationMenuRoot {
-  position: relative;
-  display: flex;
+
+display: flex;
   justify-content: center;
-  width:100vw;
+  width:100%;
   z-index: 1;
   background:#e8e9e4;
 }
