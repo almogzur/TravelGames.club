@@ -40,7 +40,7 @@ const objLength = Object.entries(photos).length
 
 return (
      <AnimatePresence initial={"enter"} >
-       <div className='gallerywrapeer'>
+       <div tabIndex={1} className='gallerywrapeer' onClick={upClick}>
           <motion.img 
             height={500}
             width={500}
@@ -57,7 +57,6 @@ return (
                }}
            /> 
        </div>
-       <button className ="scrool" onClick = { upClick } ><CircumIcon  name="square_more"/></button>
    </AnimatePresence>
 )
 

@@ -15,7 +15,7 @@ const SeparatorDemo = () => {
             justifyContent:"center",
             flexGrow:"4",
             zIndex:"6",
-            background:"#f2f4f0"
+            background:"#e8e9e4"
 
         }}>
     <div className="Text" style={{ fontWeight: 500 ,textAlign:"center" }}>

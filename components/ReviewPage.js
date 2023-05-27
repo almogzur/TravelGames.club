@@ -36,7 +36,7 @@ export default function ProdactPage({ review }) {
             <h1>{data.name.toUpperCase()}</h1>
         </PageHade>
         <Subhade>
-          <h1>{data.subhadline}</h1>
+          <h2>{data.subhadline.toUpperCase()}</h2>
         </Subhade>
         <MainWrapper>         
           <SectionWrapper >
@@ -70,19 +70,12 @@ export default function ProdactPage({ review }) {
                     {data.body}
                   </p>
                 </ArticalBody>
-                <PriceWrapper>
-                  <OldPrice>
-                    <p>$48</p>
-                  </OldPrice>
-                  <NewPrice>
-                    <p>$43</p>
-                  </NewPrice>
-                </PriceWrapper>
                 <Button>{data.callToAction}</Button>
               </ColumnB>
           </SectionWrapper>
         </MainWrapper>
         </Section>
+        <Section/>
       </MainDiv>
     );
   }
@@ -91,7 +84,7 @@ export default function ProdactPage({ review }) {
     display: flex;
     flex-direction: column;
     position: relative;
-    margin-top: 0px;
+    margin-top: -30px;
     padding-left: 20px;
     padding-right: 20px;
     padding-top: 80px;
@@ -128,7 +121,9 @@ export default function ProdactPage({ review }) {
   `;
 
   const Subhade = styled.div`
-
+    text-align:center;
+    margin-top:-50px;
+    color:#c32b60
   `
   
   const MainWrapper = styled.div`
@@ -339,65 +334,7 @@ export default function ProdactPage({ review }) {
     }
   `;
   
-  
-  const PriceWrapper = styled.div`
-    display: flex;
-    flex-direction: row;
-    position: relative;
-    margin-top: 90px;
-    padding-bottom: 0px;
-    @media (max-width: 991px) {
-      margin-top: 50px;
-    }
-    @media (max-width: 640px) {
-      margin-top: 40px;
-    }
-  `;
-  
-  const OldPrice = styled.div`
-    display: flex;
-    flex-direction: column;
-    position: relative;
-    margin-top: 0px;
-    text-align: left;
-    line-height: 35px;
-    height: auto;
-    color: rgba(0, 0, 0, 1);
-    font-family: Roboto, sans-serif;
-    font-size: 24px;
-    text-transform: uppercase;
-    font-weight: bold;
-    text-decoration: line-through;
-    @media (max-width: 640px) {
-      font-size: 24px;
-      line-height: 33px;
-      margin-bottom: 0px;
-      margin-top: 0px;
-    }
-  `;
-  
-  const NewPrice = styled.div`
-    display: flex;
-    flex-direction: column;
-    position: relative;
-    margin-top: 0px;
-    text-align: left;
-    line-height: 35px;
-    height: auto;
-    color: rgba(0, 0, 0, 1);
-    font-family: Roboto, sans-serif;
-    font-size: 24px;
-    text-transform: uppercase;
-    font-weight: bold;
-    margin-left: 20px;
-    @media (max-width: 640px) {
-      font-size: 24px;
-      line-height: 33px;
-      margin-bottom: 0px;
-      margin-top: 0px;
-    }
-  `;
-  
+
   const Button = styled.button`
     all: unset;
     display: flex;
