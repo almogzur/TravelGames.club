@@ -8,7 +8,7 @@ const NavMenu = () => {
   <div style={{  
             position: "absolute",
             top: "0px",
-            width: "100%",
+            width: "100vw",
             zIndex:"3",
             display: 'flex',
             flexDirection:"column",
