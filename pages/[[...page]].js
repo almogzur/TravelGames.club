@@ -2,9 +2,9 @@ import { useRouter } from 'next/router';
 import DefaultErrorPage from 'next/error';
 import Head from 'next/head';
 import React from 'react';
-import { BuilderComponent, builder, useIsPreviewing, Builder ,} from '@builder.io/react';
-import Header from '../components/Header';
+import { BuilderComponent, builder, useIsPreviewing} from '@builder.io/react';
 import '@builder.io/widgets';
+import Header from '../components/Header';
 import Footer from '../components/Footer'
 
 // Initialize the Builder SDK with your organization's API Key

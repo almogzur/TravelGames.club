@@ -8,15 +8,13 @@ const NavMenu = () => {
   <div style={{  
             position: "absolute",
             top: "0px",
-            width: "100vw",
+         
             zIndex:"3",
             display: 'flex',
             flexDirection:"column",
             justifyContent:"center",
             flexGrow:"4",
             background:"#e8e9e4",
-           
-
         }}>
     <div style={{ display: 'flex', height: 20, alignItems: 'center'  ,justifyContent:"center" }}>
 
