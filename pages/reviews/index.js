@@ -24,9 +24,6 @@ export async function getStaticProps() {
   };
   
 }
-
-
-
  /* -- Categoty sort names --
 Outdoor and Adventure Equipment:  OAE
 Travel Gear and Accessories: TGA
@@ -37,13 +34,10 @@ Travel Books and Guides: TBG
 export default function Reviews({ reviews }) {
 
   const [ category , setCategory ] = useState(false)
-
-
   const [ filterdReviews , setFilterdReviews ] = useState({})
 
   useEffect(()=>{
    // console.log(category)
-
     const sortByCategoty = (reviewsObj) => { 
       let  arr = []
         if(!category ){return reviewsObj}
@@ -59,9 +53,7 @@ export default function Reviews({ reviews }) {
        return arr
   }
     const sorted = sortByCategoty(reviews)
-
     setFilterdReviews(sorted)
-
   },[category, reviews ])
 
   return (
@@ -70,8 +62,6 @@ export default function Reviews({ reviews }) {
         <CategoryBar setCategory={setCategory} category={category}/>
         <ProdactsLopp reviews={filterdReviews.length >= 1 ? filterdReviews : reviews} />
         <Footer/>
-      {/* Put the rest of your page here. */}
-     
     </>
   );
 }
