@@ -70,9 +70,7 @@ return (
 
      </NavigationMenu.List>
 
-  <div className="ViewportPosition">
-   <NavigationMenu.Viewport className="NavigationMenuViewport" />
-  </div>
+  
     </NavigationMenu.Root>
   
 )
