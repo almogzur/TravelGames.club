@@ -7,7 +7,6 @@ const NavMenu = () => {
 
   <div style={{  
             position: "absolute",
-            padding: "10px" ,
             top: "0px",
             width: "100%",
             zIndex:"3",
@@ -16,7 +15,7 @@ const NavMenu = () => {
             justifyContent:"center",
             flexGrow:"4",
             background:"#e8e9e4",
-            margin:"20px",
+           
 
         }}>
     <div style={{ display: 'flex', height: 20, alignItems: 'center'  ,justifyContent:"center" }}>

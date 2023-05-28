@@ -22,25 +22,8 @@ const SeparatorDemo = () => {
       <Link href='https://TravelGame.club'>TravelGame.club</Link>
     </div>
     <Separator.Root className="SeparatorRoot" style={{ margin: '15px 0' }} />
-    <div style={{ display: 'flex', height: 20, alignItems: 'center'  ,justifyContent:"center" }}>
-    <Link  href={"/"} className="Text">Home</Link>
-
-      <Separator.Root
-        className="SeparatorRoot"
-        decorative
-        orientation="vertical"
-        style={{ margin: '0 15px' }}
-      />
-      <Link  href={"/reviews"} className="Text">Reviews</Link>
-      
-      <Separator.Root
-        className="SeparatorRoot"
-        decorative
-        orientation="vertical"
-        style={{ margin: '0 15px' }}
-      />
-      <Link  href={"/about"} className="Text">About</Link>
-    </div>
+    <spam className="text-center">All Rights Reserved CopyRight 2023 TravelGame.Club
+</spam>
   </div>
  )
     
