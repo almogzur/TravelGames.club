@@ -3,18 +3,18 @@ import * as Separator from '@radix-ui/react-separator';
 import Link from 'next/link';
 
 const NavMenu = () => {
-  return (
 
+  return (
   <div style={{  
-            position: "absolute",
-            top: "0px",
-         
-            zIndex:"3",
+            top: "0",
+            width: "100%",
             display: 'flex',
             flexDirection:"column",
             justifyContent:"center",
             flexGrow:"4",
+            zIndex:"6",
             background:"#e8e9e4",
+            height:"50px"
         }}>
     <div style={{ display: 'flex', height: 20, alignItems: 'center'  ,justifyContent:"center" }}>
 
