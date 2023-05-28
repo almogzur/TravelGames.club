@@ -45,7 +45,7 @@ return (
         </NavigationMenu.Item>
       <NavigationMenu.Item>
    <NavigationMenu.Link onClick={(e)=>click(e)} value={"TG"} className="NavigationMenuLink nav_link"  >
-   Tech and Gadgets
+   Tech and Gadgets 
    </NavigationMenu.Link>
   </NavigationMenu.Item>
 

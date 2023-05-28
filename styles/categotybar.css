@@ -52,42 +52,14 @@
 
 .List {
   display: grid;
-  padding: 22px;
+  padding: 32px;
   margin: 0;
   column-gap: 10px;
   list-style: none;
 
 }
 
-.ListItemLink {
-  display: block;
-  outline: none;
-  text-decoration: none;
-  user-select: none;
-  padding: 12px;
-  border-radius: 6px;
-  font-size: 15px;
-  line-height: 1;
-}
-.ListItemLink:focus {
-  box-shadow: 0 0 0 2px var(--violet7);
-}
-.ListItemLink:hover {
-  background-color: var(--mauve3);
-}
 
-.ListItemHeading {
-  font-weight: 500;
-  line-height: 1.2;
-  margin-bottom: 5px;
-  color: var(--violet12);
-}
-
-.ListItemText {
-  color: var(--mauve11);
-  line-height: 1.4;
-  font-weight: initial;
-}
 
 
 

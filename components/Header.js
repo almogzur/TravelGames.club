@@ -4,14 +4,10 @@ import Link from 'next/link';
 
 const NavMenu = () => {
 
-
-  
   return (
 
-  
-
   <div style={{  
-               position: "fixed",
+            position: "fixed",
             top: "0",
             width: "100%",
             display: 'flex',
