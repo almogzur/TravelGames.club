@@ -1,22 +1,22 @@
-.box-container {
+.card-wrapper{
     display: flex;
     flex-direction: row;
-    padding-left:5%;
     flex-wrap:wrap;
-    height:100%;
     width:100%;
+    height:100%;
     position:fixed;
     top:150px;
+    padding-left:5%;
     overflow:auto;
-
   }
   .card {
-    margin: 20px;
-    width:300px;
+    margin:20px;
+    width:250px;
     background-color: #fff;
     overflow: hidden;
     transition: all .2s ease-in-out;
     box-shadow: 0 2px 20px rgba(0, 0, 0, 0.2);
+    
   }
   .card:hover{
     transform: scale(1.05)
@@ -34,6 +34,7 @@
     min-height: 200px;
   }
 @media (min-width: 300px ) and (max-width: 600px) {
+  
   .card{
 
   }
