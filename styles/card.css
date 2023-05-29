@@ -3,6 +3,9 @@
     flex-direction: row;
     padding-left:5%;
     flex-wrap:wrap;
+    height:500px;
+    position:fixed;
+    top:150px;
   
   }
   .card {
