@@ -1,8 +1,25 @@
 import React from 'react';
 import * as Separator from '@radix-ui/react-separator';
 import Link from 'next/link';
+import { useEffect, useState } from 'react';
 
 const SeparatorDemo = () => {
+  
+  const [isHidden, setIsHidden] = useState(false);
+
+  useEffect(() => {
+
+    const handleScroll = () => {
+      const scrollPosition = window.pageYOffset || document.documentElement.scrollTop;
+      setIsHidden(scrollPosition > 0);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
 
  return(
   <div style={{  
@@ -14,7 +31,9 @@ const SeparatorDemo = () => {
             justifyContent:"center",
             flexGrow:"4",
             zIndex:"0",
-            background:"#e8e9e4"
+            background:"#e8e9e4",
+            transition: "transform 0.3s",
+            transform: isHidden ? "translateY(100%)" : "translateY(0)"
         }}>
     <div className="Text" style={{ fontWeight: 500 ,textAlign:"center" }}>
       <Link href='https://TravelGame.club'>TravelGame.club</Link>
