@@ -15,8 +15,9 @@
   width:100%;
   display: flex;
   justify-content: center;
-  background:#e8e9e4;
+  background:#dfe0db;
   margin-top:40px;
+  overflow:none;
   
 }
 .NavigationMenuList {
@@ -54,11 +55,11 @@
 }
 @media (min-width: 300px ) and (max-width: 600px) {
   .nav_link{
-    width:50px;
+    width:40px;
     font-size:10px;
   }
   .NavigationMenuRoot{
-    position: unset;
+  
   }
  
   .NavigationMenuLink{

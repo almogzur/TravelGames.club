@@ -15,7 +15,7 @@ const NavMenu = () => {
             justifyContent:"center",
             flexGrow:"4",
             zIndex:"6",
-            background:"#e8e9e4",
+            background:"#dfe0db",
             height:"50px"
         }}>
     <div style={{ display: 'flex', height: 20, alignItems: 'center'  ,justifyContent:"center" }}>

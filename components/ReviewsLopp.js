@@ -10,7 +10,7 @@ export default function ReviewsLoop({reviews}){
     },[reviews])
 
  return (
-       <div className="box-container">
+       <div className="card-wrapper">
           {
             reviews.map((review,i)=>{
             return <Card  key={i} review={review} />

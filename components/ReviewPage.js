@@ -22,11 +22,8 @@ stars
 link
 price
 */
-
 export default function ProdactPage({ review }) {
-
  const [ data  ] = useState( review.data)
-
   const photos = data.photos
 //  console.log(photos)
     return (
@@ -78,29 +75,21 @@ export default function ProdactPage({ review }) {
         <Section/>
       </MainDiv>
     );
-  }
-  
+  } 
   const MainDiv = styled.div`
-    display: flex;
-    flex-direction: column;
-    position: relative;
-    margin-top: -5px;
-    padding-left: 20px;
-    padding-right: 20px;
-    padding-top: 80px;
-    padding-bottom: 80px;
+    display:flex;
+    padding:50px;
     background-color: rgba(255, 255, 255, 1);
-
   `;
-  
   const Section = styled.section`
-    align-self: stretch;
+    display:flex;
+    justify-content:center;
+    align-self: center;
     flex-grow: 1;
     max-width: 1200px;
     display: flex;
     flex-direction: column;
   `;
-  
   const PageHade = styled.div`
     margin-top: -25px;
     line-height: 35px;
@@ -113,20 +102,17 @@ export default function ProdactPage({ review }) {
       font-size: 21px;
     }
   `;
-
   const Subhade = styled.div`
     text-align:center;
     margin-top:-50px;
     color:#c32b60
-  `
-  
+  `;
   const MainWrapper = styled.div`
     display: flex;
     flex-direction: column;
     position: relative;
     margin-top: 15px;
-  `;
-  
+  `; 
   const SectionWrapper = styled.div`
     display: flex;
     @media (max-width: 999px) {
@@ -134,7 +120,6 @@ export default function ProdactPage({ review }) {
       align-items: stretch;
     }
   `;
-  
   const ColumnA = styled.div`
     display: flex;
     flex-direction: column;
@@ -144,28 +129,12 @@ export default function ProdactPage({ review }) {
     @media (max-width: 999px) {
       width: 100%;
     }
-  `;
-  
+  `; 
   const ColumnAWrapper = styled.div`
     display: flex;
     flex-direction: column;
     position: relative;
-  `;
-  
-  const ProdactImageDiv = styled.div`
-    display: flex;
-    flex-direction: column;
-    position: relative;
-    margin-top: 0px;
-    text-align: center;
-    line-height: normal;
-    height: auto;
-    min-height: 20px;
-    min-width: 20px;
-    overflow: hidden;
-  `;
-  
-  
+  `; 
   const DieatelsWrapper = styled.div`
     display: flex;
     flex-direction: column;
@@ -176,9 +145,7 @@ export default function ProdactPage({ review }) {
     border-bottom: 1px solid #000000;
     padding-bottom: 33px;
     padding-top: 33px;
-
   `;
-  
   const ProdactDieatels = styled.div`
     display: flex;
     flex-direction: column;
@@ -198,7 +165,6 @@ export default function ProdactPage({ review }) {
       margin-top: 20px;
     }
   `;
-  
   const LinkDiv = styled.div`
     display: flex;
     flex-direction: column;
@@ -217,7 +183,6 @@ export default function ProdactPage({ review }) {
       margin-top: 20px;
     }
   `;
-  
   const ColumnB = styled.div`
     display: flex;
     flex-direction: column;
@@ -228,13 +193,11 @@ export default function ProdactPage({ review }) {
       width: 100%;
     }
   `;
-  
   const IntroWrapper = styled.div`
     display: flex;
     flex-direction: row;
     position: relative;
   `;
-  
   const Intro = styled.div`
     display: flex;
     flex-direction: column;
@@ -254,7 +217,6 @@ export default function ProdactPage({ review }) {
       margin-top: 20px;
     }
   `;
-  
   const ProdactheadLine = styled.div`
     display: flex;
     flex-direction: column;
@@ -274,7 +236,6 @@ export default function ProdactPage({ review }) {
       margin-top: 20px;
     }
   `;
-  
   const SubHading = styled.div`
     display: flex;
     flex-direction: column;
@@ -299,7 +260,6 @@ export default function ProdactPage({ review }) {
       margin-top: 0px;
     }
   `;
-  
   const ArticalBody = styled.div`
     display: flex;
     flex-direction: column;
@@ -319,8 +279,6 @@ export default function ProdactPage({ review }) {
       margin-top: 20px;
     }
   `;
-  
-
   const Button = styled.button`
     all: unset;
     display: flex;

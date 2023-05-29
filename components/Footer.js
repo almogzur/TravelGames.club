@@ -31,7 +31,7 @@ const SeparatorDemo = () => {
             justifyContent:"center",
             flexGrow:"4",
             zIndex:"0",
-            background:"#e8e9e4",
+            background:"#dfe0db",
             transition: "transform 0.3s",
             transform: isHidden ? "translateY(100%)" : "translateY(0)"
         }}>
