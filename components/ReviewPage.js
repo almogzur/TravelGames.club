@@ -35,7 +35,7 @@ export default function ProdactPage({ review }) {
         <Subhade>
           <h2>{data.subhadline.toUpperCase()}</h2>
         </Subhade>
-        <MainWrapper>         
+         <MainWrapper>         
           <SectionWrapper >
               <ColumnA >
                 <ColumnAWrapper>
@@ -78,16 +78,12 @@ export default function ProdactPage({ review }) {
   } 
   const MainDiv = styled.div`
     display:flex;
-    padding:50px;
+    justify-content:center;
     background-color: rgba(255, 255, 255, 1);
+    margin-top:100px;
   `;
   const Section = styled.section`
     display:flex;
-    justify-content:center;
-    align-self: center;
-    flex-grow: 1;
-    max-width: 1200px;
-    display: flex;
     flex-direction: column;
   `;
   const PageHade = styled.div`
@@ -107,11 +103,13 @@ export default function ProdactPage({ review }) {
     margin-top:-50px;
     color:#c32b60
   `;
+
+  // to chage page width go hear 
   const MainWrapper = styled.div`
     display: flex;
     flex-direction: column;
-    position: relative;
     margin-top: 15px;
+    width:90vw
   `; 
   const SectionWrapper = styled.div`
     display: flex;

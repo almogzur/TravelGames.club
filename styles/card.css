@@ -1,17 +1,18 @@
-.card-wrapper{
+.cards-wrapper{
     display: flex;
     flex-direction: row;
     flex-wrap:wrap;
     width:100%;
     height:100%;
-    position:fixed;
+    padding-top:150px;
     top:150px;
     padding-left:5%;
-    overflow:auto;
+    overflow: show;
   }
   .card {
     margin:20px;
     width:250px;
+    height:400px;
     background-color: #fff;
     overflow: hidden;
     transition: all .2s ease-in-out;

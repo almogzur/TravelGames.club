@@ -33,10 +33,8 @@ Travel Books and Guides: TBG
 */
 
 export default function Reviews({ reviews }) {
-
   const [ category , setCategory ] = useState(false)
   const [ filterdReviews , setFilterdReviews ] = useState({})
-
   useEffect(()=>{
    // console.log(category)
     const sortByCategoty = (reviewsObj) => { 
@@ -59,7 +57,7 @@ export default function Reviews({ reviews }) {
 
   return (
     <>     
-         <Header/>
+        <Header/>
         <CategoryBar setCategory={setCategory} category={category}/>
         <ProdactsLopp reviews={filterdReviews.length >= 1 ? filterdReviews : reviews} />
         <Footer/>
