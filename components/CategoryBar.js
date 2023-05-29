@@ -37,17 +37,19 @@ return (
     <NavigationMenu.Root className="NavigationMenuRoot" >
       
      <NavigationMenu.List className="NavigationMenuList">
+
         <NavigationMenu.Item >
          <NavigationMenu.Link   onClick={(e)=>click(e)} value={"TGA"}  className="NavigationMenuLink nav_link"  >
            Travel Gear and Accessories
-   
          </NavigationMenu.Link>
         </NavigationMenu.Item>
-      <NavigationMenu.Item>
-   <NavigationMenu.Link onClick={(e)=>click(e)} value={"TG"} className="NavigationMenuLink nav_link"  >
-   Tech and Gadgets 
-   </NavigationMenu.Link>
-  </NavigationMenu.Item>
+
+
+   <NavigationMenu.Item>
+     <NavigationMenu.Link onClick={(e)=>click(e)} value={"TG"} className="NavigationMenuLink nav_link"  >
+      Tech and Gadgets 
+     </NavigationMenu.Link>
+    </NavigationMenu.Item>
 
   <NavigationMenu.Item>
    <NavigationMenu.Link onClick={(e)=>click(e)} value={"OAE"}  className="NavigationMenuLink nav_link" >
