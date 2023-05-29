@@ -11,10 +11,12 @@
 }
 
 .NavigationMenuRoot {
+  position:fixed;
   display: flex;
   justify-content: center;
   background:#e8e9e4;
   margin-top:40px;
+  
 }
 
 .NavigationMenuList {
