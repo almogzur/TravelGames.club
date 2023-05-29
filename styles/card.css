@@ -6,6 +6,7 @@
     height:500px;
     position:fixed;
     top:150px;
+    overflow:auto;
   
   }
   .card {

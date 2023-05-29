@@ -19,7 +19,6 @@
   margin-top:40px;
   
 }
-
 .NavigationMenuList {
   display: flex;
   justify-content: center;
@@ -28,7 +27,6 @@
   border-radius: 6px;
   list-style: none;
 }
-
 .NavigationMenuLink {
   padding: 8px 12px;
   outline: none;
@@ -38,21 +36,14 @@
   border-radius: 4px;
   font-size: 15px;
   color: black;
-}
-.NavigationMenuLink:focus {
-  box-shadow: 0 0 0 2px none;
-}
-.NavigationMenuLink:hover {
-  background-color: #e8e9e4;
-}
-
-.NavigationMenuLink {
   display: block;
   text-decoration: none;
   font-size: 15px;
   line-height: 1;
 }
-
+.NavigationMenuLink:hover {
+  background-color: #e8e9e4;
+}
 .List {
   display: grid;
   padding: 32px;
@@ -60,6 +51,22 @@
   column-gap: 10px;
   list-style: none;
 
+}
+@media (min-width: 300px ) and (max-width: 600px) {
+  .nav_link{
+    width:50px;
+    font-size:10px;
+  }
+  .NavigationMenuRoot{
+    position: unset;
+  }
+ 
+  .NavigationMenuLink{
+   
+  }
+  .List{
+
+  }
 }
 
 
