@@ -33,7 +33,7 @@ export default function ProdactPage({ review }) {
             <h1>{data.name.toUpperCase()}</h1>
         </PageHade>
         <Subhade>
-          <h2>{data.subhadline.toUpperCase()}</h2>
+          <h2>{data.subhadline}</h2>
         </Subhade>
          <MainWrapper>         
           <SectionWrapper >
@@ -80,7 +80,7 @@ export default function ProdactPage({ review }) {
     display:flex;
     justify-content:center;
     background-color: rgba(255, 255, 255, 1);
-    margin-top:100px;
+    padding:5%;
   `;
   const Section = styled.section`
     display:flex;
@@ -101,7 +101,7 @@ export default function ProdactPage({ review }) {
   const Subhade = styled.div`
     text-align:center;
     margin-top:-50px;
-    color:#c32b60
+    color:#9391cd
   `;
 
   // to chage page width go hear 
@@ -139,8 +139,8 @@ export default function ProdactPage({ review }) {
     position: relative;
     margin-top: 0px;
     height: auto;
-    border-top: 1px solid #000000;
-    border-bottom: 1px solid #000000;
+    border-top: 2px solid #9391cd;
+    border-bottom: 2px solid #9391cd;
     padding-bottom: 33px;
     padding-top: 33px;
   `;
@@ -240,8 +240,8 @@ export default function ProdactPage({ review }) {
     position: relative;
     margin-top: 0px;
     height: auto;
-    border-top: 1px solid #000000;
-    border-bottom: 1px solid #000000;
+    border-top: 2px solid #9391cd;
+    border-bottom: 2px solid #9391cd;
     padding-bottom: 8px;
     padding-top: 8px;
     text-align: left;
@@ -287,7 +287,7 @@ export default function ProdactPage({ review }) {
     padding-bottom: 15px;
     padding-left: 25px;
     padding-right: 25px;
-    background:#e8e9e4;
+    background:#9391cd;
     color: black;
     border-radius: 15px;
     text-align: center;

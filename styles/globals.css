@@ -12,3 +12,12 @@ body{
  .text-center{
   text-align:center;
  }
+
+ a {
+  text-decoration: none;
+}
+
+
+a:hover {
+   color:#9391cd
+}

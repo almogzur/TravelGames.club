@@ -18,7 +18,7 @@ const variants = {
   exit: (direction) => {
     return {
       zIndex: 0,
-      x: direction < 0 ? 300 : 0,
+      x: direction < 0 ? 0 : 0,
       opacity: 0
     };
   }
@@ -51,13 +51,13 @@ return (
              animate="center"
              exit="exit"
              transition={{
-                  x: { type: "spring", stiffness: 100, damping: 50 },
-                  opacity: { duration: 1 },
+                  x: { type: "spring", stiffness: 50, damping: 5 },
+                  opacity: { duration: 0.5 },
                   zIndex:0
                }}
            /> 
        </div>
-       <div style={{textAlign:"center"}}>Press To Scrool</div>
+       <div style={{textAlign:"center"}}>Press On The Photo </div>
    </AnimatePresence>
 )
 

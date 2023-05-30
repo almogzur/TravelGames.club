@@ -9,8 +9,8 @@ export default function  Card  ({ review }) {
             <Image loading="lazy" src={review.data.mainImg} width={200} height={200} alt=""/>
          </div>
          <div className="card-body">
-            <h6>{new Date(review.data.publicOn).toISOString()}</h6>
-            <p>{review.data.introduction}</p>   
+            <h2 style={{marginTop:"-10px"}}>{review.data.name}</h2>  
+            <p style={{marginTop:"-10px" , padding:"10px"}}>{review.data.cardtext}</p> 
          </div>    
       </div>
       </Link>

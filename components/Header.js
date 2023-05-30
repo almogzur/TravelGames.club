@@ -16,11 +16,13 @@ const NavMenu = () => {
             flexGrow:"4",
             zIndex:"6",
             background:"#dfe0db",
-            height:"50px"
+            height:"50px",
+            
+            
         }}>
     <div style={{ display: 'flex', height: 20, alignItems: 'center'  ,justifyContent:"center" }}>
 
-     <Link  href={"/"} className="Text">Home</Link>
+     <Link  href={"/"}  className="Text">Home</Link>
 
       <Separator.Root
         className="SeparatorRoot"
@@ -28,7 +30,7 @@ const NavMenu = () => {
         orientation="vertical"
         style={{ margin: '0 15px' }}
       />
-      <Link  href={"/reviews"} className="Text">Reviews</Link>
+      <Link  href={"/reviews"}  className="Text">Reviews</Link>
       
       <Separator.Root
         className="SeparatorRoot"
@@ -36,7 +38,7 @@ const NavMenu = () => {
         orientation="vertical"
         style={{ margin: '0 15px' }}
       />
-      <Link  href={"/about"} className="Text">About</Link>
+      <Link  href={"/about"}  className="Text">About</Link>
     </div>
   </div>
   );
