@@ -6,7 +6,7 @@ import { useRouter } from 'next/router';
 import Header from "../../components/Header.js"
 
 
-builder.init("a3d0d381e56c45e8881e0794fc804b1a");
+builder.init(process.env["BUILDER_ID"]);
 
 // url name is passed to static props as the name of the file as key 
 //and get the vlau from Link review 
