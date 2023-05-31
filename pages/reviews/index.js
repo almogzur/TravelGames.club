@@ -7,7 +7,8 @@ import CategoryBar from '../../components/CategoryBar';
 import Footer from '../../components/Footer'
 
 // Replace with your Public API Key.
-builder.init("a3d0d381e56c45e8881e0794fc804b1a");
+builder.init(process.env["BUILDER_ID"]);
+
 
 export async function getStaticProps() {
   const reviews =  await builder.getAll('review',{
