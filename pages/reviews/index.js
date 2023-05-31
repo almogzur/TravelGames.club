@@ -7,7 +7,11 @@ import CategoryBar from '../../components/CategoryBar';
 import Footer from '../../components/Footer'
 
 // Replace with your Public API Key.
-builder.init(process.env["BUILDER_ID"]);
+builder.init(`${process.env.BKEY}`);
+
+
+
+
 
 
 export async function getStaticProps() {
