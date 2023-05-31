@@ -7,9 +7,13 @@ import '@builder.io/widgets';
 import Header from '../components/Header';
 import Footer from '../components/Footer'
 
+
+
 // Initialize the Builder SDK with your organization's API Key
 // Find the API Key on: https://builder.io/account/settings
-builder.init(process.env["BUILDER_ID"]);
+builder.init(`${process.env.BKEY}`);
+
+
 export async function getStaticProps({ params }) {
   // Fetch the first page from Builder that matches the current URL.
   // Use the `userAttributes` field for targeting content.
@@ -42,6 +46,7 @@ export async function getStaticPaths() {
 }
 
 export default function Page({ page }) {
+  console.log()
   const router = useRouter();
   //  This flag indicates if you are viewing the page in the Builder editor.
   const isPreviewing = useIsPreviewing();
