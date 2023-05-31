@@ -13,6 +13,7 @@ export default function ReviewsLoop({reviews}){
        <div className="cards-wrapper">
           {
             reviews.map((review,i)=>{
+              console.log(review,"cardsloop")
             return <Card  key={i} review={review} />
           })
           }

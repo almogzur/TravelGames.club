@@ -4,21 +4,16 @@ import { useState } from 'react'
 import CircumIcon from "@klarr-agency/circum-icons-react"
 
 const variants = {
-  enter: (direction) => {
+  enter: () => {
     return {
-      x: direction > 0 ? 0 : 0,
       opacity: 0
     };
   },
   center: {
-    zIndex: 1,
-    x: 0,
     opacity: 1
   },
-  exit: (direction) => {
+  exit: () => {
     return {
-      zIndex: 0,
-      x: direction < 0 ? 0 : 0,
       opacity: 0
     };
   }
@@ -34,14 +29,17 @@ const objLength = Object.entries(photos).length
 
 
   const upClick = () => { 
-    setCurrentPhoto(currentPhoto < objLength ? currentPhoto + 1 : 1 ) 
+
+    setCurrentPhoto( (prevValue)=> prevValue < objLength ? prevValue + 1 : 1 ) 
+    console.log(currentPhoto)
   }
 
 
 return (
-     <AnimatePresence initial={"enter"} >
-       <div tabIndex={1} className='gallerywrapeer' onClick={upClick}>
+ <>
+       <div tabIndex={1} className='gallerywrapeer' key={`wrapper${currentPhoto}`} onClick={upClick}>
           <motion.img 
+          loading='lazy'
             height={500}
             width={500}
              key={currentPhoto}
@@ -51,14 +49,12 @@ return (
              animate="center"
              exit="exit"
              transition={{
-                  x: { type: "spring", stiffness: 50, damping: 5 },
-                  opacity: { duration: 0.5 },
-                  zIndex:0
+                  opacity: { duration: 1 },
                }}
-           /> 
+           />   
        </div>
        <div style={{textAlign:"center"}}>Press On The Photo </div>
-   </AnimatePresence>
+</>
 )
 
 }
