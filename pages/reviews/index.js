@@ -9,11 +9,6 @@ import Footer from '../../components/Footer'
 // Replace with your Public API Key.
 builder.init(`${process.env.BKEY}`);
 
-
-
-
-
-
 export async function getStaticProps() {
   const reviews =  await builder.getAll('review',{
     // Include references, like our `author` ref
