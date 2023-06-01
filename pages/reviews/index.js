@@ -4,7 +4,7 @@ import Header from '../../components/Header'
 import { builder ,BuilderComponent , wi } from '@builder.io/react';
 import CategoryBar from '../../components/CategoryBar';
 import Footer from '../../components/Footer'
-import CardsWrapper from '../../components/cardsWrapper';
+import CardsWrapper from '../../components/CardsWrapper';
 
 // Replace with your Public API Key.
 builder.init(`${process.env.BKEY}`);
