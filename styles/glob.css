@@ -1,0 +1,22 @@
+:root { 
+  --mw:#F2FDFF;
+  --lightp:#DBCBD8;
+  --violet:#564787;
+}
+body{
+  padding:0px;
+  margin:0;
+  width:100vw;
+  height:100vh;
+  background:var(--mw)
+}
+ .text-center{
+  text-align:center;
+ }
+ a {
+  text-decoration: none;
+}
+a:hover {
+   color:#9391cd
+}
+

@@ -3,7 +3,17 @@
 @import '@radix-ui/colors/mauve.css';
 @import '@radix-ui/colors/purple.css';
 @import '@radix-ui/colors/violet.css';
+@import './glob.css'
+:root { 
+  --black:#0B2027;
+  --blue:#40798C;
+  --green:#70A9A1;
+  --gray:#cfd7c7;
+  --yalow:#F6F1D1;
 
+  /*colors*/
+ 
+}
 /* reset */
 .nav_link{
   width:100px;
@@ -15,7 +25,7 @@
   width:100%;
   display: flex;
   justify-content: center;
-  background:#dfe0db;
+  background:var(--black);
   margin-top:40px;
   overflow:none;
   
@@ -36,7 +46,6 @@
   line-height: 1;
   border-radius: 4px;
   font-size: 15px;
-  color: black;
   display: block;
   text-decoration: none;
   font-size: 15px;
