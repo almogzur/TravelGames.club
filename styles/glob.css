@@ -1,63 +1,20 @@
 :root { 
-  --mw:#F2FDFF;
-  --lightp:#DBCBD8;
-  --violet:#564787;
+  --m:#F2FDFF;
+  --lpink:#DBCBD8;
+  --vio:#564787;
 }
 body{
   padding:0px;
   margin:0;
   width:100vw;
   height:100vh;
-  background:var(--mw)
+  background:var(--m)
 }
  .text-center{
   text-align:center;
  }
  a {
   text-decoration: none;
-}
-
-
-.headerwrapper{
-   position:fixed;
-  top: 0;
-  width: 100%;
-  display: flex;
-  flex-direction:column;
-  justify-content:center;
-  flex-grow:4;
-  z-index:6;
-  background:#dfe0db;
-  height:50px;       
-}
-.headerlinkwrapper{
-  display:flex;
-   height: 20px; 
-   align-items:center;
-  justify-content:center ;
-}
-.Link-Text{
-  color:black;
-}
-.Link-Text:hover {
-  color:#9391cd
-}
-
-.footerWrapper{
-  position: fixed ;
-  bottom: 0;
-  width: 100%;
-  display:flex;
-  flex-direction:column;
-  justify-content:center;
-  flex-grow:4;
-  zIndex:0;
-  background:#dfe0db;
-  transition:transform 0.3s;
-}
-.footerlink{
-  font-weight:500; 
-  ,text-align:center; 
 }
 
 

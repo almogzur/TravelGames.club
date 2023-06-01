@@ -4,6 +4,7 @@
 .nav_link{
   width:100px;
   text-align:center;
+  color:var(--vio)
 }
 
 .NavigationMenuRoot {
@@ -11,7 +12,7 @@
   width:100%;
   display: flex;
   justify-content: center;
-  background:var(--black);
+  background:var(--lpink);
   margin-top:40px;
   overflow:none;
   
@@ -38,7 +39,8 @@
   line-height: 1;
 }
 .NavigationMenuLink:hover {
-  background-color: #e8e9e4;
+  background-color: var(--vio);
+  color:var(--lpink)
 }
 .List {
   display: grid;
