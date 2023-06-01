@@ -1,10 +1,10 @@
 // pages/your-page.jsx
 import React ,{ useEffect, useState } from 'react';
 import Header from '../../components/Header'
-import ProdactsLopp from '../../components/ReviewsLopp'
 import { builder ,BuilderComponent , wi } from '@builder.io/react';
 import CategoryBar from '../../components/CategoryBar';
 import Footer from '../../components/Footer'
+import CardsWrapper from '../../components/cardsWrapper';
 
 // Replace with your Public API Key.
 builder.init(`${process.env.BKEY}`);
@@ -58,8 +58,8 @@ export default function Reviews({ reviews }) {
   return (
     <>     
         <Header/>
-        <CategoryBar setCategory={setCategory} category={category}/>
-        <ProdactsLopp reviews={filterdReviews.length >= 1 ? filterdReviews : reviews} />
+        <CategoryBar setCategory={setCategory}/>
+        <CardsWrapper reviews={filterdReviews.length >= 1 ? filterdReviews : reviews} />
         <Footer/>
     </>
   );

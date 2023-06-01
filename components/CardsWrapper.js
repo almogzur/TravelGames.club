@@ -1,9 +1,7 @@
 import { useEffect, useState } from "react"
-import { builder ,BuilderComponent } from '@builder.io/react';
-import Footer from "./Footer";
 import Card from './Card'
 
-export default function ReviewsLoop({reviews}){
+export default function CardsWrapper({reviews}){
 
     useEffect(()=>{
      //   console.log( reviews)

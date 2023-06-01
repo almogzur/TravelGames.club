@@ -5,7 +5,8 @@
 // if catgory == null all reviews shows
 import * as NavigationMenu from '@radix-ui/react-navigation-menu';
 
-export default function CategoryBar ({category,setCategory} ){
+
+ function CategoryBar ({setCategory} ){
 
  /* -- Categoty sort names --
 Outdoor and Adventure Equipment:  OAE
@@ -29,9 +30,7 @@ Travel Books and Guides: TBG
         break;
         default : throw new Error("no category value")
       }
-
     }
-
 return (
  
     <NavigationMenu.Root className="NavigationMenuRoot" >
@@ -77,3 +76,5 @@ return (
   
 )
 }
+
+export default CategoryBar

@@ -29,32 +29,27 @@ const objLength = Object.entries(photos).length
 
 
   const upClick = () => { 
-
     setCurrentPhoto( (prevValue)=> prevValue < objLength ? prevValue + 1 : 1 ) 
-    console.log(currentPhoto)
+   //   console.log(currentPhoto)
   }
-
-
 return (
- <>
        <div tabIndex={1} className='gallerywrapeer' key={`wrapper${currentPhoto}`} onClick={upClick}>
           <motion.img 
-          loading='lazy'
-            height={500}
-            width={500}
+             loading='lazy'
+             height={500}
+             width={500}
              key={currentPhoto}
              src={photos[currentPhoto]}
              variants={variants}
              initial="enter"
              animate="center"
              exit="exit"
-             transition={{
-                  opacity: { duration: 1 },
-               }}
+             transition={{ opacity: { duration: 1 }}}
            />   
+        <div className='photoText' >Press On The Photo </div>
        </div>
-       <div style={{textAlign:"center"}}>Press On The Photo </div>
-</>
+     
+
 )
 
 }

@@ -3,7 +3,7 @@ import * as Separator from '@radix-ui/react-separator';
 import Link from 'next/link';
 import { useEffect, useState } from 'react';
 
-const SeparatorDemo = () => {
+const Footer = () => {
   
   const [isHidden, setIsHidden] = useState(false);
 
@@ -22,28 +22,18 @@ const SeparatorDemo = () => {
   }, []);
 
  return(
-  <div style={{  
-            position: "fixed",
-            bottom: "0",
-            width: "100%",
-            display: 'flex',
-            flexDirection:"column",
-            justifyContent:"center",
-            flexGrow:"4",
-            zIndex:"0",
-            background:"#dfe0db",
-            transition: "transform 0.3s",
-            transform: isHidden ? "translateY(100%)" : "translateY(0)"
-        }}>
-    <div className="Text" style={{ fontWeight: 500 ,textAlign:"center" }}>
-      <Link href='https://TravelGame.club'>TravelGame.club</Link>
-    </div>
-    <Separator.Root className="SeparatorRoot" style={{ margin: '15px 0' }} />
-    <spam className="text-center">All Rights Reserved CopyRight 2023 TravelGame.Club
-</spam>
+  <div 
+    className='footerWrapper'
+    style={{ 
+        transform: isHidden ? "translateY(100%)" : "translateY(0)"} 
+        }
+     >
+       <div className="footerlink" >
+         <Link href='https://TravelGame.club'>TravelGame.club</Link>
+      </div>
+      <Separator.Root className="SeparatorRoot" style={{ margin: '15px 0' }} />
+      <div className="text-center footerlink">All Rights Reserved CopyRight 2023 TravelGame.Club</div>
   </div>
  )
-    
 };
-
-export default SeparatorDemo;
+export default Footer;
