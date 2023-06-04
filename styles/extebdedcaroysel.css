@@ -1,0 +1,27 @@
+.gallery-wrapper{
+    display: flex;
+    overflow: auto;
+}
+.gallery-item{
+    background:lightblue;
+    fontSize:50px ; 
+    width:250px;
+    height:250px;
+    flex-shrink: 0;
+    color:#fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.img-list{
+
+}
+.extnded-button{
+
+}
+.b-list{
+    display:flex;
+}
+.b-lise-i{
+
+}
