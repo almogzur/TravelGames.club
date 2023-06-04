@@ -7,6 +7,7 @@ import '../styles/footer.css'
 import '../styles/carusel.css'
 import '../styles/reviewpage.css'
 import '../styles/header.css'
+import '../styles/extebdedcaroysel.css'
 
 
     function MyApp({ Component, pageProps }) {

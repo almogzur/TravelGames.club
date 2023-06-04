@@ -21,7 +21,7 @@ const variants = {
 
 // accept array of photos 
 
-export default function Gallery ({photos}){
+export default function Carousel ({photos}){
 
 const objLength = Object.entries(photos).length
 

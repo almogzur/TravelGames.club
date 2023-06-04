@@ -1,27 +1,29 @@
 import CircumIcon from "@klarr-agency/circum-icons-react"; // React
-import Carusel from './Carusel'
+import Carousel from './Carousel'
 import { useState } from "react";
+import Link from "next/link";
+import CarouselExpended from "./CarouselExpended";
 
 /* Data Schema
-name √
-headline √
-subhadline √
-intro √
+name 
+headline 
+subhadline 
+intro 
 publicOn 
-body √
-mainimg √
+body 
+mainimg 
 photos 
 pepole asmk
 call to action
 relayed
-catgory
-discount
-stars
-link
-price
+catgory:""
+discount:""
+stars:""
+link:""
+price :""
 */
 export default function ProdactPage({ review }) {
- const [ data  ] = useState( review.data)
+ const [ data ] = useState(review.data)
   const photos = data.photos
 //  console.log(photos)
     return (
@@ -37,8 +39,9 @@ export default function ProdactPage({ review }) {
            <div className="SectionWrapper" >
               <div className="ColumnA" >
                 <div className="ColumnAWrapper">
-                   <Carusel photos={photos[0]} />
-                   <div className="DieatelsWrapper">
+                   <Carousel photos={photos[0]} />
+                   <div className="DieatelsWrapper">\
+                   <CarouselExpended  photos={photos[0]}/>
                       <div className="ProdactDieatels">
                           <p>12 {data.discription}</p>
                       </div>
@@ -65,7 +68,11 @@ export default function ProdactPage({ review }) {
                     {data.body}
                   </p>
                 </div>
-                <button className="Button">{data.callToAction}</button>
+                <Link
+                   className="Button"
+                   href={data.link}>
+                    {data.callToAction}
+                    </Link>
               </div>
           </div>
         </div>
