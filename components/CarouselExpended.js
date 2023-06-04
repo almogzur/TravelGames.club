@@ -1,4 +1,5 @@
 import React ,{ useEffect} from 'react'; 
+import Image from 'next/image';
 
 import { useSnapCarousel } from 'react-snap-carousel';
 
@@ -15,10 +16,10 @@ useEffect(()=>{
           ref={scrollRef}
           style={{ scrollSnapType: "x mandatory"}}
       >
-        {Array.from({ length: Object.values(photos).length /* 0 baceed array*/ }).map((photo, i) => (     
+        {Object.values(photos).map((photo, i) => (     
 
           <li key={i} className='gallery-item'>
-            Item {i}
+            <Image loading='lazy' src={photo} height={250} width={250}  alt="" />
           </li>
         ))}
       </ul>
@@ -26,9 +27,11 @@ useEffect(()=>{
       <div className='img-list' >
         {activePageIndex + 1} / {pages.length}
       </div>
+   { /*  
       <button className='extnded-button' onClick={() => prev()}>Prev</button>
-      <button className='extnded-button' onClick={() => next()}>Next</button>
+       <button className='extnded-button' onClick={() => next()}>Next</button>
 
+    */}
       <div className='b-list' >
         {pages.map((_, i) => (
           <div key={i}  >
