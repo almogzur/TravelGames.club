@@ -1,8 +1,10 @@
 import CircumIcon from "@klarr-agency/circum-icons-react"; // React
-import Carousel from './Carousel'
-import { useState } from "react";
+import ImageLayout from './ImageLayout'
+import { useContext, useState } from "react";
 import Link from "next/link";
-import CarouselExpended from "./CarouselExpended";
+import Image from "next/image";
+import Carousel from "./Carousel";
+
 
 /* Data Schema
 name 
@@ -23,8 +25,12 @@ link:""
 price :""
 */
 export default function ProdactPage({ review }) {
+
+
  const [ data ] = useState(review.data)
-  const photos = data.photos
+ const photos = data.photos[0]
+ const [ mainPhoto , setMainPhoto ] = useState(data.mainImg)
+ 
 //  console.log(photos)
     return (
        <div className="MainDiv" maxwidth={1200}>
@@ -39,15 +45,15 @@ export default function ProdactPage({ review }) {
            <div className="SectionWrapper" >
               <div className="ColumnA" >
                 <div className="ColumnAWrapper">
-                   <Carousel photos={photos[0]} />
-                   <div className="DieatelsWrapper">\
-                   <CarouselExpended  photos={photos[0]}/>
+                   <ImageLayout mainPhoto={mainPhoto} />
+                   <div className="DieatelsWrapper">
+                      <Carousel  photos={photos} setMainPhoto={setMainPhoto}/>
                       <div className="ProdactDieatels">
                           <p>12 {data.discription}</p>
                       </div>
-                    <div className="LinkDiv">
+                      <div className="LinkDiv">
                       <p>{data.link}</p>
-                    </div>
+                      </div>
                   </div>
                 </div>
               </div>

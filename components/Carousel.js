@@ -1,55 +1,49 @@
-'use client'
-import  {motion, AnimatePresence} from 'framer-motion'
-import { useState } from 'react'
-import CircumIcon from "@klarr-agency/circum-icons-react"
+import React ,{ useEffect} from 'react'; 
+import Image from 'next/image';
+import { useSnapCarousel } from 'react-snap-carousel';
 
-const variants = {
-  enter: () => {
-    return {
-      opacity: 0
-    };
-  },
-  center: {
-    opacity: 1
-  },
-  exit: () => {
-    return {
-      opacity: 0
-    };
-  }
+
+
+const CarouselExpended = ({ photos ,setMainPhoto }) => {
+
+useEffect(()=>{
+  console.log(photos)
+})
+
+  const { scrollRef, pages, activePageIndex, next, prev, goTo } = useSnapCarousel();
+  return (
+    <>
+      <ul className='gallery-wrapper'
+          ref={scrollRef}
+          style={{ scrollSnapType: "x mandatory"}}
+      >
+        {Object.values(photos).map((photo, i) => (     
+
+          <li key={i} className='gallery-item'>
+            <Image loading='lazy' src={photo} height={250} width={250}  alt=""  onClick={()=>setMainPhoto(photo)}/>
+          </li>
+        ))}
+      </ul>
+
+      <div className='img-list' >
+        {activePageIndex + 1} / {pages.length}
+      </div>
+   { /*  
+      <button className='extnded-button' onClick={() => prev()}>Prev</button>
+       <button className='extnded-button' onClick={() => next()}>Next</button>
+
+    */}
+      <div className='b-list' >
+        {pages.map((_, i) => (
+          <div key={i}  >
+            <button className='b-lise-i' onClick={() => goTo(i)}>
+              {i + 1}
+            </button>
+          </div>
+        ))}
+      </div>
+    </>
+  );
 };
 
-// accept array of photos 
-
-export default function Carousel ({photos}){
-
-const objLength = Object.entries(photos).length
-
-  const [ currentPhoto , setCurrentPhoto ] = useState(1)
-
-
-  const upClick = () => { 
-    setCurrentPhoto( (prevValue)=> prevValue < objLength ? prevValue + 1 : 1 ) 
-   //   console.log(currentPhoto)
-  }
-return (
-       <div tabIndex={1} className='gallerywrapeer' key={`wrapper${currentPhoto}`} onClick={upClick}>
-          <motion.img 
-             loading='lazy'
-             height={500}
-             width={500}
-             key={currentPhoto}
-             src={photos[currentPhoto]}
-             variants={variants}
-             initial="enter"
-             animate="center"
-             exit="exit"
-             transition={{ opacity: { duration: 1 }}}
-           />   
-        <div className='photoText' >Press On The Photo </div>
-       </div>
-     
-
-)
-
-}
+export default CarouselExpended;
