@@ -2,11 +2,17 @@
   --m:#F2FDFF;
   --lpink:#DBCBD8;
   --vio:#564787;
+
+   /* new colors89*/
+  --main:#F9F7F7;
+  --lgray:#DBE2EF;
+  --lblue:#3F72AF;
+  --dblue:#112D4E;
 }
 body{
   padding:0px;
   margin:0;
-  background:var(--m)
+  background:var(--main)
   
 }
  .text-center{

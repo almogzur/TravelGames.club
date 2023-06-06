@@ -9,7 +9,7 @@
   justify-content:center;
   flex-grow:4;
   zIndex:0;
-  background:var(--lpink);
+  background:var(--lblue);
   transition:transform 0.3s;
 }
 .footerlink{

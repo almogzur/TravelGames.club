@@ -9,7 +9,7 @@
    justify-content:center;
    flex-grow:4;
    z-index:6;
-   background:var(--lpink);
+   background:var(--lblue);
    height:50px;       
  }
  .headerlinkwrapper{
@@ -26,9 +26,9 @@
   display:flex;
   justify-content:center;
   align-items:center;
-   color:var(--vio);
+   color:var(--lgray);
  }
  .Link-Text:hover {
-   color:var(--lpink);
-   background:var(--vio)
+   color:var(--dblue);
+   background:var(--lgray)
  }

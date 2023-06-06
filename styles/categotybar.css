@@ -3,13 +3,13 @@
 .nav_link{
   width:100px;
   text-align:center;
-  color:var(--vio)
+  color:var(--dblue)
 }
 .NavigationMenuRoot {
   width:100%;
   display:flex;
   justify-content: center;
-  background:var(--lpink);
+  background:var(--lblue);
   overflow:none;
 }
 .NavigationMenuList {
@@ -34,7 +34,7 @@
   line-height: 1;
 }
 .NavigationMenuLink:hover {
-  background-color: var(--vio);
+  background-color: var(--dblue);
   color:var(--lpink)
 }
 .List {
