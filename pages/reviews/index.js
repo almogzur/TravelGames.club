@@ -71,7 +71,7 @@ export default function Reviews({ reviews }) {
     <>     
         <Header/>
         <CategoryBar setCategory={setCategory}/>
-        <CardsWrapper reviews={filterdReviews.length > 0 ? filterdReviews : reviews} />
+        <CardsWrapper reviews={filterdReviews.length > 0 ? filterdReviews : reviews} category={category} />
         <Footer/>
     </>
   );
