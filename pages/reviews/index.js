@@ -7,6 +7,7 @@ import Footer from '../../components/Footer'
 import CardsWrapper from '../../components/CardsWrapper';
 import { getLocalStorageItem } from '../../util/localstoreg';
 import Head from 'next/head';
+import CustomH1 from '../../components/CustomH1'
 // Replace with your Public API Key.
 builder.init(`${process.env.BKEY}`);
 
@@ -77,6 +78,7 @@ export default function Reviews({ reviews }) {
         </Head>
         <Header/>
         <CategoryBar setCategory={setCategory}/>
+        <CustomH1 category={category}/>
         <CardsWrapper reviews={filterdReviews.length > 0 ? filterdReviews : reviews} category={category} />
         <Footer/>
     </>
