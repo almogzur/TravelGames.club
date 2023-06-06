@@ -16,9 +16,6 @@ Tech and Gadgets: TG
 Travel Books and Guides: TBG
 */
     function MyApp({ Component, pageProps }) {   
-    
-      return (
-         <Component {...pageProps} />
-      )
+      return ( <Component {...pageProps} />  )
     }
     export default MyApp
