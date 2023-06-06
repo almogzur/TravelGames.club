@@ -20,10 +20,7 @@ const variants = {
   }
 };
 
-// accept array of photos 
-
 export default function ImageLayout ({mainPhoto}){
-
 return (
        <div tabIndex={1} className='gallerywrapeer' >
           <motion.img 

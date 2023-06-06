@@ -4,7 +4,7 @@ import Link from "next/link";
 
 export default function  Card  ({ review }) {
     return( 
-      <Link style={{all:"unset"}}  href={`/reviews/${review.name}`}>
+      <Link href={`/reviews/${review.name}`}>
       <div  key={review.data.name} className="card" >
          <div className="card-header">
             <Image loading="lazy" src={review.data.mainImg} width={200} height={200} alt=""/>

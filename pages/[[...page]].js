@@ -1,16 +1,14 @@
-import { useRouter } from 'next/router';
 import DefaultErrorPage from 'next/error';
 import Head from 'next/head';
-import React from 'react';
-import { BuilderComponent, builder, useIsPreviewing} from '@builder.io/react';
+import React, { useContext, useEffect } from 'react';
 import '@builder.io/widgets';
 import Header from '../components/Header';
 import Footer from '../components/Footer'
+import { useRouter } from 'next/router';
+import { BuilderComponent, builder, useIsPreviewing} from '@builder.io/react';
+import useLocalStorageState from '../util/hooks/useLocalStorageStateHook'
 
-// Initialize the Builder SDK with your organization's API Key
-// Find the API Key on: https://builder.io/account/settings
 builder.init(`${process.env.BKEY}`);
-
 
 export async function getStaticProps({ params }) {
   // Fetch the first page from Builder that matches the current URL.
@@ -42,12 +40,20 @@ export async function getStaticPaths() {
     fallback: true,
   };
 }
-
 export default function Page({ page }) {
-  console.log()
+
+
+  // first setup of category in local storeg 
+  const  [ category , setCategory ] = useLocalStorageState("category","false")  
+
+  const handleUpdateCategory = (value) => {
+    setCategory(value);
+  };
+
   const router = useRouter();
-  //  This flag indicates if you are viewing the page in the Builder editor.
+
   const isPreviewing = useIsPreviewing();
+
 
   if (router.isFallback) {
     return <h1>Loading...</h1>;
@@ -67,7 +73,10 @@ export default function Page({ page }) {
         <meta property="og:image" content={page?.data.image} />
       </Head>
       <Header/>
-      <BuilderComponent model="page" content={page} />
+      <BuilderComponent 
+         model="page" 
+         content={page}
+         data={{ handleUpdateCategory ,category }} />
       <Footer/>
     </>
   );

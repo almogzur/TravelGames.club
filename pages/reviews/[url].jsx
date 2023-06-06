@@ -2,7 +2,6 @@
 import { BuilderComponent, builder } from '@builder.io/react';
 import ReviewPage from '../../components/ReviewPage'
 import Header from "../../components/Header.js"
-import {  useState } from 'react';
 builder.init(`${process.env.BKEY}`);
 
 // url name is passed to static props as the name of the file as key 
@@ -34,17 +33,14 @@ export  async function getStaticPaths() {
 }
   
 export default  function Page({ reviewDetails }) {
-
-  const [mainPhoto , setMainPhoto ] = useState(null)
    if(!reviewDetails){
   <div>Loading...</div>
    }else{
-
-    return <>
-   <Header/>
- 
+    return(
+     <>
+     <Header/>
      <ReviewPage review={reviewDetails}/>
-  
-   </>
+     </>
+    )
    }
 }

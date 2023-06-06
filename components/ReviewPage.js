@@ -26,7 +26,6 @@ price :""
 */
 export default function ProdactPage({ review }) {
 
-
  const [ data ] = useState(review.data)
  const photos = data.photos[0]
  const [ mainPhoto , setMainPhoto ] = useState(data.mainImg)

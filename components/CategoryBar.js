@@ -5,7 +5,6 @@
 // if catgory == null all reviews shows
 import * as NavigationMenu from '@radix-ui/react-navigation-menu';
 
-
  function CategoryBar ({setCategory} ){
 
  /* -- Categoty sort names --
@@ -14,7 +13,6 @@ Travel Gear and Accessories: TGA
 Tech and Gadgets: TG
 Travel Books and Guides: TBG
 */
-
     const click = (e)=>{
      
       switch(e.target.innerText){

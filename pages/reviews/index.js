@@ -1,11 +1,12 @@
 // pages/your-page.jsx
-import React ,{ useEffect, useState } from 'react';
+import React ,{  useContext, useEffect, useState } from 'react';
 import Header from '../../components/Header'
 import { builder ,BuilderComponent , wi } from '@builder.io/react';
 import CategoryBar from '../../components/CategoryBar';
 import Footer from '../../components/Footer'
 import CardsWrapper from '../../components/CardsWrapper';
-
+import useLocalStorageState from '../../util/hooks/useLocalStorageStateHook';
+import { getLocalStorageItem } from '../../util/localstoreg';
 // Replace with your Public API Key.
 builder.init(`${process.env.BKEY}`);
 
@@ -25,24 +26,34 @@ export async function getStaticProps() {
   };
   
 }
- /* -- Categoty sort names --
+ /* -- Categoty Sort Names --
 Outdoor and Adventure Equipment:  OAE
 Travel Gear and Accessories: TGA
 Tech and Gadgets: TG
 Travel Books and Guides: TBG
 */
-
 export default function Reviews({ reviews }) {
-  
-  const [ category , setCategory ] = useState(false)
+
   const [ filterdReviews , setFilterdReviews ] = useState({})
+
+  const  [ category , setCategory ] = useState("")
+
   useEffect(()=>{
-   // console.log(category)
-    const sortByCategoty = (reviewsObj) => { 
+     // on page navigate get back the category from local storeg and
+     // use it as state this works across all components LocalStoreg is in the Global Scoop
+     const storedState = getLocalStorageItem('category');
+    if (storedState) {
+      setCategory(storedState);
+    }
+  },[])
+
+  useEffect(()=>{
+    console.log(category , "index Moundet")
+    const sortByCategoty = (Obj) => { 
       let  arr = []
-        if(!category ){return reviewsObj}
+        if(!category ){return Obj}
         else if (category !== false){
-            reviewsObj.map(
+          Obj.map(
                   (review)=>{
                 //console.log(review.data.category)
                     if(review.data.category === category){
@@ -54,13 +65,13 @@ export default function Reviews({ reviews }) {
   }
     const sorted = sortByCategoty(reviews)
     setFilterdReviews(sorted)
-  },[category, reviews ])
+  },[ category, reviews ])
 
   return (
     <>     
         <Header/>
         <CategoryBar setCategory={setCategory}/>
-        <CardsWrapper reviews={filterdReviews.length >= 1 ? filterdReviews : reviews} />
+        <CardsWrapper reviews={filterdReviews.length > 0 ? filterdReviews : reviews} />
         <Footer/>
     </>
   );

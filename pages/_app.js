@@ -1,5 +1,3 @@
-// root level component for feeding next width the style modles 
-
 import '../styles/glob.css'
 import '../styles/categotybar.css'
 import '../styles/cardswrapper.css'
@@ -10,8 +8,17 @@ import '../styles/header.css'
 import '../styles/extebdedcaroysel.css'
 
 
-    function MyApp({ Component, pageProps }) {
-      return <Component {...pageProps} />
-    }
 
+ /* -- Categoty Sort Names --
+Outdoor and Adventure Equipment:  OAE
+Travel Gear and Accessories: TGA
+Tech and Gadgets: TG
+Travel Books and Guides: TBG
+*/
+    function MyApp({ Component, pageProps }) {   
+    
+      return (
+         <Component {...pageProps} />
+      )
+    }
     export default MyApp
