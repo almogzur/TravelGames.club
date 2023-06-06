@@ -2,6 +2,7 @@
 import { BuilderComponent, builder } from '@builder.io/react';
 import ReviewPage from '../../components/ReviewPage'
 import Header from "../../components/Header.js"
+import Head from 'next/head';
 builder.init(`${process.env.BKEY}`);
 
 // url name is passed to static props as the name of the file as key 
@@ -38,6 +39,9 @@ export default  function Page({ reviewDetails }) {
    }else{
     return(
      <>
+      <Head>
+         <meta name="viewport" content="initial-scale=1.0, width=device-width"/>
+      </Head>
      <Header/>
      <ReviewPage review={reviewDetails}/>
      </>

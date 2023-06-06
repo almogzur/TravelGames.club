@@ -5,8 +5,8 @@ import { builder ,BuilderComponent , wi } from '@builder.io/react';
 import CategoryBar from '../../components/CategoryBar';
 import Footer from '../../components/Footer'
 import CardsWrapper from '../../components/CardsWrapper';
-import useLocalStorageState from '../../util/hooks/useLocalStorageStateHook';
 import { getLocalStorageItem } from '../../util/localstoreg';
+import Head from 'next/head';
 // Replace with your Public API Key.
 builder.init(`${process.env.BKEY}`);
 
@@ -69,6 +69,12 @@ export default function Reviews({ reviews }) {
 
   return (
     <>     
+        <Head>
+        {/* Add any relevant SEO metadata or open graph tags here */}
+        <title>{}</title>
+         <meta  property="og:image"  />
+         <meta name="viewport" content="initial-scale=1.0, width=device-width"/>
+        </Head>
         <Header/>
         <CategoryBar setCategory={setCategory}/>
         <CardsWrapper reviews={filterdReviews.length > 0 ? filterdReviews : reviews} category={category} />
