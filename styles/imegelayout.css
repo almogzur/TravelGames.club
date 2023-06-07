@@ -1,0 +1,11 @@
+@import './glob.css';
+
+.gallerywrapeer{
+text-align:center;
+  height:500px;
+  width:100%;
+@media (max-width: 640px) {
+    height:500px;
+    width:auto;
+  }
+}

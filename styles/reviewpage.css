@@ -2,7 +2,6 @@
     display:flex;
     justify-content:center;
     background-color: var(--margin);
-    padding:5%;
  }
 .Section{
     display:flex;

@@ -3,15 +3,14 @@
     overflow: auto;
 }
 .gallery-item{
-    background:lightblue;
-    fontSize:50px ; 
-    width:250px;
-    height:250px;
-    flex-shrink: 0;
-    color:#fff;
     display: flex;
     justify-content: center;
     align-items: center;
+    fontSize:50px ; 
+    width:250px;
+    height:250px;
+
+    
 }
 .img-list{
 

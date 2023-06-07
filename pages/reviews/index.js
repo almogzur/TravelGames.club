@@ -74,7 +74,7 @@ export default function Reviews({ reviews }) {
         {/* Add any relevant SEO metadata or open graph tags here */}
         <title>{}</title>
          <meta  property="og:image"  />
-         <meta name="viewport" content="initial-scale=1.0, width=device-width"/>
+         <meta name="viewport" content="width=device-width, initial-scale=1  minimum-scale=1 maximum-scale=1  "  />
         </Head>
         <Header/>
         <CategoryBar setCategory={setCategory}/>
