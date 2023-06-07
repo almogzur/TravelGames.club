@@ -69,7 +69,7 @@ export default function Page({ page }) {
     <>
       <Head>
         {/* Add any relevant SEO metadata or open graph tags here */}
-        <title>{page?.data.title}</title>
+        <title>{"TravelGame.club"}</title>
          <meta  property="og:image"  content={page?.data.image}/>
          <meta name="viewport" content="initial-scale=1.0, width=device-width"/>
       </Head>

@@ -22,15 +22,13 @@ const Footer = () => {
   }, []);
 
  return(
-  <div 
-    className='footerWrapper'
-    style={{ 
-        transform: isHidden ? "translateY(100%)" : "translateY(0)"} 
-        }
-     >
+  <div  
+     className='footerWrapper'
+     style={{transform: isHidden ? "translateY(100%)" : "translateY(0)"}}
+   >
        <div className="footerlink" >
-         <a className='footerlink' href='https://TravelGame.club'>TravelGame.club</a>
-      </div>
+       <a className='footerlink' href='https://TravelGame.club'>TravelGame.club</a>
+   </div>
       <Separator.Root className="SeparatorRoot" style={{ margin: '5px' }} />
       <div className="text-center footerlink">All Rights Reserved CopyRight 2023 TravelGame.Club</div>
   </div>

@@ -72,15 +72,15 @@ export default function Reviews({ reviews }) {
     <>     
         <Head>
         {/* Add any relevant SEO metadata or open graph tags here */}
-        <title>{}</title>
+         <title>{"Reviews"}</title>
          <meta  property="og:image"  />
-         <meta name="viewport" content="width=device-width, initial-scale=1  minimum-scale=1 maximum-scale=1  "  />
+         <meta name="viewport" content="width=device-width, initial-scale=1 "  />
         </Head>
         <Header/>
         <CategoryBar setCategory={setCategory}/>
         <CustomH1 category={category}/>
         <CardsWrapper reviews={filterdReviews.length > 0 ? filterdReviews : reviews} category={category} />
-        <Footer/>
+
     </>
   );
 }

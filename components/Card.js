@@ -7,7 +7,7 @@ export default function  Card  ({ review }) {
       <Link href={`/reviews/${review.name}`}>
       <div  key={review.data.name} className="card" >
          <div className="card-header">
-            <Image loading="lazy" src={review.data.mainImg} width={200} height={200} alt=""/>
+            <Image priority src={review.data.mainImg} width={200} height={200} alt=""/>
          </div>
          <div className="card-body">
             <h2 style={{marginTop:"-10px"}}>{review.data.name}</h2>  
