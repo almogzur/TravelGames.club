@@ -29,9 +29,9 @@ const Footer = () => {
         }
      >
        <div className="footerlink" >
-         <Link href='https://TravelGame.club'>TravelGame.club</Link>
+         <a className='footerlink' href='https://TravelGame.club'>TravelGame.club</a>
       </div>
-      <Separator.Root className="SeparatorRoot" style={{ margin: '15px 0' }} />
+      <Separator.Root className="SeparatorRoot" style={{ margin: '5px' }} />
       <div className="text-center footerlink">All Rights Reserved CopyRight 2023 TravelGame.Club</div>
   </div>
  )
