@@ -6,7 +6,7 @@ import '../styles/imegelayout.css'
 import '../styles/reviewpage.css'
 import '../styles/header.css'
 import '../styles/extebdedcaroysel.css'
-import '../styles/customh1.css'
+import '../styles/cardwrapperheadline.css'
 
 
 

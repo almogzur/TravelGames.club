@@ -16,7 +16,7 @@ function CustomH1({category}) {
   }
 
     return (
-        <h1 className="customh1" >{handelText(category)}</h1>
+        <h3 className="cardwrapperheadline" >{handelText(category)}</h3>
       );
 }
 
