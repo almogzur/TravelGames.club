@@ -211,6 +211,7 @@
     }
 }
 .Button {
+    align-self:center;
     display: flex;
     flex-direction: row;
     justify-content:center;
@@ -225,11 +226,15 @@
     font-size: 24px;
     font-weight: bold;
     height:50px;
-    @media (max-width: 640px) {
+    width:80%;
+    @media (max-width: 1090px) {
+      
       line-height: 126.4%;
       font-size: 15px;
-      letter-spacing: -0.01em;
-     
+      letter-spacing: -0.01em;     
     }
+}
+.Button:hover{
+  background:var(--dblue)
 }
   

@@ -6,6 +6,9 @@
   --mob:1090px;
   --min:375px;
 }
+*{
+  transition : ease 1s;
+}
 body{
   padding:0px;
   margin:0;
