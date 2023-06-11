@@ -2,7 +2,6 @@ import CircumIcon from "@klarr-agency/circum-icons-react"; // React
 import ImageLayout from './ImageLayout'
 import { useContext, useState } from "react";
 import Link from "next/link";
-import Image from "next/image";
 import Carousel from "./Carousel";
 
 
