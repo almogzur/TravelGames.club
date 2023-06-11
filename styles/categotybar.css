@@ -19,6 +19,9 @@
   padding: 4px;
   border-radius: 6px;
   list-style: none;
+  @media (max-width : 650px){
+    border: solid 3px var(--dblue)
+  }
 }
 .NavigationMenuLink {
   padding: 8px 12px;

@@ -2,11 +2,11 @@
 import Image from "next/image"
 export default function ImageLayout ({mainPhoto}){
 return (
-       <div  className='gallerywrapeer' >
+       <div  className='imegelayout'>
           <Image
              alt=""
-             height={400}
-             width={400}
+             fill 
+             style={{objectFit: "contain"}}
              loading='lazy'
              src={mainPhoto}
              transition={{ opacity: { duration: 1 }}}

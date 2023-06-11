@@ -1,4 +1,7 @@
+@import './glob.css';
+
 .cardwrapperheadline{
+
  display:flex;
  justify-content:center;
  align-items:center;
@@ -6,4 +9,5 @@
  margin:0px;
  padding:0px;
  width:100%;
+ 
 }

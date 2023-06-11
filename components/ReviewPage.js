@@ -32,7 +32,7 @@ export default function ProdactPage({ review }) {
  
 //  console.log(photos)
     return (
-       <div className="MainDiv" maxwidth={1200}>
+       <div className="MainDiv" >
           <div className= "Section">
             <div className="PageHeader">
             <h1>{data.name.toUpperCase()}</h1>

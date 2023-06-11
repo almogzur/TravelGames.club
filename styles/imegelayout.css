@@ -1,11 +1,12 @@
 @import './glob.css';
 
-.gallerywrapeer{
-text-align:center;
-  height:500px;
+.imegelayout{
+  text-align:center;
   width:100%;
+  position:relative;
+  height:500px;
+  margin:5px;
 @media (max-width: 640px) {
-    height:500px;
-    width:auto;
-  }
+    height:400px;
+    width:95%;  }
 }

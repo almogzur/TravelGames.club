@@ -1,12 +1,20 @@
+@import './glob.css';
+
 .MainDiv{
     display:flex;
     justify-content:center;
-    background-color: var(--margin);
+    width:inherit;
+    background-color: var(--main);
+    @media (max-width:650px){
+      width:99%;
+    }
  }
 .Section{
     display:flex;
     flex-direction: column;
-  }
+    width:inherit
+}
+
 .PageHeader{
     margin-top: -25px;
     line-height: 35px;
@@ -14,22 +22,27 @@
     font-size: 34px;
     font-family: Roboto, sans-serif;
     font-weight: bold;
-    color:var(--dblue);
+    color:var(--dblue);  
  @media (max-width: 640px) {
-      line-height: 30px;
-      font-size: 21px;
+  
+      line-height: 45px;
+      font-size: 28px;
+
     }
 }  
+
 .Subhade {
    text-align:center;
     margin-top:-50px;
     color:var(--lblue);
+
    }
+
 .MainWrapper{
     display: flex;
     flex-direction: column;
     margin-top: 15px;
-    width:90vw
+    width:100%;
     }
 .SectionWrapper {
     display: flex;
@@ -44,6 +57,7 @@
     line-height: normal;
     width: calc(50% - 10px);
     margin-left: 0px;
+    padding:5px;
  @media (max-width: 1090px) {
       width: 100%;
     }
@@ -101,12 +115,13 @@
       margin-top: 20px;
     }
 }
+
 .ColumnB{
     display: flex;
     flex-direction: column;
     line-height: normal;
     width: calc(50% - 10px);
-    margin-left: 20px;
+    margin:5px;
     @media (max-width: 1090px) {
       width: 100%;
     }
@@ -195,30 +210,25 @@
     }
 }
 .Button {
-    all: unset;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
+    justify-content:center;
+    align-items:center;
     position: relative;
-    margin-top: 51px;
-    padding-top: 15px;
-    padding-bottom: 15px;
-    padding-left: 25px;
-    padding-right: 25px;
     background:var(--lblue);
-    color: black;
+    color: var(--lgray);
     border-radius: 15px;
     text-align: center;
     cursor: pointer;
     line-height: 35px;
     font-size: 24px;
     font-weight: bold;
+    height:50px;
     @media (max-width: 640px) {
       line-height: 126.4%;
       font-size: 15px;
       letter-spacing: -0.01em;
-      padding-left: 10px;
-      padding-right: 10px;
-      margin-top: 44px;
+     
     }
 }
   
