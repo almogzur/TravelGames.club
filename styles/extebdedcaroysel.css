@@ -1,6 +1,7 @@
 .gallery-wrapper{
     display: flex;
     overflow: auto;
+    width:inherit;
 }
 .gallery-item{
     display: flex;
@@ -9,8 +10,6 @@
     fontSize:50px ; 
     width:250px;
     height:250px;
-
-    
 }
 .img-list{
 
@@ -19,7 +18,7 @@
 
 }
 .b-list{
-    display:flex;
+ display:flex;
 }
 .b-lise-i{
 

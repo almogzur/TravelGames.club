@@ -3,16 +3,14 @@
 .MainDiv{
     display:flex;
     justify-content:center;
-    width:inherit;
+    width:99%;
     background-color: var(--main);
-    @media (min-width: 300px  ) and (max-width: 1090px){
-      width:99%;
-    }
+    @media (min-width: 300px  ) and (max-width: 1090px){}
  }
 .Section{
     display:flex;
     flex-direction: column;
-    width:inherit
+    width:100%;
 }
 
 .PageHeader{
@@ -24,10 +22,9 @@
     font-weight: bold;
     color:var(--dblue);  
     width:99%;
-    @media (min-width: 300px  ) and (max-width: 1090px){
+    @media (min-width: 300px) and (max-width: 1090px){
       line-height: 45px;
       font-size: 28px;
-
     }
 }  
 

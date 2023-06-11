@@ -14,7 +14,6 @@ return (
              style={{objectFit: "contain"}}
              loading='lazy'
              src={mainPhoto}
-             transition={{ opacity: { duration: 1 }}}
            />   
        </div>
      
