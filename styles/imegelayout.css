@@ -8,5 +8,6 @@
   margin:5px;
 @media (max-width: 640px) {
     height:400px;
-    width:95%;  }
+    width:95%;
+   }
 }
