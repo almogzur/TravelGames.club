@@ -5,7 +5,7 @@
     justify-content:center;
     width:99%;
     background-color: var(--main);
-    @media (min-width: 300px  ) and (max-width: 1090px){}
+  
  }
 .Section{
     display:flex;
@@ -22,10 +22,6 @@
     font-weight: bold;
     color:var(--dblue);  
     width:99%;
-    @media (min-width: 300px) and (max-width: 1090px){
-      line-height: 45px;
-      font-size: 28px;
-    }
 }  
 
 .Subhade {
@@ -43,10 +39,6 @@
     }
 .SectionWrapper {
     display: flex;
-    @media (min-width: 300px  ) and (max-width: 1090px){
-      flex-direction: column;
-      align-items: stretch;
-    }
 }
 .ColumnA{
     display: flex;
@@ -55,15 +47,13 @@
     width: calc(50% - 10px);
     margin-left: 0px;
     padding:5px;
-    @media (min-width: 300px  ) and (max-width: 1090px){
-      width: 100%;
-    }
 }
 .ColumnAWrapper{
     display: flex;
     flex-direction: column;
     position: relative;
   }
+
 .DieatelsWrapper{
     display: flex;
     flex-direction: column;
@@ -86,14 +76,6 @@
     color: rgba(0, 0, 0, 1);
     font-family: Roboto, sans-serif;
     font-size: 16px;
-
-    @media (min-width: 300px  ) and (max-width: 1090px){
-
-      font-size: 15px;
-      line-height: 22px;
-      margin-bottom: 0px;
-      margin-top: 20px;
-    }
 }
 .LinkDiv {
     display: flex;
@@ -106,13 +88,7 @@
     color: rgba(0, 0, 0, 1);
     font-family: Roboto, sans-serif;
     font-size: 16px;
-    @media (min-width: 300px  ) and (max-width: 1090px){
 
-      font-size: 15px;
-      line-height: 22px;
-      margin-bottom: 0px;
-      margin-top: 20px;
-    }
 }
 
 .ColumnB{
@@ -121,9 +97,7 @@
     line-height: normal;
     width: calc(50% - 10px);
     margin:5px;
-    @media (min-width: 300px  ) and (max-width: 1090px){
-      width: 100%;
-    }
+
 }
 .IntroWrapper {
     display: flex;
@@ -142,12 +116,7 @@
     font-family: Roboto, sans-serif;
     font-size: 21px;
     margin-bottom: auto;
-    @media (min-width: 300px  ) and (max-width: 1090px){
-      font-size: 21px;
-      line-height: 138.4%;
-      margin-bottom: 0px;
-      margin-top: 20px;
-    }
+
 }
 .ProdactheadLine {
     display: flex;
@@ -160,13 +129,6 @@
     color: rgba(0, 0, 0, 1);
     font-family: Roboto, sans-serif;
     font-size: 16px;
-    @media (min-width: 300px  ) and (max-width: 1090px){
-
-      font-size: 15px;
-      line-height: 138.4%;
-      margin-bottom: 0px;
-      margin-top: 20px;
-    }
 }
 .SubHading {  
     display: flex;
@@ -184,13 +146,7 @@
     font-family: Roboto, sans-serif;
     font-size: 29px;
     margin-bottom: -15px;
-    @media (min-width: 300px  ) and (max-width: 1090px){
 
-      font-size: 27px;
-      line-height: 39px;
-      margin-bottom: -10px;
-      margin-top: 0px;
-    }
 }
 .ArticalBody {
     display: flex;
@@ -203,13 +159,6 @@
     color: rgba(0, 0, 0, 1);
     font-family: Roboto, sans-serif;
     font-size: 16px;
-    @media (min-width: 300px  ) and (max-width: 1090px){
-
-      font-size: 15px;
-      line-height: 155%;
-      margin-bottom: 0px;
-      margin-top: 20px;
-    }
 }
 .Button {
     align-self:center;
@@ -228,13 +177,66 @@
     font-weight: bold;
     height:50px;
     width:80%;
-    @media (min-width: 300px  ) and (max-width: 1090px){
-      line-height: 126.4%;
-      font-size: 15px;
-      letter-spacing: -0.01em;     
-    }
+
 }
 .Button:hover{
   background:var(--dblue)
 }
   
+@media (min-width: 300px  ) and (max-width: 1090px){
+.PageHeader{
+    line-height: 45px;
+    font-size: 28px;
+  }
+.SectionWrapper{ 
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+.SubHading{
+    font-size: 27px;
+    line-height: 39px;
+    margin-bottom: -10px;
+    margin-top: 0px;
+  }
+  .ColumnA{  width: 100%;}
+.Intro{
+    font-size: 21px;
+    line-height: 138.4%;
+    margin-bottom: 0px;
+    margin-top: 20px;
+  }
+  .ColumnB{width: 100%;}
+.LinkDiv{
+    font-size: 15px;
+    line-height: 22px;
+    margin-bottom: 0px;
+    margin-top: 20px;
+  }
+.ProdactDieatels{
+    font-size: 15px;
+    line-height: 22px;
+    margin-bottom: 0px;
+    margin-top: 20px;
+  }
+.DieatelsWrapper{}
+.ColumnAWrapper{}
+ 
+  
+.ProdactheadLine{
+    font-size: 15px;
+    line-height: 138.4%;
+    margin-bottom: 0px;
+    margin-top: 20px;
+  }
+.ArticalBody{
+  font-size: 15px;
+  line-height: 155%;
+  margin-bottom: 0px;
+  margin-top: 20px;
+}
+.Button{
+  line-height: 126.4%;
+  font-size: 15px;
+  letter-spacing: -0.01em;     
+}
