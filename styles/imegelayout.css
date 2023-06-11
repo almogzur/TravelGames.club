@@ -6,7 +6,7 @@
   position:relative;
   height:500px;
   margin:5px;
-@media (max-width: 640px) {
+@media (max-width: 640px , min-width:0px) {
     height:400px;
     width:95%;
    }
