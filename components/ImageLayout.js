@@ -1,11 +1,16 @@
 
 import Image from "next/image"
-export default function ImageLayout ({mainPhoto}){
+
+ const ImageLayout = ({mainPhoto}) =>{
+
+   const componenyStyle = {}
+
 return (
-       <div  className='imegelayout'>
+
+       <div  className='imegelayout' >
           <Image
              alt=""
-             fill 
+             fill
              style={{objectFit: "contain"}}
              loading='lazy'
              src={mainPhoto}
@@ -17,3 +22,4 @@ return (
 )
 
 }
+export default ImageLayout
