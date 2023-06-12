@@ -1,7 +1,6 @@
 
 const nextConfig = {
     reactStrictMode: true,
-    webpack5: true,
     experimental: {
          appDir: true,
               },
