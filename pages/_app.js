@@ -21,7 +21,8 @@ Travel Books and Guides: TBG
        }) {   
       return (
         <SessionProvider session={session}>
-         <Component {...pageProps} />  
-         </SessionProvider>)
+           <Component {...pageProps} />  
+        </SessionProvider>
+         )
     }
     export default MyApp
