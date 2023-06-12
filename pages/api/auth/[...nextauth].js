@@ -19,7 +19,6 @@ import clientPromise from '../../../util/db'
 export const authOptions = {
   // Configure one or more authentication providers
   providers: [
-  
     Google({
         clientId: `${process.env.GOOGEL_ID}`,
         clientSecret: `${process.env.GOOGEL_SECRET}`,
