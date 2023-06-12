@@ -4,20 +4,26 @@ const nextConfig = {
     experimental: {
          appDir: true,
               },
-    images: {
-      domains:['https://travelgame.club/*'], // for production
+    images:{
       remotePatterns: [
-                  {
-                    protocol: 'https',
-                    hostname: '**.builder.io',
-                    hostname: '**.googleusercontent.com',
-                    hostname: '**.discordapp.com',
-                    hostname: "avatars.githußbusercontent.com"
-                  },
-                ],
+           {
+              protocol:'https',
+              hostname:'**.builder.io',
             },
-
-
+            {
+              protocol:'https',
+              hostname:'**.googleusercontent.com',
+            },
+            {     
+               protocol:'https',
+               hostname:'**.discordapp.com',
+             },
+             {
+               protocol:'https',
+               hostname:"**.githußbusercontent.com"
+             }
+                ],
+            }
 }
 
 module.exports = nextConfig

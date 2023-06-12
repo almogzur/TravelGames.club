@@ -16,7 +16,7 @@ export default function LogunBtn() {
     return (
       <>
         <br />
-        <img  src={session.user.image} height={25} width={25} style={{borderRadius:"15px"}} alt=""/>
+        <Image  src={session.user.image} height={25} width={25} style={{borderRadius:"15px"}} alt=""/>
         <button onClick={() => signOut()}>Sign out</button>
       </>
     )
