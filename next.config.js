@@ -9,6 +9,10 @@ const nextConfig = {
                   {
                     protocol: 'https',
                     hostname: '**.builder.io',
+                    hostname: '**.googleusercontent.com',
+                    hostname: '**.discordapp.com',
+                    hostname: "avatars.githubusercontent.com"
+
                   },
                 ],
               },

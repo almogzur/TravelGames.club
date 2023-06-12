@@ -1,15 +1,13 @@
 @import './glob.css';
+
 .headerwrapper{
-   top: 0;
    width: 100%;
    display: flex;
    flex-direction:column;
    justify-content:center;
-   flex-grow:4;
-   z-index:6;
+   align-items:center;
    background:var(--lblue);
    height:60px;      
-
  }
  .headerlinkwrapper{
    display:flex;
@@ -25,9 +23,23 @@
   display:flex;
   justify-content:center;
   align-items:center;
-   color:var(--lgray);
+  color:var(--lgray);
  }
  .Link-Text:hover {
    color:var(--dblue);
    background:var(--lgray)
  }
+ .loginbtn{
+  border:none;
+  background:var(--lblue);
+  outline:none;
+  color:var(--lgray);
+  position:absolute;
+  right:50px
+  
+
+ }
+ .loginbtn:hover{
+   background:var(--lgray);
+   color:var(--dblue);
+}
