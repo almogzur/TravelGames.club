@@ -5,8 +5,7 @@ const nextConfig = {
          appDir: true,
               },
     images: {
-      domains:['travelgame.club'], // for production
-      formats:['image/webp','image/avif'],
+      domains:['https://travelgame.club/*'], // for production
       remotePatterns: [
                   {
                     protocol: 'https',
