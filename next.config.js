@@ -6,7 +6,7 @@ const nextConfig = {
               },
     images: {
       domains:['travelgame.club'], // for production
-      formats:['image/webp','png','jpge','jpg'],
+      formats:['image/webp','image/avif'],
       remotePatterns: [
                   {
                     protocol: 'https',
