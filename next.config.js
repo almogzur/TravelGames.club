@@ -1,13 +1,14 @@
 
 const nextConfig = {
-  reactStrictMode: true,
-   webpack5: true,
-   experimental: {
+    reactStrictMode: true,
+    webpack5: true,
+    experimental: {
          appDir: true,
               },
     images: {
       domains:['travelgame.club'], // for production
-    remotePatterns: [
+      formats:['image/webp','png','jpge','jpg'],
+      remotePatterns: [
                   {
                     protocol: 'https',
                     hostname: '**.builder.io',
@@ -16,7 +17,7 @@ const nextConfig = {
                     hostname: "avatars.githußbusercontent.com"
                   },
                 ],
-              },
+            },
 
 
 }
