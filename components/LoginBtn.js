@@ -1,7 +1,7 @@
 /* eslint-disable @next/next/no-img-element */
-import { useSession, signIn, signOut } from "next-auth/react"
 import Image from "next/image"
 import { useEffect } from "react"
+import { useSession, signIn, signOut } from "next-auth/react"
 
 export default function LogunBtn() {
 
@@ -13,7 +13,7 @@ export default function LogunBtn() {
 
   if (session) {
   
-    return (
+ return (
       <>
         <br />
         <Image  src={session.user.image} height={25} width={25} style={{borderRadius:"15px"}} alt=""/>
@@ -22,9 +22,10 @@ export default function LogunBtn() {
     )
   }
   return (
-    <>
-      Not signed in <br />
+    <div >
       <button onClick={() => signIn()}>Sign in</button>
-    </>
+      Not signed in
+      <br />
+    </div>
   )
 }

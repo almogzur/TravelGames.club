@@ -7,6 +7,8 @@ import '../styles/reviewpage.css'
 import '../styles/header.css'
 import '../styles/extebdedcaroysel.css'
 import '../styles/cardwrapperheadline.css'
+import '../styles/sidebar.css'
+import '../styles/profilepage.css'
 import { SessionProvider } from "next-auth/react"
 
  /* -- Categoty Sort Names --

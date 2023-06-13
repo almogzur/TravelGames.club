@@ -1,21 +1,22 @@
 @import './glob.css';
 
+
 .headerwrapper{
    width: 100%;
    display: flex;
    flex-direction:column;
    justify-content:center;
-   align-items:center;
+   align-items:flex-start;
    background:var(--lblue);
    height:60px;      
  }
- .headerlinkwrapper{
+.headerlinkwrapper{
    display:flex;
     height: 20px; 
     align-items:center;
    justify-content:center ;
  }
- .Link-Text{
+.Link-Text{
   outline:none;
   height:40px;
   width:80px;
@@ -29,17 +30,15 @@
    color:var(--dblue);
    background:var(--lgray)
  }
- .loginbtn{
+.loginbtn{
   border:none;
   background:var(--lblue);
   outline:none;
   color:var(--lgray);
   position:absolute;
   right:50px
-  
-
  }
- .loginbtn:hover{
+.loginbtn:hover{
    background:var(--lgray);
    color:var(--dblue);
 }

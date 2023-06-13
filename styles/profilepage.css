@@ -1,0 +1,15 @@
+@import './glob.css';
+.welcome{
+    position:absolute;
+    left:250px;
+    display:flex;
+    justify-content:center;
+    align-items: center;
+    width:calc(100% - 250px);
+    height:50px;
+    background:var(--dblue);
+    margin:0px;
+    padding:0px;
+    z-index:2;
+    color:var(--lgray)
+}

@@ -6,14 +6,10 @@ import { authOptions } from "../auth/[...nextauth]"
   const session = await getServerSession(req, res, authOptions)
   
   if (session) {
-    res.send({
-      content:
-        "This is protected content. You can access this content because you are signed in.",
-    })
+     res.redirect(200, '/profile')
+    
   } else {
-    res.send({
-      error: "You must be signed in to view the protected content on this page.",
-    })
+    res.redirect('/')
   }
 }
 export default hendler

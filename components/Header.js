@@ -45,12 +45,12 @@ const Header = () => {
         orientation="vertical"
         style={{ margin: '0 15px' }}
       />
-    { session?
+  
       <Link 
         href={"/profile"} 
         className="Link-Text">Profile
-      </Link>:null
-    } 
+      </Link>
+   
       <LogunBtn/>
     
     </div>
