@@ -1,18 +1,26 @@
+import { useState } from 'react';
 import { Sidebar, Menu, MenuItem, SubMenu } from 'react-pro-sidebar';
-import Link from 'next/link';
-export default function DefaultSidebar() {
+import CircumIcon from '@klarr-agency/circum-icons-react'
+
+
+export default function DefaultSidebar({isCollapsed,setIsCollapsed}) {
 
   return (
     <div  >
-      <Sidebar  >
-        <Menu className='bar'>{/* need to active style in this level to avide style conflict  */}
-          <SubMenu className='bar-item' label="Charts">
-            <MenuItem > Pie charts  </MenuItem>
-            <MenuItem> Line charts </MenuItem>
+      <Sidebar
+        collapsed={isCollapsed}
+        
+        onBackdropClick={() => setToggled(false)}
+        >
+        <Menu className='bar'>
+          <SubMenu className='bar-item' label={ !isCollapsed? "Favorites Reviews":<CircumIcon name="star"/>}>
+
+            <MenuItem > Link1  </MenuItem>
+            <MenuItem> Link2 </MenuItem>
           </SubMenu>
-          <MenuItem> Documentation </MenuItem>
-          <MenuItem> Calendar </MenuItem>
-          <MenuItem href='/' > Home </MenuItem>
+          <MenuItem onClick={()=>setIsCollapsed(!isCollapsed)}>
+           { !isCollapsed ? `Close sidebar`:<CircumIcon  name="maximize_1"/>} 
+           </MenuItem>
         </Menu>
       </Sidebar>
     </div>

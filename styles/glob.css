@@ -5,6 +5,7 @@
   --dblue:#112D4E;
   --mob:1090px;
   --min:375px;
+  --navheight:70px;
 }
 
 body{
@@ -19,6 +20,10 @@ body{
 a{
   text-decoration: none;
 }
+a{color:#fff;}
+a:link{color:blue;}
+a:visited{color:var(--lgray);}
+a:focus{color:var(--dblue);}
 
 
 

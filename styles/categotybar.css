@@ -19,9 +19,7 @@
   padding: 4px;
   border-radius: 6px;
   list-style: none;
-  @media (max-width : 650px){
-    border: solid 3px var(--dblue)
-  }
+
 }
 .NavigationMenuLink {
   padding: 8px 12px;
@@ -48,7 +46,7 @@
   list-style: none;
 
 }
-@media (min-width: 300px ) and (max-width: 600px) {
+@media (min-width:280px)  and (max-width: 600px) {
   .nav_link{
     width:40px;
     font-size:10px;

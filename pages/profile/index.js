@@ -1,11 +1,10 @@
 import ProfileHeader from "../../components/profile/profileHader"
 import Head from "next/head"
-import { useSession, signIn, signOut } from "next-auth/react"
 import SideBar from '../../components/profile/SideBar'
 import Haeder from "../../components/Header"
 import { authOptions } from '../api/auth/[...nextauth]'
 import { getServerSession } from "next-auth/next"
-
+import { useState } from 'react';
 export async function getServerSideProps(context) {
   
   const session = await getServerSession(context.req, context.res, authOptions)
@@ -16,9 +15,9 @@ export async function getServerSideProps(context) {
         destination: '/',
         permanent: false,
       },
+  
     }
   }
-
   return {
     props: {
       session,
@@ -27,7 +26,7 @@ export async function getServerSideProps(context) {
 }
 
 function ProfilePage ({session}){
-
+  const [ isCollapsed, setIsCollapsed] = useState(true)
     return(
         <>
          <Head>
@@ -37,10 +36,17 @@ function ProfilePage ({session}){
          <meta name="viewport" content="width=device-width, initial-scale=1 "  />
         </Head>
         <Haeder/>
-        <ProfileHeader/>
-        <SideBar/>
+        <ProfileHeader isCollapsed={isCollapsed} />
+        <SideBar
+         defaultCollapsed={true}
+         isCollapsed={isCollapsed}
+         setIsCollapsed={setIsCollapsed}
+         width={250}
+         collapsedWidth={80}
+         />
         </>
     )
+   
 }
 
 export default ProfilePage

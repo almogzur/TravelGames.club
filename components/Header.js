@@ -2,7 +2,7 @@ import React from 'react';
 import * as Separator from '@radix-ui/react-separator';
 import Link from 'next/link';
 import CircumIcon from '@klarr-agency/circum-icons-react'
-import LogunBtn from './LoginBtn';
+import ProfileControls from './ProfileControls';
 import { useSession, signIn, signOut } from "next-auth/react"
 
 const Header = () => {
@@ -43,14 +43,7 @@ const Header = () => {
         orientation="vertical"
         style={{ margin: '0 15px' }}
       />
-  
-      <Link 
-        href={"/profile"} 
-        className="Link-Text">Profile
-      </Link>
-   
-      <LogunBtn/>
-    
+      <ProfileControls/>
     </div>
 
     

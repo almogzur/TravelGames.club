@@ -8,6 +8,7 @@ import { useRouter } from 'next/router';
 import { BuilderComponent, builder, useIsPreviewing} from '@builder.io/react';
 import useLocalStorageState from '../util/hooks/useLocalStorageStateHook'
 
+
 builder.init(`${process.env.BKEY}`);
 
 export async function getStaticProps({ params }) {
@@ -40,20 +41,16 @@ export async function getStaticPaths() {
     fallback: true,
   };
 }
-export default function Page({ page }) {
-
+export default function Page({ page  }) {
 
   // first setup of category in local storeg 
   const  [ category , setCategory ] = useLocalStorageState("category","false")  
-
   const handleUpdateCategory = (value) => {
     setCategory(value);
   };
 
   const router = useRouter();
-
   const isPreviewing = useIsPreviewing();
-
 
   if (router.isFallback) {
     return <h1>Loading...</h1>;

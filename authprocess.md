@@ -9,7 +9,7 @@ Created files and changes
 
 * pages/api/auth  // 
 [...nexyAuth].js // confing the auth providers and drivers this project use mongo-driver 
-restricted.js // chake if user sessone and return from api 
+restricted.js // can be used insted of getserverprops
 
 * /util
 db.js for saving providers loging in mongo // driver made by next to use in mongo case 
@@ -20,6 +20,9 @@ LoginBtn
 
 * _app.js
  wrapping the app in the sesson context 
+
+ * scured page /profile
+  in index js config getServerSideProps(context) to chake if live siison if not navto root 
 
 * function MyApp({
        Component, 
