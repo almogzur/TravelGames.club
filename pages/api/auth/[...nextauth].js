@@ -5,16 +5,7 @@ import Facebook from "next-auth/providers/facebook"
 import Google from "next-auth/providers/google"
 import { MongoDBAdapter } from "@next-auth/mongodb-adapter"
 import clientPromise from '../../../util/db'
-/*  Facebook({
-  clientId: process.env.FACEBOOK_ID,
-  clientSecret: process.env.FACEBOOK_SECRET,
-}),
-*/
 
-// ** importent note  you can use one mail peer sinein serves 
-// for exmp you cant use joned@gmail for all 3 ,
-// if your email is regester in mongo db you will
-// be asked to connnect to the first provider 
 
 export const authOptions = {
   // Configure one or more authentication providers

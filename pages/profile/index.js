@@ -3,10 +3,30 @@ import Head from "next/head"
 import { useSession, signIn, signOut } from "next-auth/react"
 import SideBar from '../../components/profile/SideBar'
 import Haeder from "../../components/Header"
+import { authOptions } from '../api/auth/[...nextauth]'
+import { getServerSession } from "next-auth/next"
 
-function ProfilePage (){
+export async function getServerSideProps(context) {
+  
+  const session = await getServerSession(context.req, context.res, authOptions)
 
-    const { data: session } = useSession()
+  if (!session) {
+    return {
+      redirect: {
+        destination: '/',
+        permanent: false,
+      },
+    }
+  }
+
+  return {
+    props: {
+      session,
+    },
+  }
+}
+
+function ProfilePage ({session}){
 
     return(
         <>
