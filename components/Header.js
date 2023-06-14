@@ -7,9 +7,7 @@ import { useSession, signIn, signOut } from "next-auth/react"
 
 const Header = () => {
   const { data: session } = useSession()
-  const logInHendler = ()=>{
-    // hear we need to start auth prosees 
-  }
+
   return (
   <div className='headerwrapper'>
 
