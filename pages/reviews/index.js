@@ -27,6 +27,8 @@ export async function getStaticProps() {
   };
   
 }
+
+
  /* -- Categoty Sort Names --
 Outdoor and Adventure Equipment:  OAE
 Travel Gear and Accessories: TGA
