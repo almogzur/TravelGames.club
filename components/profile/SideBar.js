@@ -13,13 +13,13 @@ export default function DefaultSidebar({isCollapsed,setIsCollapsed}) {
         onBackdropClick={() => setToggled(false)}
         >
         <Menu className='bar'>
-          <SubMenu className='bar-item' label={ !isCollapsed? "Favorites Reviews":<CircumIcon name="star"/>}>
+          <SubMenu className='bar-item' label={ !isCollapsed? [  "Favorites Reviews", <CircumIcon size={25} key={1} name="star"/>] :<CircumIcon name="star"/>}>
 
             <MenuItem > Link1  </MenuItem>
             <MenuItem> Link2 </MenuItem>
           </SubMenu>
           <MenuItem onClick={()=>setIsCollapsed(!isCollapsed)}>
-           { !isCollapsed ? `Close sidebar`:<CircumIcon  name="maximize_1"/>} 
+           { !isCollapsed ? ["Close SideBar", <CircumIcon key={2} size={25} name="minimize_1" />]:<CircumIcon name="maximize_1" />} 
            </MenuItem>
         </Menu>
       </Sidebar>

@@ -17,6 +17,7 @@ return(
    session? 
    <>
     <Link 
+    //in headeer css
       className="controls-link" 
       href={"/profile"}
       >Profile
@@ -25,7 +26,7 @@ return(
       tabIndex={1} 
       onClick={() => signOut()} 
       >
-       <span style={{marginBottom:"3px"}}>Sign Out</span>
+       <span style={{marginBottom:"3px" , }}>Sign Out</span>
         <Image 
          src={session.user.image} 
          height={30}

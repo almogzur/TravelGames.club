@@ -21,8 +21,8 @@ a{
   text-decoration: none;
 }
 a{color:#fff;}
-a:link{color:blue;}
-a:visited{color:var(--lgray);}
+a:link{color:var(--lblue);}
+a:visited{color:var(--dblue);}
 a:focus{color:var(--dblue);}
 
 

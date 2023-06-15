@@ -19,7 +19,6 @@
   outline:none;
   height:40px;
   width:80px;
-  border-radius:15px;
   display:flex;
   justify-content:center;
   align-items:center;
@@ -27,8 +26,10 @@
   margin-left:10px;
 }
 .Link-Text:hover{
-   color:var(--dblue);
-   background:var(--lgray);
+  background:black;
+  color:var(--dblue);
+  color:#fff;
+  transition:ease 1s;
 }
 .usercontrols{ 
   display:flex;
@@ -39,19 +40,18 @@
   right:10px;
   width:60px;
   height:calc(var(--navheight) - 30px);
-  color:var(--lgray);
+  color:var(--dblue);
   cursor:pointer;
   font-size:15px;
   padding:10px; 
-  border-radius:10px;
-  box-shadow: 1px 1px 1px var(--dblue);
   line-height:15px;
+  outline:none;
+  transition:ease 1s;
+  
 }
 .usercontrols:hover{
-  border: solid 1px var(--lgray);
-  background:var(--lgray);
-  opacity: 0.8;
-  color:var(--dblue);
+  background:black;
+  color:#fff;
 }
 .controls-link{
   display:flex;
@@ -60,13 +60,13 @@
   height:var(--navheight);
   width:80px;
   height:40px;
-  border-radius:15px;
+  transition:ease 1s;
   cursor:pointer;
- 
 }
 .controls-link:hover{
-  background:var(--lgray);
+  background:black;
   color:var(--dblue);
+  color:#fff;
 }
 @media (min-width:280px) and (max-width: 1090px) {
  .headerwrapper{}
