@@ -11,6 +11,7 @@ import useLocalStorageState from '../util/hooks/useLocalStorageStateHook'
 
 builder.init(`${process.env.BKEY}`);
 
+// page data 
 export async function getStaticProps({ params }) {
   // Fetch the first page from Builder that matches the current URL.
   // Use the `userAttributes` field for targeting content.
@@ -30,17 +31,20 @@ export async function getStaticProps({ params }) {
     revalidate: 5,
   };
 }
-
 export async function getStaticPaths() {
+  // Get a list of all pages in builder
   const pages = await builder.getAll('page', {
+    // We only need the URL field
+    fields: 'data.url', 
     options: { noTargeting: true },
   });
 
   return {
-    paths: [],
+    paths: pages.map(page => `${page.data?.url}`),
     fallback: true,
   };
 }
+
 export default function Page({ page  }) {
 
   // first setup of category in local storeg 

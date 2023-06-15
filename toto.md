@@ -8,8 +8,7 @@
 * profile
 fix profile page sidebar in mobile 
 
-* about
-create aboute page 
+* about 
 site nishe and agenda 
 
 * favorites contaxt 
