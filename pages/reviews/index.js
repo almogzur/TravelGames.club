@@ -8,6 +8,7 @@ import CardsWrapper from '../../components/reviews/CardsWrapper';
 import { getLocalStorageItem } from '../../util/localstoreg';
 import Head from 'next/head';
 import CustomH1 from '../../components/profile/CustomH1'
+import ReviewsSideBar from "../../components/reviews/ReviwesSideBar"
 // Replace with your Public API Key.
 builder.init(`${process.env.BKEY}`);
 
@@ -38,7 +39,7 @@ Travel Books and Guides: TBG
 export default function Reviews({ reviews }) {
 
   const [ filterdReviews , setFilterdReviews ] = useState({})
-
+  const [isCollapsed, setIsCollapsed] = useState(false)
   const  [ category , setCategory ] = useState("")
 
   useEffect(()=>{
@@ -79,8 +80,14 @@ export default function Reviews({ reviews }) {
          <meta name="viewport" content="width=device-width, initial-scale=1 "  />
         </Head>
         <Header/>
-        <CategoryBar setCategory={setCategory}/>
-        
+        <ReviewsSideBar 
+         setCategory={setCategory}
+         defaultCollapsed={false}
+         isCollapsed={isCollapsed}
+         setIsCollapsed={setIsCollapsed}
+         width={250}
+         collapsedWidth={80}
+        />
         <CustomH1 category={category}/>
         <CardsWrapper reviews={filterdReviews.length > 0 ? filterdReviews : reviews} category={category} />
 

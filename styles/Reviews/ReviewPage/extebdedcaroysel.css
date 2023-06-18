@@ -1,3 +1,4 @@
+@import '../../glob.css';
 .gallery-wrapper{
     display: flex;
     overflow: auto;

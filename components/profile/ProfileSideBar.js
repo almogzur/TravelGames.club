@@ -3,7 +3,7 @@ import { Sidebar, Menu, MenuItem, SubMenu } from 'react-pro-sidebar';
 import CircumIcon from '@klarr-agency/circum-icons-react'
 
 
-export default function DefaultSidebar({isCollapsed,setIsCollapsed}) {
+export default function ProfileSidebar({isCollapsed,setIsCollapsed}) {
 
   return (
     <div  >

@@ -1,14 +1,31 @@
-import '../styles/glob.css'
-import '../styles/categotybar.css'
-import '../styles/cardswrapper.css'
+//Global 
 import '../styles/footer.css'
-import '../styles/imegelayout.css'
-import '../styles/reviewpage.css'
 import '../styles/header.css'
-import '../styles/extebdedcaroysel.css'
-import '../styles/cardwrapperheadline.css'
-import '../styles/sidebar.css'
-import '../styles/profilepage.css'
+import '../styles/glob.css'
+
+// Profile
+import '../styles/Profile/profilepage.css'
+
+//ReviewPage 
+ 
+import '../styles/Reviews/ReviewPage/extebdedcaroysel.css'
+import '../styles/Reviews/ReviewPage/imegelayout.css'
+import '../styles/Reviews/ReviewPage/profilesidebar.css'
+import '../styles/Reviews/ReviewPage/reviewpage.css'
+
+//Reviews
+
+import '../styles/Reviews/cardswrapper.css'
+import '../styles/Reviews/cardwrapperheadline.css'
+
+import '../styles/Reviews/reviewssidebar.css'
+
+
+
+
+
+
+
 import { SessionProvider } from "next-auth/react"
 
  /* -- Categoty Sort Names --

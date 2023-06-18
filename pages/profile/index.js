@@ -1,6 +1,6 @@
 import ProfileHeader from "../../components/profile/profileHader"
 import Head from "next/head"
-import SideBar from '../../components/profile/SideBar'
+import ProfileSideBar from '../../components/profile/ProfileSideBar'
 import Haeder from "../../components/Global/Header"
 import { authOptions } from '../api/auth/[...nextauth]'
 import { getServerSession } from "next-auth/next"
@@ -37,7 +37,7 @@ function ProfilePage ({session}){
         </Head>
         <Haeder/>
         <ProfileHeader isCollapsed={isCollapsed} />
-        <SideBar
+        <ProfileSideBar
          defaultCollapsed={true}
          isCollapsed={isCollapsed}
          setIsCollapsed={setIsCollapsed}
