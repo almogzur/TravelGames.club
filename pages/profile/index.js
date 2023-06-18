@@ -1,7 +1,7 @@
 import ProfileHeader from "../../components/profile/profileHader"
 import Head from "next/head"
 import SideBar from '../../components/profile/SideBar'
-import Haeder from "../../components/Header"
+import Haeder from "../../components/Global/Header"
 import { authOptions } from '../api/auth/[...nextauth]'
 import { getServerSession } from "next-auth/next"
 import { useState } from 'react';

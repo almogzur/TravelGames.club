@@ -1,7 +1,7 @@
 // pages/collections/[collection].jsx
 import { BuilderComponent, builder } from '@builder.io/react';
-import ReviewPage from '../../components/ReviewPage'
-import Header from "../../components/Header.js"
+import ReviewPage from '../../components/reviews/reviwepage/ReviewPage.js'
+import Header from "../../components/Global/Header"
 import Head from 'next/head';
 builder.init(`${process.env.BKEY}`);
 

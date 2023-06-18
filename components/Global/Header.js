@@ -2,7 +2,7 @@ import React from 'react';
 import * as Separator from '@radix-ui/react-separator';
 import Link from 'next/link';
 import CircumIcon from '@klarr-agency/circum-icons-react'
-import ProfileControls from './ProfileControls';
+import ProfileControls from '../profile/ProfileControls'
 import { useSession, signIn, signOut } from "next-auth/react"
 
 const Header = () => {

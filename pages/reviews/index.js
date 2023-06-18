@@ -1,13 +1,13 @@
 // pages/your-page.jsx
 import React ,{  useContext, useEffect, useState } from 'react';
-import Header from '../../components/Header'
+import Header from '../../components/Global/Header'
 import { builder ,BuilderComponent , wi } from '@builder.io/react';
-import CategoryBar from '../../components/CategoryBar';
-import Footer from '../../components/Footer'
-import CardsWrapper from '../../components/CardsWrapper';
+import CategoryBar from '../../components/reviews/CategoryBar';
+import Footer from '../../components/Global/Footer'
+import CardsWrapper from '../../components/reviews/CardsWrapper';
 import { getLocalStorageItem } from '../../util/localstoreg';
 import Head from 'next/head';
-import CustomH1 from '../../components/CustomH1'
+import CustomH1 from '../../components/profile/CustomH1'
 // Replace with your Public API Key.
 builder.init(`${process.env.BKEY}`);
 
@@ -80,6 +80,7 @@ export default function Reviews({ reviews }) {
         </Head>
         <Header/>
         <CategoryBar setCategory={setCategory}/>
+        
         <CustomH1 category={category}/>
         <CardsWrapper reviews={filterdReviews.length > 0 ? filterdReviews : reviews} category={category} />
 

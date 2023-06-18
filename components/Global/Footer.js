@@ -1,6 +1,5 @@
 import React from 'react';
 import * as Separator from '@radix-ui/react-separator';
-import Link from 'next/link';
 import { useEffect, useState } from 'react';
 
 const Footer = () => {
