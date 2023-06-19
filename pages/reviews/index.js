@@ -1,5 +1,6 @@
 // pages/your-page.jsx
 import React ,{  useContext, useEffect, useState } from 'react';
+import { ReviewSidebarWidthContext } from '../../util/Context/Context';
 import Header from '../../components/Global/Header'
 import { builder ,BuilderComponent , wi } from '@builder.io/react';
 import CategoryBar from '../../components/reviews/CategoryBar';
@@ -7,7 +8,7 @@ import Footer from '../../components/Global/Footer'
 import CardsWrapper from '../../components/reviews/CardsWrapper';
 import { getLocalStorageItem } from '../../util/localstoreg';
 import Head from 'next/head';
-import CustomH1 from '../../components/profile/CustomH1'
+import CustomH1 from '../../components/reviews/CustomH1'
 import ReviewsSideBar from "../../components/reviews/ReviwesSideBar"
 // Replace with your Public API Key.
 builder.init(`${process.env.BKEY}`);
@@ -39,8 +40,8 @@ Travel Books and Guides: TBG
 export default function Reviews({ reviews }) {
 
   const [ filterdReviews , setFilterdReviews ] = useState({})
-  const [isCollapsed, setIsCollapsed] = useState(false)
-  const  [ category , setCategory ] = useState("")
+  const  [ category , setCategory ] = useState()
+  const [isCollapsed, setIsCollapsed] = useContext(ReviewSidebarWidthContext)
 
   useEffect(()=>{
      // on page navigate get back the category from local storeg and
