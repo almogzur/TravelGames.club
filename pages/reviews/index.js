@@ -3,7 +3,6 @@ import React ,{  useContext, useEffect, useState } from 'react';
 import { ReviewSidebarWidthContext } from '../../util/Context/Context';
 import Header from '../../components/Global/Header'
 import { builder ,BuilderComponent , wi } from '@builder.io/react';
-import CategoryBar from '../../components/reviews/CategoryBar';
 import Footer from '../../components/Global/Footer'
 import CardsWrapper from '../../components/reviews/CardsWrapper';
 import { getLocalStorageItem } from '../../util/localstoreg';
