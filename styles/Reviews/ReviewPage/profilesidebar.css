@@ -1,8 +1,0 @@
-@import '../../glob.css';
-
-.bar{
-    background:var(--lblue);
-    height:100dvh;
-}
-.bar-item{}
-

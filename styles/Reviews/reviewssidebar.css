@@ -1,12 +1,14 @@
 @import '../glob.css';
 
-.reviews-sidebar{
-
+.review .ps-sidebar-root{
+    
+}
+.review .ps-collapsed{
 
 }
-.reviews-sidebar-manu{
-
+.review .ps-menu-root{
+  background:green;
 }
-.reviews-sidebar-item{
+.review .ps-menuitem-root{
     
 }

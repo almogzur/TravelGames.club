@@ -1,0 +1,17 @@
+@import '../glob.css';
+
+.profile .ps-sidebar-root {
+    
+}
+.profile .ps-collapsed {
+
+}
+.profile .ps-menu-root{
+  background:red;
+}
+.profile .ps-menuitem-root {
+    
+}
+
+@media (min-width:280px)  and (max-width: 600px) {}
+

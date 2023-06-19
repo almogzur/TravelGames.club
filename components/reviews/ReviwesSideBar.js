@@ -23,16 +23,17 @@ export default function ReviewsSidebar({ setCategory , isCollapsed,setIsCollapse
   }
   return (
     
-      <Sidebar className='reviews-sidebar'
+      <Sidebar  className='review'
         collapsed={isCollapsed}
         onBackdropClick={() => setToggled(false)}
         >
-        <Menu className='reviews-sidebar-menu'>
+        <Menu  >
            <MenuItem onClick={(e)=>click(e)}>Travel Gear and Accessories</MenuItem>
            <MenuItem onClick={(e)=>click(e)}>Tech and Gadgets</MenuItem>
            <MenuItem onClick={(e)=>click(e)}>Outdoor and Adventure Equipment</MenuItem>
            <MenuItem onClick={(e)=>click(e)}>Travel Books and Guides</MenuItem>
-          <SubMenu className='reviews-sidebar-item' label={ !isCollapsed? [  "Favorites Reviews", <CircumIcon size={25} key={1} name="star"/>] :<CircumIcon name="star"/>}>
+          <SubMenu  
+            label={ !isCollapsed? [  "Favorites Reviews", <CircumIcon size={25} key={1} name="star"/>] :<CircumIcon name="star"/>}>
 
             <MenuItem > Link1  </MenuItem>
             <MenuItem> Link2 </MenuItem>

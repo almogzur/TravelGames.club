@@ -7,9 +7,8 @@ export default function ProfileSidebar({isCollapsed,setIsCollapsed}) {
 
   return (
     <div  >
-      <Sidebar
+      <Sidebar className='profile'
         collapsed={isCollapsed}
-        
         onBackdropClick={() => setToggled(false)}
         >
         <Menu className='bar'>

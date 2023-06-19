@@ -9,7 +9,7 @@ import { getLocalStorageItem } from '../../util/localstoreg';
 import Head from 'next/head';
 import CustomH1 from '../../components/reviews/CustomH1'
 import ReviewsSideBar from "../../components/reviews/ReviwesSideBar"
-// Replace with your Public API Key.
+
 builder.init(`${process.env.BKEY}`);
 
 export async function getStaticProps() {
@@ -29,18 +29,11 @@ export async function getStaticProps() {
   
 }
 
-
- /* -- Categoty Sort Names --
-Outdoor and Adventure Equipment:  OAE
-Travel Gear and Accessories: TGA
-Tech and Gadgets: TG
-Travel Books and Guides: TBG
-*/
 export default function Reviews({ reviews }) {
 
   const [ filterdReviews , setFilterdReviews ] = useState({})
-  const  [ category , setCategory ] = useState()
-  const [isCollapsed, setIsCollapsed] = useContext(ReviewSidebarWidthContext)
+  const [ category , setCategory ] = useState()
+  const [ isCollapsed , setIsCollapsed ] = useContext(ReviewSidebarWidthContext)
 
   useEffect(()=>{
      // on page navigate get back the category from local storeg and
@@ -80,13 +73,14 @@ export default function Reviews({ reviews }) {
          <meta name="viewport" content="width=device-width, initial-scale=1 "  />
         </Head>
         <Header/>
-        <ReviewsSideBar 
+        <ReviewsSideBar  
          setCategory={setCategory}
          defaultCollapsed={false}
          isCollapsed={isCollapsed}
          setIsCollapsed={setIsCollapsed}
          width={250}
          collapsedWidth={80}
+         
         />
         <CustomH1 category={category}/>
         <CardsWrapper reviews={filterdReviews.length > 0 ? filterdReviews : reviews} category={category} />
