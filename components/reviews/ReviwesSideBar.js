@@ -1,10 +1,12 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { Sidebar, Menu, MenuItem, SubMenu } from 'react-pro-sidebar';
 import CircumIcon from '@klarr-agency/circum-icons-react'
 
 
+// in the project all styles in hendeld in css models exept this component 
+
 export default function ReviewsSidebar({ setCategory , isCollapsed,setIsCollapsed}) {
-  
+
   const click = (e)=>{
      
     switch(e.target.innerText){
@@ -21,13 +23,21 @@ export default function ReviewsSidebar({ setCategory , isCollapsed,setIsCollapse
       default : throw new Error("no category value")
     }
   }
+
+
   return (
     
-      <Sidebar  className='review'
+      <Sidebar  
         collapsed={isCollapsed}
         onBackdropClick={() => setToggled(false)}
+        
         >
-        <Menu  >
+        <Menu   
+          rootStyles={{
+            height:"100vh",
+           
+        }}
+              >
            <MenuItem onClick={(e)=>click(e)}>Travel Gear and Accessories</MenuItem>
            <MenuItem onClick={(e)=>click(e)}>Tech and Gadgets</MenuItem>
            <MenuItem onClick={(e)=>click(e)}>Outdoor and Adventure Equipment</MenuItem>

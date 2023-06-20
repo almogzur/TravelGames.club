@@ -3,27 +3,22 @@ import { useState } from 'react'
 import '../styles/footer.css'
 import '../styles/header.css'
 import '../styles/glob.css'
+import '../styles/serch.css'
 // Profile
 import '../styles/Profile/profilepage.css'
-import '../styles/Profile/profilesidebar.css'
+//Reviews
+import '../styles/Reviews/cardswrapper.css'
+import '../styles/Reviews/cardwrapperheadline.css'
 //ReviewPage 
 import '../styles/Reviews/ReviewPage/extebdedcaroysel.css'
 import '../styles/Reviews/ReviewPage/imegelayout.css'
 import '../styles/Reviews/ReviewPage/reviewpage.css'
-//Reviews
-import '../styles/Reviews/reviewssidebar.css'
-import '../styles/Reviews/cardswrapper.css'
-import '../styles/Reviews/cardwrapperheadline.css'
-import '../styles/Reviews/reviewssidebar.css'
 // Context
 import { SessionProvider } from "next-auth/react"
 import { FavoritesContext , ReviewSidebarWidthContext } from '../util/Context/Context'
 
-function MyApp({
-          Component, 
-          pageProps:{session, ...pageProps},
-          }) 
-           {  
+function MyApp({ Component, pageProps : { session , ...pageProps } }) {  
+      
       const [isCollapsed, setIsCollapsed] = useState(false)
 
       return (

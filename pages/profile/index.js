@@ -5,6 +5,9 @@ import Haeder from "../../components/Global/Header"
 import { authOptions } from '../api/auth/[...nextauth]'
 import { getServerSession } from "next-auth/next"
 import { useState } from 'react';
+import { useMediaQuery } from 'usehooks-ts'
+
+
 export async function getServerSideProps(context) {
   
   const session = await getServerSession(context.req, context.res, authOptions)
@@ -26,7 +29,11 @@ export async function getServerSideProps(context) {
 }
 
 function ProfilePage ({session}){
+
   const [ isCollapsed, setIsCollapsed] = useState(true)
+
+  const PagewidthIsLessThen = useMediaQuery('(max-width: 1090px)')
+
     return(
         <>
          <Head>
@@ -39,10 +46,8 @@ function ProfilePage ({session}){
         <ProfileHeader isCollapsed={isCollapsed} />
         <ProfileSideBar
          defaultCollapsed={true}
-         isCollapsed={isCollapsed}
+         isCollapsed={PagewidthIsLessThen ? true : isCollapsed}
          setIsCollapsed={setIsCollapsed}
-         width={250}
-         collapsedWidth={80}
          />
         </>
     )

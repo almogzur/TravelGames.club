@@ -1,18 +1,32 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
+import { useMediaQuery } from 'usehooks-ts'
 import { Sidebar, Menu, MenuItem, SubMenu } from 'react-pro-sidebar';
 import CircumIcon from '@klarr-agency/circum-icons-react'
 
 
+// in the project all styles in hendeld in css models exept this component 
+
 export default function ProfileSidebar({isCollapsed,setIsCollapsed}) {
+
+  const PagewidthIsLessThen = useMediaQuery('(max-width: 1090px)')
+
+  useEffect(()=>{
+    console.log(PagewidthIsLessThen)
+},[PagewidthIsLessThen])
 
   return (
     <div  >
-      <Sidebar className='profile'
+      <Sidebar 
         collapsed={isCollapsed}
         onBackdropClick={() => setToggled(false)}
         >
-        <Menu className='bar'>
-          <SubMenu className='bar-item' label={ !isCollapsed? [  "Favorites Reviews", <CircumIcon size={25} key={1} name="star"/>] :<CircumIcon name="star"/>}>
+        <Menu
+              rootStyles={{
+              background:"#3F72AF",
+              height:"100vh"
+               
+               }} >
+          <SubMenu label={ !isCollapsed? [  "Favorites Reviews", <CircumIcon size={25} key={1} name="star"/>] :<CircumIcon name="star"/>}>
 
             <MenuItem > Link1  </MenuItem>
             <MenuItem> Link2 </MenuItem>

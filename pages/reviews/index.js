@@ -3,12 +3,13 @@ import React ,{  useContext, useEffect, useState } from 'react';
 import { ReviewSidebarWidthContext } from '../../util/Context/Context';
 import Header from '../../components/Global/Header'
 import { builder ,BuilderComponent , wi } from '@builder.io/react';
-import Footer from '../../components/Global/Footer'
 import CardsWrapper from '../../components/reviews/CardsWrapper';
 import { getLocalStorageItem } from '../../util/localstoreg';
 import Head from 'next/head';
 import CustomH1 from '../../components/reviews/CustomH1'
 import ReviewsSideBar from "../../components/reviews/ReviwesSideBar"
+import Serch from "../../components/Global/serch"
+import { useMediaQuery } from 'usehooks-ts'
 
 builder.init(`${process.env.BKEY}`);
 
@@ -30,10 +31,10 @@ export async function getStaticProps() {
 }
 
 export default function Reviews({ reviews }) {
-
   const [ filterdReviews , setFilterdReviews ] = useState({})
   const [ category , setCategory ] = useState()
   const [ isCollapsed , setIsCollapsed ] = useContext(ReviewSidebarWidthContext)
+  const PagewidthIsLessThen = useMediaQuery('(max-width: 1090px)')
 
   useEffect(()=>{
      // on page navigate get back the category from local storeg and
@@ -45,20 +46,20 @@ export default function Reviews({ reviews }) {
   },[])
 
   useEffect(()=>{
-    console.log(category , "index Moundet")
+    console.log( "index Moundet")
     const sortByCategoty = (Obj) => { 
-      let  arr = []
-        if(!category ){return Obj}
-        else if (category !== false){
-          Obj.map(
-                  (review)=>{
-                //console.log(review.data.category)
-                    if(review.data.category === category){
-                            arr.push(review)
-                          }
+    let  arr = []
+    if(!category ){return Obj}
+    else if(category !== false){
+       Obj.map(
+         (review)=>{
+    //console.log(review.data.category)
+            if(review.data.category === category){
+              arr.push(review)
+             }
              })
              }
-       return arr
+    return arr
   }
     const sorted = sortByCategoty(reviews)
     setFilterdReviews(sorted)
@@ -73,14 +74,12 @@ export default function Reviews({ reviews }) {
          <meta name="viewport" content="width=device-width, initial-scale=1 "  />
         </Head>
         <Header/>
+        <Serch reviews={reviews}/>
         <ReviewsSideBar  
          setCategory={setCategory}
          defaultCollapsed={false}
-         isCollapsed={isCollapsed}
-         setIsCollapsed={setIsCollapsed}
-         width={250}
-         collapsedWidth={80}
-         
+         isCollapsed={PagewidthIsLessThen ? true : isCollapsed}
+         setIsCollapsed={setIsCollapsed}       
         />
         <CustomH1 category={category}/>
         <CardsWrapper reviews={filterdReviews.length > 0 ? filterdReviews : reviews} category={category} />

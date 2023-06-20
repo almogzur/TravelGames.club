@@ -1,0 +1,21 @@
+@import './glob.css';
+
+--width:200px;
+
+.serch-wrapper{}
+.serch-bar{
+    height:40px;
+    width:var(--width);
+    border-radius:9px;
+    margin-top:10px;
+}
+.serch-results{
+    border: solid 1px blacks;
+    width:var(--width);
+    margin-top:10px;
+}
+.serch-result-item{
+
+    margin-buttom: solid 1px black; 
+    width:var(--width);
+}

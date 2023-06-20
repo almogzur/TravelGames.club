@@ -7,6 +7,7 @@
 
 * profile
 fix profile page sidebar in mobile 
+add serch bar
 
 * about 
  site nishe and agenda 
@@ -19,3 +20,5 @@ then in user profile pull context and map throu favorites review
 
 * SEO 
  Site map  
+
+ 
