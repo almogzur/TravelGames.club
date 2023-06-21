@@ -3,7 +3,7 @@ import { useEffect } from "react";
 function CustomH1({category}) { 
 
 useEffect(()=>{
-  console.log(category , "profile h1")
+  //console.log(category , "profile h1")
 })
 
   const handelText = (Cat) => {

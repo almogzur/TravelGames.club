@@ -47,7 +47,7 @@ export default function Reviews({ reviews }) {
   },[])
 // reviers filter 
   useEffect(()=>{
-    console.log( "filtring process")
+  //  console.log( "filtring process")
     const sortByCategoty = (Obj) => { 
     let  arr = []
     if(!category ){return Obj}
@@ -69,7 +69,7 @@ export default function Reviews({ reviews }) {
 // chak for width and update sidebar no dip array this need to cheak vs the window listner for changes 
 //cansel esliont no dep array 
 useEffect(()=>{
-  console.log("this is runing")
+ // console.log("this is runing")
   if(PagewidthIsLessThen){
     setIsCollapsed(true)
   }

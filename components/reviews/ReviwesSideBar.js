@@ -12,11 +12,8 @@ export default function ReviewsSidebar({ setCategory ,isCollapsed , setIsCollaps
 
   const PagewidthIsLessThen = useMediaQuery('(max-width: 1090px)')
  
-
-
-
   const click = (e)=>{
-     console.log(e)
+
     switch(e.target.innerText){
        case "TGA" : 
        case "Travel Gear and Accessories" : setCategory("TGA") ; 
@@ -24,7 +21,7 @@ export default function ReviewsSidebar({ setCategory ,isCollapsed , setIsCollaps
        case "TG" :
        case "Tech and Gadgets" : setCategory("TG") ;
         break;
-       case "OAE" :
+       case "OAD" :
        case "Outdoor and Adventure Equipment" : setCategory("OAE") ; 
         break;
        case "TBG" :
@@ -55,17 +52,17 @@ export default function ReviewsSidebar({ setCategory ,isCollapsed , setIsCollaps
            <MenuItem onClick={(e)=>click(e)}>{isCollapsed ? "TG"  : "Tech and Gadgets"}</MenuItem>
            <MenuItem onClick={(e)=>click(e)}>{isCollapsed ? "OAD" : "Outdoor and Adventure Equipment"}</MenuItem>
            <MenuItem onClick={(e)=>click(e)}>{ isCollapsed ? "TBG" : "Travel Books and Guides" }</MenuItem>
-          <SubMenu  
-        >
+          <SubMenu  label={ isCollapsed ? "Sub " : "Sub Manu"} >
 
             <MenuItem > Link1  </MenuItem>
             <MenuItem> Link2 </MenuItem>
           </SubMenu>
+         { PagewidthIsLessThen ? null:
           <MenuItem onClick={()=>setIsCollapsed(!isCollapsed)}>{
-             isCollapsed && PagewidthIsLessThen ? "Mob" : isCollapsed ?  <CircumIcon name="maximize_1" />   :<CircumIcon name="minimize_1" />  }
+              isCollapsed ?  <CircumIcon name="maximize_1" />   :<CircumIcon name="minimize_1" />  }
           
            </MenuItem>
-           
+           }
         </Menu>
       </Sidebar>
   
