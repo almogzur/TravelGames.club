@@ -12,7 +12,7 @@ export default function CardsWrapper({reviews, category}){
 
 
     useEffect(()=>{
-        console.log( reviews)
+       // console.log( reviews)
     },[reviews])
 
  return (

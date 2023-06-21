@@ -1,21 +1,29 @@
 @import './glob.css';
 
---width:200px;
 
 .serch-wrapper{}
+
 .serch-bar{
-    height:40px;
-    width:var(--width);
-    border-radius:9px;
-    margin-top:10px;
+    
 }
 .serch-results{
-    border: solid 1px blacks;
-    width:var(--width);
-    margin-top:10px;
+    border: solid 1px black;
+
+    
 }
 .serch-result-item{
+    border-bottom: solid 1px black ;
+    height:40px;
+    display:flex;
+    justify-content:flex-start;
+    align-items: center;
+    display:flex;
+    justify-content:flex-start;
+    align-items:baceline;
+    margin:5px;
 
-    margin-buttom: solid 1px black; 
-    width:var(--width);
+}
+.serch-result-item:hover{
+    background:var(--lblue);
+    color:var(--lgray);
 }

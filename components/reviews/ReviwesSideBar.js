@@ -1,55 +1,69 @@
-import { useEffect, useState } from 'react';
+"use client"
 import { Sidebar, Menu, MenuItem, SubMenu } from 'react-pro-sidebar';
 import CircumIcon from '@klarr-agency/circum-icons-react'
+import { useMediaQuery } from 'usehooks-ts'
+import { useEffect, useState , useContext } from 'react';
 
 
-// in the project all styles in hendeld in css models exept this component 
 
-export default function ReviewsSidebar({ setCategory , isCollapsed,setIsCollapsed}) {
+// in the project all styles is in css models ecxepts this component 
+
+export default function ReviewsSidebar({ setCategory ,isCollapsed , setIsCollapsed  }) {
+
+  const PagewidthIsLessThen = useMediaQuery('(max-width: 1090px)')
+ 
+
+
 
   const click = (e)=>{
-     
+     console.log(e)
     switch(e.target.innerText){
-      case "Travel Gear and Accessories" : setCategory("TGA") ; 
+       case "TGA" : 
+       case "Travel Gear and Accessories" : setCategory("TGA") ; 
+        break;
+       case "TG" :
+       case "Tech and Gadgets" : setCategory("TG") ;
+        break;
+       case "OAE" :
+       case "Outdoor and Adventure Equipment" : setCategory("OAE") ; 
+        break;
+       case "TBG" :
+       case "Travel Books and Guides" : setCategory("TBG") ;
+        break; 
+       case "All": setCategory(false); 
        break;
-      case "Tech and Gadgets" : setCategory("TG") ;
-       break;
-      case "Outdoor and Adventure Equipment": setCategory("OAE") ; 
-       break;
-      case "Travel Books and Guides": setCategory("TBG") ;
-       break; 
-      case "All": setCategory(false); 
-      break;
-      default : throw new Error("no category value")
+       default : throw new Error("no categoy")
     }
   }
 
+  useEffect(()=>{
+
+  })
 
   return (
     
       <Sidebar  
         collapsed={isCollapsed}
         onBackdropClick={() => setToggled(false)}
-        
         >
         <Menu   
           rootStyles={{
             height:"100vh",
-           
         }}
               >
-           <MenuItem onClick={(e)=>click(e)}>Travel Gear and Accessories</MenuItem>
-           <MenuItem onClick={(e)=>click(e)}>Tech and Gadgets</MenuItem>
-           <MenuItem onClick={(e)=>click(e)}>Outdoor and Adventure Equipment</MenuItem>
-           <MenuItem onClick={(e)=>click(e)}>Travel Books and Guides</MenuItem>
+           <MenuItem onClick={(e)=>click(e)}>{isCollapsed ?   "TGA" : "Travel Gear and Accessories" }</MenuItem>
+           <MenuItem onClick={(e)=>click(e)}>{isCollapsed ? "TG"  : "Tech and Gadgets"}</MenuItem>
+           <MenuItem onClick={(e)=>click(e)}>{isCollapsed ? "OAD" : "Outdoor and Adventure Equipment"}</MenuItem>
+           <MenuItem onClick={(e)=>click(e)}>{ isCollapsed ? "TBG" : "Travel Books and Guides" }</MenuItem>
           <SubMenu  
-            label={ !isCollapsed? [  "Favorites Reviews", <CircumIcon size={25} key={1} name="star"/>] :<CircumIcon name="star"/>}>
+        >
 
             <MenuItem > Link1  </MenuItem>
             <MenuItem> Link2 </MenuItem>
           </SubMenu>
-          <MenuItem onClick={()=>setIsCollapsed(!isCollapsed)}>
-           { !isCollapsed ? ["Close SideBar", <CircumIcon key={2} size={25} name="minimize_1" />]:<CircumIcon name="maximize_1" />} 
+          <MenuItem onClick={()=>setIsCollapsed(!isCollapsed)}>{
+             isCollapsed && PagewidthIsLessThen ? "Mob" : isCollapsed ?  <CircumIcon name="maximize_1" />   :<CircumIcon name="minimize_1" />  }
+          
            </MenuItem>
            
         </Menu>

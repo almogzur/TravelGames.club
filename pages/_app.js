@@ -23,11 +23,11 @@ function MyApp({ Component, pageProps : { session , ...pageProps } }) {
 
       return (
         <SessionProvider session={session}>
-        <FavoritesContext.Provider  >
+        
         <ReviewSidebarWidthContext.Provider value={[isCollapsed, setIsCollapsed] }>
            <Component {...pageProps} />  
         </ReviewSidebarWidthContext.Provider>
-        </FavoritesContext.Provider>
+
         </SessionProvider>
          )
     }

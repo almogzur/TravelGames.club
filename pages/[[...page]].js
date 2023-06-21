@@ -49,6 +49,7 @@ export default function Page({ page  }) {
 
   // first setup of category in local storeg 
   const  [ category , setCategory ] = useLocalStorageState("category","false")  
+  
   const handleUpdateCategory = (value) => {
     setCategory(value);
   };

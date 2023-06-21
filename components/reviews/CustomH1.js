@@ -1,14 +1,20 @@
+import { useEffect } from "react";
+
 function CustomH1({category}) { 
 
-  const handelText = (Categoty) => {
-     switch(Categoty){
-      case "TGA" : return "Travel Gear and Accessories" ; 
+useEffect(()=>{
+  console.log(category , "profile h1")
+})
+
+  const handelText = (Cat) => {
+     switch(Cat){
+      case "TGA" :  return "Travel Gear and Accessories" ; 
       break;
-      case "TG" : return "Tech and Gadgets" ; 
+      case "TG" : return  "Tech and Gadgets" ; 
       break;
-      case "OAE" : return "Outdoor and Adventure Equipment" ; 
+      case "OAE" : return   "Outdoor and Adventure Equipment" ; 
       break; 
-      case "TBG" : return "Travel Books and Guides"
+      case "TBG" : return   "Travel Books and Guides"
       break;
       default : return "All Reviews"
      }
