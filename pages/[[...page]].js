@@ -1,7 +1,6 @@
 import DefaultErrorPage from 'next/error';
 import Head from 'next/head';
 import React, { useContext, useEffect } from 'react';
-import '@builder.io/widgets';
 import Header from '../components/Global/Header';
 import Footer from '../components/Global/Footer'
 import { useRouter } from 'next/router';
