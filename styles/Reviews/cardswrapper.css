@@ -2,7 +2,7 @@
 
 .cards-wrapper{
     position:absolute;
-    top:150px;
+    top:130px;
     display: flex;
     flex-direction: row;
     flex-wrap:wrap;
@@ -39,7 +39,7 @@
   .card{
     margin:0px;
     margin-top:10px;
-    width:100%;
+    width:240px;
     display:flex;
     height:200px;
   }
