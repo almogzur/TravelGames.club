@@ -25,15 +25,8 @@ export default function SearchComponent({reviews}) {
   
     return (
        <div 
-      className='serch-wrapper'
-      style={ {
-      position:"absolute",
-      right: PagewidthIsLessThen ? "10px" : "50px",
-      width: PagewidthIsLessThen ? "100px": "250px",
-      height:"150px",
-      zIndex:"2"
-    }}
-      >
+        className='serch-wrapper'
+         >
         <input 
           className='serch-bar'
           type="text"

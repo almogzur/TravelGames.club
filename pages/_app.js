@@ -3,7 +3,6 @@ import { useState } from 'react'
 import '../styles/footer.css'
 import '../styles/header.css'
 import '../styles/glob.css'
-import '../styles/serch.css'
 // Profile
 import '../styles/Profile/profilepage.css'
 //Reviews
@@ -13,6 +12,9 @@ import '../styles/Reviews/cardwrapperheadline.css'
 import '../styles/Reviews/ReviewPage/extebdedcaroysel.css'
 import '../styles/Reviews/ReviewPage/imegelayout.css'
 import '../styles/Reviews/ReviewPage/reviewpage.css'
+// Reviews topbar
+import '../styles/Reviews/topbar/serch.css'
+import '../styles/Reviews/topbar/topbar.css'
 // Context
 import { SessionProvider } from "next-auth/react"
 import { FavoritesContext , ReviewSidebarWidthContext } from '../util/Context/Context'

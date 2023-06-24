@@ -6,6 +6,8 @@
    add new componenet to ovraly the imge on the 90% screen onclick e
    add new fev icon to push to user data 
    fix serch css mobile and desk  
+creat a new catrgort producat categoy and travel gategort 
+move back to top bar and puf serch i  it 
 
 * profile
    side bar css on mobile 
@@ -21,6 +23,9 @@
 
 * SEO 
   Site map  
+
+  .env 
+  NEXTAUTH_URL
 
 
 

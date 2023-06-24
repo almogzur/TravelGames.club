@@ -15,8 +15,7 @@ restricted.js // can be used insted of getserverprops
 db.js for saving providers loging in mongo // driver made by next to use in mongo case 
 
 * /components
-default login button 
-LoginBtn
+profile controls 
 
 * _app.js
  wrapping the app in the sesson context 
