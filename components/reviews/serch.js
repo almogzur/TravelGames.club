@@ -1,5 +1,4 @@
 "use client"
-
 import { useMediaQuery } from 'usehooks-ts';
 import Link from 'next/link';
 import Image from 'next/image';
@@ -10,6 +9,7 @@ export default function SearchComponent({reviews}) {
     const [searchTerm, setSearchTerm] = useState('');
     const [searchResults, setSearchResults] = useState([]);
     const PagewidthIsLessThen = useMediaQuery('(max-width: 1090px)')
+
     const handleSearch = (event) => {
 
       const { value } = event.target;
@@ -33,9 +33,7 @@ export default function SearchComponent({reviews}) {
           value={searchTerm}
           onChange={handleSearch}
           placeholder="Search..."
-          style={{
-            width: PagewidthIsLessThen ? "150px" : "245px",
-            }}
+    
         />
         <div className='serch-results'>
           {searchResults.map((item) => (

@@ -3,6 +3,7 @@ import React ,{  useContext, useEffect, useState } from 'react';
 import { useMediaQuery } from 'usehooks-ts'
 import { builder } from '@builder.io/react';
 import { getLocalStorageItem } from '../../util/localstoreg';
+import { ReviewSidebarWidthContext } from '../../util/Context/Context';
 import CardsWrapper from '../../components/reviews/CardsWrapper';
 import Head from 'next/head';
 import CustomH1 from '../../components/reviews/CustomH1'
@@ -32,11 +33,11 @@ export async function getStaticProps() {
 }
 
 export default function Reviews({ reviews }) {
-  
+
   const PagewidthIsLessThen = useMediaQuery('(max-width: 1090px)')
   const [ filterdReviews , setFilterdReviews ] = useState({})
   const [ category , setCategory ] = useState()
-  const [isCollapsed , setIsCollapsed ] = useState(false)
+  const [isCollapsed , setIsCollapsed ] = useContext(ReviewSidebarWidthContext)
  
  // local storeg
   useEffect(()=>{
@@ -90,9 +91,13 @@ export default function Reviews({ reviews }) {
         
        {
          PagewidthIsLessThen ? 
-        <TopBar/>
+        <TopBar 
+         reviews={reviews}
+
+        />
        :
         <ReviewsSideBar  
+         reviews={reviews}
          setCategory={setCategory}
          defaultCollapsed={false}
          isCollapsed={ isCollapsed }

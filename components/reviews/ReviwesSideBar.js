@@ -3,12 +3,12 @@ import { Sidebar, Menu, MenuItem, SubMenu } from 'react-pro-sidebar';
 import CircumIcon from '@klarr-agency/circum-icons-react'
 import { useMediaQuery } from 'usehooks-ts'
 import { useEffect, useState , useContext } from 'react';
-
+import Serch from './serch'
 
 
 // in the project all styles is in css models ecxepts this component 
 
-export default function ReviewsSidebar({ setCategory ,isCollapsed , setIsCollapsed  }) {
+export default function ReviewsSidebar({ setCategory ,isCollapsed , setIsCollapsed  , reviews }) {
 
   const PagewidthIsLessThen = useMediaQuery('(max-width: 1090px)')
  
@@ -63,6 +63,7 @@ export default function ReviewsSidebar({ setCategory ,isCollapsed , setIsCollaps
           
            </MenuItem>
            }
+           <Serch reviews={reviews}/>
         </Menu>
       </Sidebar>
   

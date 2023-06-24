@@ -3,8 +3,6 @@ import { ReviewSidebarWidthContext } from "../../util/Context/Context"
 import Card from './Card'
 import { useMediaQuery } from 'usehooks-ts'
 
-
-
 export default function CardsWrapper({reviews, category}){
 
   const [isCollapsed, setIsCollapsed] = useContext(ReviewSidebarWidthContext)
@@ -12,16 +10,22 @@ export default function CardsWrapper({reviews, category}){
 
 
     useEffect(()=>{
-       // console.log( reviews)
-    },[reviews])
+      //  console.log( isCollapsed)
+    },[])
 
  return (
  
        <div className="cards-wrapper"
-        style={{
-          left:isCollapsed? "100px" :PagewidthIsLessThen? "100px" :"250px"
+        style={ PagewidthIsLessThen?
+         {left:"15px"} :
+         {left: isCollapsed? "80px":"250px",
+         transition:"ease 1s"
+          
+         }
+         }
+         
 
-        }}
+        
         >     
           {
             reviews.map((review,i)=>{
