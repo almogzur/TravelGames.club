@@ -11,8 +11,6 @@ import ReviewsSideBar from "../../components/reviews/ReviwesSideBar"
 import Header from '../../components/Global/Header'
 import TopBar from '../../components/reviews/TopBar';
 
-
-
 builder.init(`${process.env.BKEY}`);
 
 export async function getStaticProps() {

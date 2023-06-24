@@ -1,6 +1,7 @@
 import ProfileHeader from "../../components/profile/profileHader"
 import Head from "next/head"
 import ProfileSideBar from '../../components/profile/ProfileSideBar'
+import ProfileTopBar from "../../components/profile/ProfileTopBar"
 import Haeder from "../../components/Global/Header"
 import { authOptions } from '../api/auth/[...nextauth]'
 import { getServerSession } from "next-auth/next"
@@ -28,7 +29,8 @@ export async function getServerSideProps(context) {
   }
 }
 
-function ProfilePage ({session}){
+
+function ProfilePage ({session , reviews}){
 
   const [ isCollapsed, setIsCollapsed] = useState(true)
 
@@ -44,11 +46,15 @@ function ProfilePage ({session}){
         </Head>
         <Haeder/>
         <ProfileHeader isCollapsed={isCollapsed} />
-        <ProfileSideBar
-         defaultCollapsed={true}
-         isCollapsed={PagewidthIsLessThen ? true : isCollapsed}
-         setIsCollapsed={setIsCollapsed}
-         />
+        {PagewidthIsLessThen? 
+           <ProfileTopBar/> 
+          : 
+           <ProfileSideBar
+             defaultCollapsed={true}
+             isCollapsed={PagewidthIsLessThen ? true : isCollapsed}
+             setIsCollapsed={setIsCollapsed}
+         /> }
+      
         </>
     )
    

@@ -1,17 +1,23 @@
 * add project alieas
 
 * reviews
-   add serch bar √
+  - add serch bar √
    fix side bar icon on mobile make id null when the hook return true √
-   add new componenet to ovraly the imge on the 90% screen onclick e
-   add new fev icon to push to user data 
-   fix serch css mobile and desk  
-creat a new catrgort producat categoy and travel gategort 
-move back to top bar and puf serch i  it 
+   creat a new catrgort producat categoy and travel gategort √
+   on mob renders topbad on desk renders sidebad √
+
+   - Fix cards at mob resolitions
+      add new fev icon to push to user data 
+     fix serch css mobile and desk  
+     config Topbar
+     add new componenet to ovraly the imge on the 90% screen onclick e
+     
 
 * profile
-   side bar css on mobile 
-   fix side bar icon on mobile make id null when the hook return true 
+   side bar css on mobile √
+   fix side bar icon on mobile make id null when the hook√ 
+   
+   -
 
 * about 
  
