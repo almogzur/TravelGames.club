@@ -4,17 +4,34 @@ import Link from 'next/link';
 import Image from 'next/image';
 import React ,{  useContext, useEffect, useState } from 'react';
 import { SubMenu } from 'react-pro-sidebar';
+import { SerchBarlocatonContaxt } from "../../util/Context/Context"
+
 
 export default function SearchComponent({
     reviews , 
     MenuItem ,
-    isCollapsed 
+    isCollapsed ,
+    inTopbar,
+    inSideBar
    }) 
    {
     const [searchTerm, setSearchTerm] = useState('');
     const [searchResults, setSearchResults] = useState([]);
-    const PagewidthIsLessThen = useMediaQuery('(max-width: 1090px)')
+    const [isSerchOpen , setIsSerchOpen ] = useState(true)
+    const [location , setLocation] =useContext(SerchBarlocatonContaxt)
 
+    // ceck to see wher component is render
+    useEffect(()=>{
+
+      switch(inTopbar,inSideBar){
+        case inTopbar : setLocation("sidebar") 
+        break;
+        case inSideBar : setLocation("topbar")
+      }
+     
+      console.log(location)
+    }, [inSideBar, inTopbar, location, setLocation])
+    
     const handleSearch = (event) => {
 
       const { value } = event.target;
@@ -29,7 +46,7 @@ export default function SearchComponent({
     };
   
     return (
-       MenuItem ? //cheak to see if in sub menu is paseed as pros  if it is render the given props 
+       location === "sidebar" ? //cheak to see if in sub menu is paseed as pros  if it is render the given props 
         <>
        <input 
         type="text"
@@ -52,16 +69,15 @@ export default function SearchComponent({
        
      { 
        searchTerm === ""  ? null :
-      <SubMenu label={isCollapsed ? "Result" :" Serch Results"}>
+      <SubMenu open={isSerchOpen} onClick={()=>setIsSerchOpen(!isSerchOpen)} label={isCollapsed ? "Result" :" Serch Results"}>
         { 
          searchResults.map(
             (item) => 
             <MenuItem 
              key={item.name}
-             style={{padding:"20px"}}
+             style={{padding:"20px" ,color:"red"}}
             >  
             {item.name.replaceAll("-"," ")}
-            <Image style={{marginLeft:"15px"}} height={35} width={35} src={item.data.mainImg} alt=""/>
             </MenuItem>
            )
         }
@@ -69,8 +85,12 @@ export default function SearchComponent({
       }
 
         </>
-        : // else return this div 
+        :  // else return this div 
+       location === "topbar" ?
+        <>
        <div className='serch-wrapper'
+       key={"intopbar"}
+     
          >
         <input 
           className='serch-bar'
@@ -78,9 +98,12 @@ export default function SearchComponent({
           value={searchTerm}
           onChange={handleSearch}
           placeholder="Search..."
-    
+          style={{
+            width:"250px",
+            height:"55px"
+       }}
         />
-        <div className='serch-results'>
+        <div  className='serch-results'>
           {
             searchResults.map((item) => (
             searchTerm === '' ?  null 
@@ -103,6 +126,9 @@ export default function SearchComponent({
         </div>
 
        </div>
+        </>
+        :
+        null
     );
   }
   

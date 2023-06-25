@@ -3,10 +3,9 @@ import React ,{  useContext, useEffect, useState } from 'react';
 import { useMediaQuery } from 'usehooks-ts'
 import { builder } from '@builder.io/react';
 import { getLocalStorageItem } from '../../util/localstoreg';
-import { ReviewSidebarWidthContext } from '../../util/Context/Context';
+import { ReviewSidebarWidthContext,SerchBarlocatonContaxt } from '../../util/Context/Context';
 import CardsWrapper from '../../components/reviews/CardsWrapper';
 import Head from 'next/head';
-import CustomH1 from '../../components/reviews/CustomH1'
 import ReviewsSideBar from "../../components/reviews/ReviwesSideBar"
 import Header from '../../components/Global/Header'
 import TopBar from '../../components/reviews/TopBar';
@@ -31,11 +30,11 @@ export async function getStaticProps() {
 }
 
 export default function Reviews({ reviews }) {
-
-  const PagewidthIsLessThen = useMediaQuery('(max-width: 1090px)')
+  const PagewidthIsLessThen = useMediaQuery('(max-width: 900px)')
   const [ filterdReviews , setFilterdReviews ] = useState({})
   const [ category , setCategory ] = useState()
   const [isCollapsed , setIsCollapsed ] = useContext(ReviewSidebarWidthContext)
+
  
  // local storeg
   useEffect(()=>{
@@ -85,13 +84,12 @@ export default function Reviews({ reviews }) {
          <meta  property="og:image"  />
          <meta name="viewport" content="width=device-width, initial-scale=1 "  />
         </Head>
-        <Header/>
-        
+        <Header/>      
        {
          PagewidthIsLessThen ? 
         <TopBar 
          reviews={reviews}
-
+         category={category}
         />
        :
         <ReviewsSideBar  
@@ -101,11 +99,11 @@ export default function Reviews({ reviews }) {
          isCollapsed={ isCollapsed }
          setIsCollapsed={setIsCollapsed}       
         />
-
        }
-        <CustomH1 category={category}/>
-        <CardsWrapper reviews={filterdReviews.length > 0 ? filterdReviews : reviews} category={category} />
-
+        <CardsWrapper 
+         reviews={filterdReviews.length > 0 ? filterdReviews : reviews}
+         category={category} 
+         />
     </>
   );
 }

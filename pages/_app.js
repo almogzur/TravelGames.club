@@ -7,29 +7,27 @@ import '../styles/glob.css'
 import '../styles/Profile/profilepage.css'
 //Reviews
 import '../styles/Reviews/cardswrapper.css'
-import '../styles/Reviews/cardwrapperheadline.css'
 //ReviewPage 
 import '../styles/Reviews/ReviewPage/extebdedcaroysel.css'
 import '../styles/Reviews/ReviewPage/imegelayout.css'
 import '../styles/Reviews/ReviewPage/reviewpage.css'
-// Reviews topbar
-import '../styles/Reviews/topbar/serch.css'
-import '../styles/Reviews/topbar/topbar.css'
 // Context
 import { SessionProvider } from "next-auth/react"
-import { FavoritesContext , ReviewSidebarWidthContext } from '../util/Context/Context'
+import { FavoritesContext , ReviewSidebarWidthContext , SerchBarlocatonContaxt  } from '../util/Context/Context'
 
 function MyApp({ Component, pageProps : { session , ...pageProps } }) {  
       
       const [isCollapsed, setIsCollapsed] = useState(false)
+      const [location , setLocation] = useState('')
 
       return (
         <SessionProvider session={session}>
-        
+        <SerchBarlocatonContaxt.Provider value={[location , setLocation]}>
         <ReviewSidebarWidthContext.Provider value={[isCollapsed, setIsCollapsed] }>
            <Component {...pageProps} />  
+           
         </ReviewSidebarWidthContext.Provider>
-
+        </SerchBarlocatonContaxt.Provider>
         </SessionProvider>
          )
     }

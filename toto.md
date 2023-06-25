@@ -34,5 +34,6 @@
   NEXTAUTH_URL
 
 
+ define 3 media quarys  1200 900  600 
 
- 
+ and use them in css 

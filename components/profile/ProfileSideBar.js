@@ -3,6 +3,8 @@ import { useMediaQuery } from 'usehooks-ts'
 import { Sidebar, Menu, MenuItem, SubMenu } from 'react-pro-sidebar';
 import CircumIcon from '@klarr-agency/circum-icons-react'
 
+import {Xl , Md , Sm} from '../../util/Context/Context'
+
 // in the project all styles in hendeld in css models exept this component 
 
 export default function ProfileSidebar({isCollapsed,setIsCollapsed}) {
@@ -11,6 +13,7 @@ export default function ProfileSidebar({isCollapsed,setIsCollapsed}) {
 
   useEffect(()=>{
     console.log(PagewidthIsLessThen)
+    console.log(<Xl/> , <Md/> , <Sm/>)
 },[PagewidthIsLessThen])
 
   return (
@@ -30,9 +33,11 @@ export default function ProfileSidebar({isCollapsed,setIsCollapsed}) {
             <MenuItem > Link1  </MenuItem>
             <MenuItem> Link2 </MenuItem>
           </SubMenu>
+          { PagewidthIsLessThen? null :
           <MenuItem onClick={()=>setIsCollapsed(!isCollapsed)}>
-           { PagewidthIsLessThen? null : !isCollapsed ? ["Close SideBar", <CircumIcon key={2} size={25} name="minimize_1" />]:<CircumIcon name="maximize_1" />} 
+            {!isCollapsed ? ["Close SideBar", <CircumIcon key={2} size={25} name="minimize_1" />]:<CircumIcon name="maximize_1" />}
            </MenuItem>
+           }
         </Menu>
       </Sidebar>
     </div>

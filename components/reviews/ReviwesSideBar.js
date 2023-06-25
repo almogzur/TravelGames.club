@@ -16,7 +16,8 @@ export default function ReviewsSidebar({
      }) 
    {
 
-  const PagewidthIsLessThen = useMediaQuery('(max-width: 1090px)')
+  const PagewidthIsLessThen = useMediaQuery('(max-width: 900px)')
+
   const click = (e)=>{
 
     switch(e.target.innerText){
@@ -55,6 +56,7 @@ export default function ReviewsSidebar({
                SubMenu={SubMenu} 
                MenuItem={MenuItem}  
                isCollapsed={isCollapsed}
+               isSideBar={true}
            />
            <SubMenu label={"Categorys"}>
            <MenuItem onClick={(e)=>click(e)}

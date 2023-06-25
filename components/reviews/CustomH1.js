@@ -2,11 +2,11 @@ import { useEffect } from "react";
 
 function CustomH1({category}) { 
 
-useEffect(()=>{
-  //console.log(category , "profile h1")
-})
+      useEffect(()=>{
+      //console.log(category , "profile h1")
+       })
 
-  const handelText = (Cat) => {
+      const handelText = (Cat) => {
      switch(Cat){
       case "TGA" :  return "Travel Gear and Accessories" ; 
       break;
@@ -19,9 +19,9 @@ useEffect(()=>{
       default : return "All Reviews"
      }
 
-  }
-
-    return (
+      }
+  
+      return (
         <h3 className="cardwrapperheadline" >{handelText(category)}</h3>
       );
 }
