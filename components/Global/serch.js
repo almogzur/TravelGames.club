@@ -27,9 +27,8 @@ export default function SearchComponent({
         case inTopbar : setLocation("sidebar") 
         break;
         case inSideBar : setLocation("topbar")
-      }
-     
-      console.log(location)
+      }  
+    //  console.log(location)
     }, [inSideBar, inTopbar, location, setLocation])
     
     const handleSearch = (event) => {

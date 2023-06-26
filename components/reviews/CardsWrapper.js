@@ -1,33 +1,47 @@
 import { useEffect, useContext } from "react"
-import { ReviewSidebarWidthContext , SerchBarlocatonContaxt } from "../../util/Context/Context"
+import { ReviewSidebarWidthContext , SerchBarlocatonContaxt , PageWidthContext } from "../../util/Context/Context"
 import Card from './Card'
 import { useMediaQuery } from 'usehooks-ts'
 
 export default function CardsWrapper({reviews, category}){
 
   const [isCollapsed, setIsCollapsed] = useContext(ReviewSidebarWidthContext)
-  const PagewidthIsLessThen = useMediaQuery('(max-width: 900px)')
-  const [location , setLocation] = useContext(SerchBarlocatonContaxt)
+  const [serchBarLocation , setSerchBarLocation] = useContext(SerchBarlocatonContaxt)
+  const pageWidth = useContext(PageWidthContext) 
+  const xl = pageWidth.xl
+  const md = pageWidth.md
+  const sm = pageWidth.sm
 
     useEffect(()=>{
-      //  console.log( isCollapsed)
-    },[])
+        console.log( pageWidth)
+    },[pageWidth])
 
  return (
  
        <div className="cards-wrapper"
-        style={ // mob
-           PagewidthIsLessThen ? 
+        style={ //mob
+           xl && md && sm ?
            {
             left:"15px",
             "top": "200px"
            } 
-
            :
-           {  // desk
+           xl && md ?  
+           {  // tab
             left: isCollapsed? "80px":"250px",
-            transition:"ease 1s"
-           }}
+            transition:"ease 1s",
+            background:"green"
+           }
+           :
+          xl ?
+           { // desk
+            
+            }
+           : // desk and up
+           {
+
+           }
+           }
           >     
           {
             reviews.map((review,i)=>{

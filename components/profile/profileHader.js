@@ -1,6 +1,14 @@
+import {   PageWidthContext } from "../../util/Context/Context"
+import { useContext } from "react"
 import { useSession, signIn, signOut } from "next-auth/react"
 
+
 function ProfileHeader ({isCollapsed}) {
+
+   const pageWidth = useContext(PageWidthContext) 
+   const xl = pageWidth.xl
+   const md = pageWidth.md
+   const sm = pageWidth.sm
 
    const style = { 
       width:"100%",
@@ -9,9 +17,34 @@ function ProfileHeader ({isCollapsed}) {
       textAlign:"center"
    }
     const { data: session } = useSession()
-         return <div className="welcome" style={style}>{
+         return (
+         xl && md && sm ? 
+          <div className="welcome" style={style}>
+         {
             session? `Welcome Back ${session.user.name}` : null
-      }</div>
+         } 
+         </div>
+         :
+         xl && md ?  
+         <div className="welcome" style={style}>
+         {
+            session? `Welcome Back ${session.user.name}` : null
+         } 
+         </div>
+         :
+         xl?  
+         <div className="welcome" style={style}>
+         {
+            session? `Welcome Back ${session.user.name}` : null
+         } 
+         </div>
+         :
+         <div className="welcome" style={style}>
+         {
+            session? `Welcome Back ${session.user.name}` : null
+         } 
+         </div>
+      )
 }
 
 export default ProfileHeader

@@ -3,7 +3,7 @@ import React ,{  useContext, useEffect, useState } from 'react';
 import { useMediaQuery } from 'usehooks-ts'
 import { builder } from '@builder.io/react';
 import { getLocalStorageItem } from '../../util/localstoreg';
-import { ReviewSidebarWidthContext,SerchBarlocatonContaxt } from '../../util/Context/Context';
+import { ReviewSidebarWidthContext,PageWidthContext } from '../../util/Context/Context';
 import CardsWrapper from '../../components/reviews/CardsWrapper';
 import Head from 'next/head';
 import ReviewsSideBar from "../../components/reviews/ReviwesSideBar"
@@ -30,12 +30,14 @@ export async function getStaticProps() {
 }
 
 export default function Reviews({ reviews }) {
-  const PagewidthIsLessThen = useMediaQuery('(max-width: 900px)')
+  const pageWidth = useContext(PageWidthContext) 
+  const xl = pageWidth.xl
+  const md = pageWidth.md
+  const sm = pageWidth.sm
   const [ filterdReviews , setFilterdReviews ] = useState({})
   const [ category , setCategory ] = useState()
   const [isCollapsed , setIsCollapsed ] = useContext(ReviewSidebarWidthContext)
 
- 
  // local storeg
   useEffect(()=>{
      // on page navigate get back the category from local storeg and
@@ -69,12 +71,6 @@ export default function Reviews({ reviews }) {
 
 // chak for width and update sidebar no dip array this need to cheak vs the window listner for changes 
 //cansel esliont no dep array 
-  useEffect(()=>{
- // console.log("this is runing")
-  if(PagewidthIsLessThen){
-    setIsCollapsed(true)
-  }
-})
 
   return (
     <>     
@@ -86,18 +82,35 @@ export default function Reviews({ reviews }) {
         </Head>
         <Header/>      
        {
-         PagewidthIsLessThen ? 
+        xl && md && sm ?  // mon
         <TopBar 
+         key={"tab"}
          reviews={reviews}
          category={category}
         />
        :
-        <ReviewsSideBar  
+        xl && md ?    // tab
+        <TopBar 
+         key={"tab"}
          reviews={reviews}
-         setCategory={setCategory}
-         defaultCollapsed={false}
-         isCollapsed={ isCollapsed }
-         setIsCollapsed={setIsCollapsed}       
+         category={category}
+        />
+        :
+        xl? // desk 
+        <ReviewsSideBar  
+           reviews={reviews}
+           setCategory={setCategory}
+           defaultCollapsed={false}
+           isCollapsed={ isCollapsed }
+           setIsCollapsed={setIsCollapsed}       
+        />
+        : //  desk and up
+        <ReviewsSideBar  
+           reviews={reviews}
+           setCategory={setCategory}
+           defaultCollapsed={false}
+           isCollapsed={ isCollapsed }
+           setIsCollapsed={setIsCollapsed}       
         />
        }
         <CardsWrapper 

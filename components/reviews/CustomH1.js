@@ -1,10 +1,16 @@
-import { useEffect } from "react";
+import { useEffect , useContext , useState } from "react";
+import {PageWidthContext} from "../../util/Context/Context"
 
 function CustomH1({category}) { 
 
-      useEffect(()=>{
+  const pageWidth = useContext(PageWidthContext) 
+  const xl = pageWidth.xl
+  const md = pageWidth.md
+  const sm = pageWidth.sm
+
+  useEffect(()=>{
       //console.log(category , "profile h1")
-       })
+   })
 
       const handelText = (Cat) => {
      switch(Cat){
@@ -22,6 +28,15 @@ function CustomH1({category}) {
       }
   
       return (
+        xl && md && sm ? 
+        <h3 className="cardwrapperheadline" >{handelText(category)}</h3>
+        :
+        xl && md ? 
+        <h3 className="cardwrapperheadline" >{handelText(category)}</h3>
+        :
+        xl ? 
+        <h3 className="cardwrapperheadline" >{handelText(category)}</h3>
+        :
         <h3 className="cardwrapperheadline" >{handelText(category)}</h3>
       );
 }

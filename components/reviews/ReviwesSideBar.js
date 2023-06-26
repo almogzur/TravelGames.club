@@ -4,6 +4,7 @@ import CircumIcon from '@klarr-agency/circum-icons-react'
 import { useMediaQuery } from 'usehooks-ts'
 import { useEffect, useState , useContext } from 'react';
 import Serch from '../Global/serch'
+import { PageWidthContext } from '../../util/Context/Context';
 
 
 // in the project all styles is in css models ecxepts this component 
@@ -15,8 +16,11 @@ export default function ReviewsSidebar({
     ,reviews
      }) 
    {
-
-  const PagewidthIsLessThen = useMediaQuery('(max-width: 900px)')
+    const pageWidth = useContext(PageWidthContext) 
+    const xl = pageWidth.xl
+    const md = pageWidth.md
+    const sm = pageWidth.sm
+ 
 
   const click = (e)=>{
 
@@ -78,7 +82,7 @@ export default function ReviewsSidebar({
            </MenuItem>
            </SubMenu>
 
-         { PagewidthIsLessThen ? null:
+         { xl ? null:
           <MenuItem onClick={()=>setIsCollapsed(!isCollapsed)}>{
               isCollapsed ?  <CircumIcon name="maximize_1" />   :<CircumIcon name="minimize_1" />  }
           

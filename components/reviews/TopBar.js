@@ -5,11 +5,17 @@ import { useMediaQuery } from "usehooks-ts";
 import Serch from '../Global/serch'
 import CircumIcon from '@klarr-agency/circum-icons-react'
 import CustomH1 from '../../components/reviews/CustomH1'
+import { PageWidthContext } from "../../util/Context/Context";
 
 export default function ReviewsTopBar({
     reviews,
     category 
-    }){
+    })
+    {
+      const pageWidth = useContext(PageWidthContext) 
+       const xl = pageWidth.xl
+       const md = pageWidth.md
+       const sm = pageWidth.sm
     
     return ( 
         <div className="topbar-wrapper"
