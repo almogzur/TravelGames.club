@@ -1,9 +1,8 @@
 // pages/your-page.jsx
 import React ,{  useContext, useEffect, useState } from 'react';
-import { useMediaQuery } from 'usehooks-ts'
 import { builder } from '@builder.io/react';
 import { getLocalStorageItem } from '../../util/localstoreg';
-import { ReviewSidebarWidthContext,PageWidthContext } from '../../util/Context/Context';
+import { IsCollapsedContext,PageWidthContext } from '../../util/Context/Context';
 import CardsWrapper from '../../components/reviews/CardsWrapper';
 import Head from 'next/head';
 import ReviewsSideBar from "../../components/reviews/ReviwesSideBar"
@@ -30,13 +29,10 @@ export async function getStaticProps() {
 }
 
 export default function Reviews({ reviews }) {
-  const pageWidth = useContext(PageWidthContext) 
-  const xl = pageWidth.xl
-  const md = pageWidth.md
-  const sm = pageWidth.sm
+  const { xl , md , sm } = useContext(PageWidthContext) 
   const [ filterdReviews , setFilterdReviews ] = useState({})
   const [ category , setCategory ] = useState()
-  const [isCollapsed , setIsCollapsed ] = useContext(ReviewSidebarWidthContext)
+  const [ isCollapsed , setIsCollapsed ] = useContext(IsCollapsedContext)
 
  // local storeg
   useEffect(()=>{

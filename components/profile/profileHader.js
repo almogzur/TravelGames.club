@@ -5,10 +5,7 @@ import { useSession, signIn, signOut } from "next-auth/react"
 
 function ProfileHeader ({isCollapsed}) {
 
-   const pageWidth = useContext(PageWidthContext) 
-   const xl = pageWidth.xl
-   const md = pageWidth.md
-   const sm = pageWidth.sm
+   const {xl,md,sm} = useContext(PageWidthContext) 
 
    const style = { 
       width:"100%",

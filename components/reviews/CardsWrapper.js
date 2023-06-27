@@ -1,45 +1,62 @@
 import { useEffect, useContext } from "react"
-import { ReviewSidebarWidthContext , SerchBarlocatonContaxt , PageWidthContext } from "../../util/Context/Context"
+import { IsCollapsedContext ,  PageWidthContext } from "../../util/Context/Context"
 import Card from './Card'
-import { useMediaQuery } from 'usehooks-ts'
 
 export default function CardsWrapper({reviews, category}){
 
-  const [isCollapsed, setIsCollapsed] = useContext(ReviewSidebarWidthContext)
-  const [serchBarLocation , setSerchBarLocation] = useContext(SerchBarlocatonContaxt)
-  const pageWidth = useContext(PageWidthContext) 
-  const xl = pageWidth.xl
-  const md = pageWidth.md
-  const sm = pageWidth.sm
+  const [isCollapsed, setIsCollapsed] = useContext(IsCollapsedContext)
+
+  const {xl,md,sm} = useContext(PageWidthContext) 
 
     useEffect(()=>{
-        console.log( pageWidth)
-    },[pageWidth])
+        console.log( xl,md,sm)
+    },[md, sm, xl])
 
  return (
- 
        <div className="cards-wrapper"
-        style={ //mob
-           xl && md && sm ?
+        style={ 
+           xl && md && sm ? //mob
            {
+            position:"absolute",
             left:"15px",
-            "top": "200px"
+            "top": "250px",
+            transition:"ease 1s",
+            background:"pink"
            } 
            :
-           xl && md ?  
-           {  // tab
-            left: isCollapsed? "80px":"250px",
+           xl && md ?  // tab
+           {  
+            position:"absolute",
+            top:"250px",
             transition:"ease 1s",
-            background:"green"
+            display:"flex",
+            flexDirection:"row",
+            flexWrap:"wrap",
+            justifyContent:"center",
+            width:"100%",
+        
            }
            :
-          xl ?
-           { // desk
-            
-            }
-           : // desk and up
+           xl ?// desk
+           { 
+            position:"absolute",
+            top:"100px",
+            left:isCollapsed? "80px" : "250px",
+            display:"flex",
+            flexDirection:"row",
+            flexWrap:"wrap",
+            transition:"ease 1s",
+       
+           }
+           : // desk and up 
            {
-
+            position:"absolute",
+            top:"100px",
+            display:"flex",
+            flexDirection:"row",
+            flexWrap:"wrap",
+            left:isCollapsed? "80px" : "250px",
+            transition:"ease 1s",
            }
            }
           >     

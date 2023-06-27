@@ -3,10 +3,7 @@ import {PageWidthContext} from "../../util/Context/Context"
 
 function CustomH1({category}) { 
 
-  const pageWidth = useContext(PageWidthContext) 
-  const xl = pageWidth.xl
-  const md = pageWidth.md
-  const sm = pageWidth.sm
+  const {xl,md,sm} = useContext(PageWidthContext) 
 
   useEffect(()=>{
       //console.log(category , "profile h1")

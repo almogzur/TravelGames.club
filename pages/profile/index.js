@@ -1,14 +1,13 @@
+import { authOptions } from '../api/auth/[...nextauth]'
+import { getServerSession } from "next-auth/next"
+import { useState , useContext , useEffect} from 'react';
+
+import { PageWidthContext } from "../../util/Context/Context"
 import ProfileHeader from "../../components/profile/profileHader"
 import Head from "next/head"
 import ProfileSideBar from '../../components/profile/ProfileSideBar'
 import ProfileTopBar from "../../components/profile/ProfileTopBar"
 import Haeder from "../../components/Global/Header"
-import { authOptions } from '../api/auth/[...nextauth]'
-import { getServerSession } from "next-auth/next"
-import { useState, useContext,useEffect} from 'react';
-import { useMediaQuery } from 'usehooks-ts'
-import {  PageWidthContext } from "../../util/Context/Context"
-
 
 export async function getServerSideProps(context) {
   
@@ -30,16 +29,12 @@ export async function getServerSideProps(context) {
   }
 }
 
-
 function ProfilePage ({session , reviews}){
 
-  const [ isCollapsed, setIsCollapsed] = useState(true)
+  const [ profileIsCollapsed, setProfileIsCollapsed] = useState(false)
 
-  const PagewidthIsLessThen = useMediaQuery('(max-width: 1090px)')
-  const pageWidth = useContext(PageWidthContext) 
-  const xl = pageWidth.xl
-  const md = pageWidth.md
-  const sm = pageWidth.sm
+
+  const {xl,md,sm} = useContext(PageWidthContext) 
 
     return(
         <>
@@ -50,26 +45,25 @@ function ProfilePage ({session , reviews}){
          <meta name="viewport" content="width=device-width, initial-scale=1 "  />
         </Head>
         <Haeder/>
-        <ProfileHeader isCollapsed={isCollapsed} />
+        
+        <ProfileHeader isCollapsed={profileIsCollapsed} />
         {
           xl && md && sm ? // mob 
-         <ProfileTopBar/> 
+          <ProfileTopBar/> 
           : 
           xl && md ? //tab
           <ProfileTopBar/> 
          :
-         xl ? 
+          xl ? //desk
          <ProfileSideBar
-             defaultCollapsed={true}
-             isCollapsed={PagewidthIsLessThen ? true : isCollapsed}
-             setIsCollapsed={setIsCollapsed}
-         /> //desk
+             isCollapsed={profileIsCollapsed}
+             setIsCollapsed={setProfileIsCollapsed}
+         /> //and up 
          :
          <ProfileSideBar
-             defaultCollapsed={true}
-             isCollapsed={PagewidthIsLessThen ? true : isCollapsed}
-             setIsCollapsed={setIsCollapsed}
-         />  // desk and up
+             isCollapsed={ profileIsCollapsed}
+             setIsCollapsed={setProfileIsCollapsed}
+         />  
          }
       
         </>

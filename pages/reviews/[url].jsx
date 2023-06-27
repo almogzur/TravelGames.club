@@ -1,8 +1,9 @@
 // pages/collections/[collection].jsx
-import { BuilderComponent, builder } from '@builder.io/react';
+import { builder } from '@builder.io/react';
 import ReviewPage from '../../components/reviews/reviwepage/ReviewPage.js'
 import Header from "../../components/Global/Header"
 import Head from 'next/head';
+
 builder.init(`${process.env.BKEY}`);
 
 // url name is passed to static props as the name of the file as key 

@@ -4,10 +4,7 @@ import {   PageWidthContext } from "../../util/Context/Context"
 
 export default function ProfileTobBar({}){
     
-    const pageWidth = useContext(PageWidthContext) 
-    const xl = pageWidth.xl
-    const md = pageWidth.md
-    const sm = pageWidth.sm
+  const {xl,md,sm} = useContext(PageWidthContext) 
 
     return (
         xl && md && sm ?   // mob
