@@ -6,70 +6,140 @@ import { useEffect, useState , useContext } from 'react';
 
 export default function  Card  ({ review }) {
    
-   const pageWidth = useContext(PageWidthContext) 
-   const xl = pageWidth.xl
-   const md = pageWidth.md
-   const sm = pageWidth.sm
+   const {xl,md,sm} = useContext(PageWidthContext) 
 
     return( 
-      xl && md && sm ? 
       <Link  href={`/reviews/${review.name}`}>
-      <div  key={review.data.name} className="card" >
-         <div className="card-header">
-        
-            <Image priority src={review.data.mainImg} width={200} height={200} alt=""/>
-         </div>
-         <div className="card-body">
-            <h2 style={{marginTop:"-10px"}}>{review.data.name}</h2>  
-            <p style={{marginTop:"-10px" , padding:"10px"}}>{review.data.cardtext}</p> 
-          
-         </div>    
-      </div>
-      </Link>
-      :
-      xl && md ? 
-      <Link  href={`/reviews/${review.name}`}>
-      <div  key={review.data.name} className="card" >
-         <div className="card-header">
-        
-            <Image priority src={review.data.mainImg} width={200} height={200} alt=""/>
-         </div>
-         <div className="card-body">
-            <h2 style={{marginTop:"-10px"}}>{review.data.name}</h2>  
-            <p style={{marginTop:"-10px" , padding:"10px"}}>{review.data.cardtext}</p> 
-          
-         </div>    
-      </div>
-      </Link>
-      :
-      xl ?   
-       <Link  href={`/reviews/${review.name}`}>
-      <div  key={review.data.name} className="card" >
-         <div className="card-header">
-        
-            <Image priority src={review.data.mainImg} width={200} height={200} alt=""/>
-         </div>
-         <div className="card-body">
-            <h2 style={{marginTop:"-10px"}}>{review.data.name}</h2>  
-            <p style={{marginTop:"-10px" , padding:"10px"}}>{review.data.cardtext}</p> 
-          
-         </div>    
-      </div>
-      </Link>
-      :
-      <Link  href={`/reviews/${review.name}`}>
-      <div  key={review.data.name} className="card" >
-         <div className="card-header">
-        
-            <Image priority src={review.data.mainImg} width={200} height={200} alt=""/>
-         </div>
-         <div className="card-body">
-            <h2 style={{marginTop:"-10px"}}>{review.data.name}</h2>  
-            <p style={{marginTop:"-10px" , padding:"10px"}}>{review.data.cardtext}</p> 
-          
-         </div>    
-      </div>
-      </Link>
-              )
-  }
+       <div  className="card" 
+         key={review.data.name}  
+         style={
+             xl && md && sm ?  
+              {
+              margin:"10px",
+              marginTop:"10px",
+              width:"70px",
+              display:"flex",
+              height:"200px", 
+             }
+            :
+            xl && md ?{
+            margin:"10px",
+            width:"130px",
+            height:"300px",
+            backgroundColor:" #fff",
+            overflow: "hidden",
+            transition:" all .2s ease-in-out",
+            boxShadow: "0 3px 30px rgba(0, 0, 0, 0.6)",
+            borderEadius:"15px",
+            
+            }
+            :
+            xl?{
+              margin:"20px",
+            width:"250px",
+            height:"400px",
+            backgroundColor:" #fff",
+            overflow: "hidden",
+            transition:" all .2s ease-in-out",
+            boxShadow: "0 3px 30px rgba(0, 0, 0, 0.6)",
+            borderEadius:"15px",
 
+            }
+            :{
+            margin:"20px",
+            width:"250px",
+            height:"400px",
+            backgroundColor:" #fff",
+            overflow: "hidden",
+            transition:" all .2s ease-in-out",
+            boxShadow: "0 3px 30px rgba(0, 0, 0, 0.6)",
+            borderEadius:"15px",
+            }
+            }
+      >
+         <div className="card-header"
+         style={
+         xl && md && sm ? 
+         {
+         
+         } 
+         :
+         xl && md ? 
+         {
+            
+         }
+         :
+         xl?
+         {
+       
+         }
+         :
+         {
+         
+         
+         }
+         }
+         >
+          <Image 
+            priority
+            src={review.data.mainImg} 
+            width={
+               xl && md && sm ? 
+               150
+               :
+               xl && md ? 
+               150
+               :
+               xl?
+               250
+               :
+               250
+               }
+            height={
+               xl && md && sm ? 
+               150
+               :
+               xl && md ? 
+               150
+               :
+               xl?
+               250
+               :
+               250
+               } 
+            alt=""
+            style={{ objectFit: "fill"}}
+            />
+         </div>
+         <div className="card-body"
+         style={
+            xl && md && sm ? 
+         {
+
+         }
+         :
+         xl && md ? 
+         {}
+         :
+         xl?
+         {}
+         :
+         {
+         display: "flex",
+         flexDirection: "column",
+         alignItems: "center",
+         padding: "10px",
+         minHeight: "200px",
+         }
+         }
+         >
+            <h2 style={{marginTop:"-10px"}}>{review.data.name}</h2>  
+            <p style={{marginTop:"-10px" , padding:"10px"}}>{review.data.cardtext}</p>  
+         </div>    
+      </div>
+      </Link>
+     )}
+
+
+ 
+ 
