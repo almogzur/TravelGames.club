@@ -18,10 +18,14 @@ export default function CardsWrapper({reviews, category}){
            xl && md && sm ? //mob
            {
             position:"absolute",
-            left:"15px",
-            "top": "250px",
+            position:"absolute",
+            top:"250px",
             transition:"ease 1s",
-            background:"pink"
+            display:"flex",
+            flexDirection:"row",
+            flexWrap:"wrap",
+            justifyContent:"center",
+
            } 
            :
            xl && md ?  // tab

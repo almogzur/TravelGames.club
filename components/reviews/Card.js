@@ -15,22 +15,23 @@ export default function  Card  ({ review }) {
          style={
              xl && md && sm ?  
               {
-              margin:"10px",
-              marginTop:"10px",
-              width:"70px",
-              display:"flex",
-              height:"200px", 
+               width:"160px",
+               height:"300px",
+               backgroundColor:" #fff",
+               overflow: "hidden",
+               transition:" all .2s ease-in-out",
+               boxShadow: "0 3px 30px rgba(0, 0, 0, 0.6)",
+               margin:"5px"
              }
             :
             xl && md ?{
-            margin:"10px",
-            width:"130px",
+            margin:"9px",
+            width:"280px",
             height:"300px",
             backgroundColor:" #fff",
             overflow: "hidden",
             transition:" all .2s ease-in-out",
             boxShadow: "0 3px 30px rgba(0, 0, 0, 0.6)",
-            borderEadius:"15px",
             
             }
             :
