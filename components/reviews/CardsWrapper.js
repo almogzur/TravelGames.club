@@ -25,6 +25,8 @@ export default function CardsWrapper({reviews, category}){
             flexDirection:"row",
             flexWrap:"wrap",
             justifyContent:"center",
+            width:"100%",
+            
 
            } 
            :

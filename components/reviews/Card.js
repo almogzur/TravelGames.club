@@ -11,27 +11,29 @@ export default function  Card  ({ review }) {
     return( 
       <Link  href={`/reviews/${review.name}`}>
        <div  className="card" 
-         key={review.data.name}  
-         style={
+          key={review.data.name}  
+          style={
              xl && md && sm ?  
               {
-               width:"160px",
+               width:"45vw",
                height:"300px",
                backgroundColor:" #fff",
                overflow: "hidden",
                transition:" all .2s ease-in-out",
                boxShadow: "0 3px 30px rgba(0, 0, 0, 0.6)",
-               margin:"5px"
+               margin:"5px",
+              
              }
             :
             xl && md ?{
             margin:"9px",
-            width:"280px",
+            width:"45vw",
             height:"300px",
             backgroundColor:" #fff",
             overflow: "hidden",
             transition:" all .2s ease-in-out",
             boxShadow: "0 3px 30px rgba(0, 0, 0, 0.6)",
+          
             
             }
             :
@@ -56,8 +58,8 @@ export default function  Card  ({ review }) {
             boxShadow: "0 3px 30px rgba(0, 0, 0, 0.6)",
             borderEadius:"15px",
             }
-            }
-      >
+           }
+          >
          <div className="card-header"
          style={
          xl && md && sm ? 
@@ -137,7 +139,7 @@ export default function  Card  ({ review }) {
             <h2 style={{marginTop:"-10px"}}>{review.data.name}</h2>  
             <p style={{marginTop:"-10px" , padding:"10px"}}>{review.data.cardtext}</p>  
          </div>    
-      </div>
+       </div>
       </Link>
      )}
 
