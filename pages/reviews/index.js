@@ -2,7 +2,7 @@
 import React ,{  useContext, useEffect, useState } from 'react';
 import { builder } from '@builder.io/react';
 import { getLocalStorageItem } from '../../util/localstoreg';
-import { IsCollapsedContext,PageWidthContext } from '../../util/Context/Context';
+import { IsReviewSideBarCollapsedContext,PageWidthContext } from '../../util/Context/Context';
 import CardsWrapper from '../../components/reviews/CardsWrapper';
 import Head from 'next/head';
 import ReviewsSideBar from "../../components/reviews/ReviwesSideBar"
@@ -29,22 +29,23 @@ export async function getStaticProps() {
 }
 
 export default function Reviews({ reviews }) {
-  const { xl , md , sm } = useContext(PageWidthContext) 
+  const [diplayState,setDisplaystate] = useContext(PageWidthContext) 
   const [ filterdReviews , setFilterdReviews ] = useState({})
-  const [ category , setCategory ] = useState()
-  const [ isCollapsed , setIsCollapsed ] = useContext(IsCollapsedContext)
+  const [ category , setCategory ] = useState("")
+  const [isReviewSideBarCollapsed, setIsReviewSideBarCollapsed]= useContext(IsReviewSideBarCollapsedContext)
 
  // local storeg
   useEffect(()=>{
      // on page navigate get back the category from local storeg and
      // use it as state this works across all components LocalStoreg is in the Global Scoop
      const storedState = getLocalStorageItem('category');
-
      if (storedState) {
       setCategory(storedState);
     }
   },[])
+
 // reviers filter 
+
   useEffect(()=>{
   //  console.log( "filtring process")
     const sortByCategoty = (Obj) => { 
@@ -65,6 +66,10 @@ export default function Reviews({ reviews }) {
     setFilterdReviews(sorted)
   },[ category, reviews ])
 
+
+  useEffect(()=>{
+
+  },[])
 // chak for width and update sidebar no dip array this need to cheak vs the window listner for changes 
 //cansel esliont no dep array 
 
@@ -75,38 +80,40 @@ export default function Reviews({ reviews }) {
          <title>{"Reviews"}</title>
          <meta  property="og:image"  />
          <meta name="viewport" content="width=device-width, initial-scale=1 "  />
+         <meta name="format-detection" content="telephone=no, date=no, email=no, address=no" />
+
         </Head>
         <Header/>      
        {
-        xl && md && sm ?  // mon
+        diplayState=== "mob" ?  // mon
         <TopBar 
-         key={"tab"}
+         key={"mob"}
          reviews={reviews}
          category={category}
         />
        :
-        xl && md ?    // tab
+       diplayState === "tab" ?
         <TopBar 
          key={"tab"}
          reviews={reviews}
          category={category}
         />
         :
-        xl? // desk 
-        <ReviewsSideBar  
+        diplayState === "desk" ?
+        <ReviewsSideBar      
            reviews={reviews}
            setCategory={setCategory}
            defaultCollapsed={false}
-           isCollapsed={ isCollapsed }
-           setIsCollapsed={setIsCollapsed}       
+           isCollapsed={ isReviewSideBarCollapsed }
+           setIsCollapsed={setIsReviewSideBarCollapsed}       
         />
-        : //  desk and up
+        : 
         <ReviewsSideBar  
            reviews={reviews}
            setCategory={setCategory}
            defaultCollapsed={false}
-           isCollapsed={ isCollapsed }
-           setIsCollapsed={setIsCollapsed}       
+           isCollapsed={ isReviewSideBarCollapsed }
+           setIsCollapsed={setIsReviewSideBarCollapsed}       
         />
        }
         <CardsWrapper 

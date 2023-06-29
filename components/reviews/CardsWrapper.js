@@ -1,23 +1,22 @@
+"use client"
 import { useEffect, useContext } from "react"
-import { IsCollapsedContext ,  PageWidthContext } from "../../util/Context/Context"
+import { IsReviewSideBarCollapsedContext ,  PageWidthContext } from "../../util/Context/Context"
 import Card from './Card'
 
 export default function CardsWrapper({reviews, category}){
 
-  const [isCollapsed, setIsCollapsed] = useContext(IsCollapsedContext)
-
-  const {xl,md,sm} = useContext(PageWidthContext) 
+  const [isReviewSideBarCollapsed, setIsReviewSideBarCollapsed] = useContext(IsReviewSideBarCollapsedContext)
+  const [diplayState,setDisplaystate] = useContext(PageWidthContext) 
 
     useEffect(()=>{
-        console.log( xl,md,sm)
-    },[md, sm, xl])
+       
+    },[])
 
  return (
        <div className="cards-wrapper"
         style={ 
-           xl && md && sm ? //mob
+          diplayState=== "mob" ?  // mon
            {
-            position:"absolute",
             position:"absolute",
             top:"250px",
             transition:"ease 1s",
@@ -25,12 +24,9 @@ export default function CardsWrapper({reviews, category}){
             flexDirection:"row",
             flexWrap:"wrap",
             justifyContent:"center",
-            width:"100%",
-            
-
            } 
            :
-           xl && md ?  // tab
+           diplayState === "tab" ?
            {  
             position:"absolute",
             top:"250px",
@@ -39,15 +35,13 @@ export default function CardsWrapper({reviews, category}){
             flexDirection:"row",
             flexWrap:"wrap",
             justifyContent:"center",
-            width:"100%",
-        
            }
            :
-           xl ?// desk
+           diplayState === "desk" ?
            { 
             position:"absolute",
             top:"100px",
-            left:isCollapsed? "80px" : "250px",
+            left:isReviewSideBarCollapsed? "80px" : "250px",
             display:"flex",
             flexDirection:"row",
             flexWrap:"wrap",
@@ -61,7 +55,7 @@ export default function CardsWrapper({reviews, category}){
             display:"flex",
             flexDirection:"row",
             flexWrap:"wrap",
-            left:isCollapsed? "80px" : "250px",
+            left:isReviewSideBarCollapsed? "80px" : "250px",
             transition:"ease 1s",
            }
            }

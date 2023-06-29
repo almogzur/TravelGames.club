@@ -6,39 +6,42 @@ import { useEffect, useState , useContext } from 'react';
 
 export default function  Card  ({ review }) {
    
-   const {xl,md,sm} = useContext(PageWidthContext) 
+   const [diplayState,setDisplaystate]= useContext(PageWidthContext) 
+   const [fortyFiveViewUnits,setFortyFiveViewUnits] = useState(0)
 
-    return( 
-      <Link  href={`/reviews/${review.name}`}>
-       <div  className="card" 
-          key={review.data.name}  
-          style={
-             xl && md && sm ?  
-              {
-               width:"45vw",
+    useEffect(()=>{
+      const getFortyFiveVw = () => {
+       setFortyFiveViewUnits ('45vw');
+     };
+     getFortyFiveVw()
+  
+   },[])
+
+   const cardStyle =  
+             diplayState=== "mob" ?  // mon
+             {
+               width:fortyFiveViewUnits,
                height:"300px",
                backgroundColor:" #fff",
                overflow: "hidden",
                transition:" all .2s ease-in-out",
                boxShadow: "0 3px 30px rgba(0, 0, 0, 0.6)",
                margin:"5px",
-              
              }
-            :
-            xl && md ?{
+             :
+             diplayState === "tab" ?
+             { 
             margin:"9px",
-            width:"45vw",
-            height:"300px",
-            backgroundColor:" #fff",
+            width:fortyFiveViewUnits,
+            height:"400px",
             overflow: "hidden",
             transition:" all .2s ease-in-out",
             boxShadow: "0 3px 30px rgba(0, 0, 0, 0.6)",
-          
-            
-            }
-            :
-            xl?{
-              margin:"20px",
+             }
+             :
+             diplayState === "desk" ?
+             {
+            margin:"7px",
             width:"250px",
             height:"400px",
             backgroundColor:" #fff",
@@ -46,100 +49,129 @@ export default function  Card  ({ review }) {
             transition:" all .2s ease-in-out",
             boxShadow: "0 3px 30px rgba(0, 0, 0, 0.6)",
             borderEadius:"15px",
+             }
+             :
+             { 
+            margin:"10px",
+            width:"250px",
+            height:"400px",
+            backgroundColor:" #fff",
+            overflow: "hidden",
+            transition:" all .2s ease-in-out",
+            boxShadow: "0 3px 30px rgba(0, 0, 0, 0.6)",
+            borderEadius:"15px",
+ }
 
-            }
-            :{
-            margin:"20px",
-            width:"250px",
-            height:"400px",
-            backgroundColor:" #fff",
-            overflow: "hidden",
-            transition:" all .2s ease-in-out",
-            boxShadow: "0 3px 30px rgba(0, 0, 0, 0.6)",
-            borderEadius:"15px",
-            }
-           }
+    return( 
+      <Link  href={`/reviews/${review.name}`}>
+        <div  className="card" 
+          key={review.data.name}  
+          style={cardStyle}
           >
-         <div className="card-header"
-         style={
-         xl && md && sm ? 
-         {
-         
-         } 
-         :
-         xl && md ? 
-         {
-            
-         }
-         :
-         xl?
-         {
-       
-         }
-         :
-         {
-         
-         
-         }
-         }
-         >
+         <div className="card-header">
           <Image 
             priority
             src={review.data.mainImg} 
-            width={
-               xl && md && sm ? 
-               150
-               :
-               xl && md ? 
-               150
-               :
-               xl?
-               250
-               :
-               250
-               }
-            height={
-               xl && md && sm ? 
-               150
-               :
-               xl && md ? 
-               150
-               :
-               xl?
-               250
-               :
-               250
-               } 
-            alt=""
-            style={{ objectFit: "fill"}}
+             alt=""
+             height={150}
+             width={150}
+            style={{ width: '100%' , objectFit:"scale-down", }} // optional
             />
-         </div>
-         <div className="card-body"
-         style={
-            xl && md && sm ? 
-         {
-
-         }
-         :
-         xl && md ? 
-         {}
-         :
-         xl?
-         {}
-         :
-         {
-         display: "flex",
-         flexDirection: "column",
-         alignItems: "center",
-         padding: "10px",
-         minHeight: "200px",
-         }
-         }
-         >
-            <h2 style={{marginTop:"-10px"}}>{review.data.name}</h2>  
-            <p style={{marginTop:"-10px" , padding:"10px"}}>{review.data.cardtext}</p>  
-         </div>    
+         </div>      
+         {       
+       diplayState=== "mob" ?  // mon
+       <div className="card-body" 
+              style={{lineHeight:"15px"}} 
+              >
+               <h2 
+               style={{textAlign:"center",}} 
+               >{review.data.name.slice(0,15)+"..."}
+               </h2>
+               <p style={{marginLeft:"5px",height:"45px"}}>{review.data.intro.slice(0,100)+"..."}</p>
+               <h3 style={{marginLeft:"7px"}}>{review.data.price+" $"}</h3>
+             <div 
+               style={{
+                height:"20px",
+                width:"100px",
+                background:"#3f72af",
+                borderRadius:"10px",
+                color:"#DBE2EF",
+                marginLeft:"5px",
+              
+                }}
+               >{review.data.category}
+            </div>
+        </div>
+            :
+       diplayState=== "tab" ?  // mon
+       <div className="card-body" 
+              style={{lineHeight:"15px"}} 
+              >
+               <h2 
+               style={{textAlign:"center",}} 
+               >{review.data.name.slice(0,15)+"..."}
+               </h2>
+               <p style={{marginLeft:"5px",height:"45px"}}>{review.data.intro.slice(0,100)+"..."}</p>
+               <h3 style={{marginLeft:"7px"}}>{review.data.price+" $"}</h3>
+             <div 
+               style={{
+                height:"20px",
+                width:"100px",
+                background:"#3f72af",
+                borderRadius:"10px",
+                color:"#DBE2EF",
+                marginLeft:"5px",
+              
+                }}
+               >{review.data.category}
+            </div>
+        </div>
+            :
+       diplayState=== "desk" ?  // mon
+       <div className="card-body" 
+        style={{lineHeight:"15px"}} 
+       >
+          <h2  style={{textAlign:"center",}} >{review.data.name.slice(0,15)+"..."}</h2>
+          <p style={{marginLeft:"5px"}}>{review.data.intro.slice(0,100)+"..."}</p>
+          <h3 style={{marginLeft:"7px"}}>{review.data.price+" $"}</h3>
+          <div 
+            style={{
+               height:"20px",
+               width:"100px",
+               background:"#3f72af",
+               borderRadius:"10px",
+               color:"#DBE2EF",
+               marginLeft:"5px",  
+             }}
+               >{review.data.category}
+            </div>
        </div>
+            :
+        <div className="card-body" 
+              style={{lineHeight:"15px"}} 
+              >
+               <h2 
+               style={{textAlign:"center",}} 
+               >{review.data.name.slice(0,15)+"..."}
+               </h2>
+               <p style={{marginLeft:"5px",height:"45px"}}>{review.data.intro.slice(0,100)+"..."}</p>
+               <h3 style={{marginLeft:"7px"}}>{review.data.price+" $"}</h3>
+             <div 
+               style={{
+                height:"20px",
+                width:"100px",
+                background:"#3f72af",
+                borderRadius:"10px",
+                color:"#DBE2EF",
+                marginLeft:"5px",
+              
+                }}
+               >{review.data.category}
+            </div>
+        </div>
+         } 
+        </div>    
+      
       </Link>
      )}
 

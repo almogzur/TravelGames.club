@@ -11,25 +11,18 @@ export default function SearchComponent({
     reviews , 
     MenuItem ,
     isCollapsed ,
-    inTopbar,
-    inSideBar
    }) 
    {
     const [searchTerm, setSearchTerm] = useState('');
     const [searchResults, setSearchResults] = useState([]);
     const [isSerchOpen , setIsSerchOpen ] = useState(true)
-    const [location , setLocation] =useContext(SerchBarlocatonContaxt)
+    const [location , setLocation] =useState(SerchBarlocatonContaxt)
 
     // ceck to see wher component is render
     useEffect(()=>{
-
-      switch(inTopbar,inSideBar){
-        case inTopbar : setLocation("sidebar") 
-        break;
-        case inSideBar : setLocation("topbar")
-      }  
-    //  console.log(location)
-    }, [inSideBar, inTopbar, location, setLocation])
+      // if the props are passed to component then we know he is in sidebar
+      MenuItem ? setLocation("sidebar") : setLocation("topbar")
+    }, [MenuItem, location])
     
     const handleSearch = (event) => {
 
@@ -86,11 +79,7 @@ export default function SearchComponent({
         </>
         :  // else return this div 
        location === "topbar" ?
-        <>
-       <div className='serch-wrapper'
-       key={"intopbar"}
-     
-         >
+       <>
         <input 
           className='serch-bar'
           type="text"
@@ -102,7 +91,7 @@ export default function SearchComponent({
             height:"55px"
        }}
         />
-        <div  className='serch-results'>
+     
           {
             searchResults.map((item) => (
             searchTerm === '' ?  null 
@@ -112,7 +101,6 @@ export default function SearchComponent({
             > 
               
             <Link 
-            
               href={`/reviews/${item.name}`} 
             >{[<Image key={item.name} src={item.data.mainImg} height={25} width={25} alt=""/>,item.name]}
              {}
@@ -122,10 +110,10 @@ export default function SearchComponent({
                
           )
           )}
-        </div>
+   
 
-       </div>
-        </>
+       </>
+       
         :
         null
     );

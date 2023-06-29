@@ -3,7 +3,7 @@ import {PageWidthContext} from "../../util/Context/Context"
 
 function CustomH1({category}) { 
 
-  const {xl,md,sm} = useContext(PageWidthContext) 
+  const [diplayState,setDisplaystate] = useContext(PageWidthContext) 
 
   useEffect(()=>{
       //console.log(category , "profile h1")
@@ -25,15 +25,6 @@ function CustomH1({category}) {
       }
   
       return (
-        xl && md && sm ? 
-        <h3 className="cardwrapperheadline" >{handelText(category)}</h3>
-        :
-        xl && md ? 
-        <h3 className="cardwrapperheadline" >{handelText(category)}</h3>
-        :
-        xl ? 
-        <h3 className="cardwrapperheadline" >{handelText(category)}</h3>
-        :
         <h3 className="cardwrapperheadline" >{handelText(category)}</h3>
       );
 }

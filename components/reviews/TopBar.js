@@ -1,7 +1,7 @@
+
 import Link  from "next/link";
 import Head from "next/head"; 
 import {useState , useEffect , useContext} from "react"
-import { useMediaQuery } from "usehooks-ts";
 import Serch from '../Global/serch'
 import CircumIcon from '@klarr-agency/circum-icons-react'
 import CustomH1 from '../../components/reviews/CustomH1'
@@ -12,25 +12,23 @@ export default function ReviewsTopBar({
     category 
     })
     {
-      const {xl,md,sm} = useContext(PageWidthContext) 
+      const [diplayState,setDisplaystate] = useContext(PageWidthContext) 
     
     return ( 
-        <div className="topbar-wrapper"
+      
+        <div 
         style={{
             display:"flex",
             justifyContent:"center",
             flexDirection:"column",
             alignItems:"center",
             height:"200px"
-                
         }}>
-         <div 
-         className="topbar-icons" 
-         >
+         <div  className="topbar-icons">
            <CircumIcon name="bookmark"/>
            <CircumIcon name="grid_4-1"/>
            <CircumIcon name="star"/>
-        </div>
+         </div>
           <Serch reviews={reviews} inTopbar={true} />
           <CustomH1 category={category} />
        </div>

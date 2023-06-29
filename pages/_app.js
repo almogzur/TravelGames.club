@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 //Global 
 import '../styles/footer.css'
 import '../styles/header.css'
@@ -11,26 +11,41 @@ import '../styles/Reviews/ReviewPage/imegelayout.css'
 import '../styles/Reviews/ReviewPage/reviewpage.css'
 // Context
 import { SessionProvider } from "next-auth/react"
-import { FavoritesContext , IsCollapsedContext , SerchBarlocatonContaxt , PageWidthContext  } from '../util/Context/Context'
+import { FavoritesContext , IsReviewSideBarCollapsedContext , SerchBarlocatonContaxt , PageWidthContext  } from '../util/Context/Context'
 import { useMediaQuery } from 'usehooks-ts'
 
 function MyApp({ Component, pageProps : { session , ...pageProps } }) {  
-      
-      const [isCollapsed, setIsCollapsed] = useState(false)
+     // replasing css media quarys widh in js styled 
+      const xl = useMediaQuery('(max-width: 1200px)')
+      const md = useMediaQuery('(max-width: 900px)')
+      const sm = useMediaQuery('(max-width: 600px)')
+      const [isReviewSideBarCollapsed, setIsReviewSideBarCollapsed] = useState(false)
       const [serchBarLocation , setSerchBarLocation] = useState('')
-       // replacing all css files with in line css and hooks for media quarys 
-       const xl =   useMediaQuery('(max-width: 1200px)')
-       const md =   useMediaQuery('(max-width: 900px)')
-       const sm =   useMediaQuery('(max-width: 600px)')
+      const [diplayState,setDisplaystate] = useState(null)
+       
+       useEffect(()=>{
+        
+         xl&&md&&sm ?
+         setDisplaystate("mob")
+         :
+         xl&md?
+         setDisplaystate("tab")
+         :
+         xl?
+         setDisplaystate("desk")
+         :
+         setDisplaystate("deskandup")
+       },[md, sm, xl])
+
       
       return (
         <SessionProvider session={session}>
         <SerchBarlocatonContaxt.Provider value={[serchBarLocation , setSerchBarLocation]}>
-        <IsCollapsedContext.Provider value={[isCollapsed, setIsCollapsed] }>
-        <PageWidthContext.Provider value={{xl,md,sm}} >
+        <IsReviewSideBarCollapsedContext.Provider value={[isReviewSideBarCollapsed, setIsReviewSideBarCollapsed]}>
+        <PageWidthContext.Provider value={[diplayState,setDisplaystate]} >
            <Component {...pageProps} />  
          </PageWidthContext.Provider>
-        </IsCollapsedContext.Provider>
+        </IsReviewSideBarCollapsedContext.Provider>
         </SerchBarlocatonContaxt.Provider>
         </SessionProvider>
          )

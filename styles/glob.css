@@ -26,6 +26,13 @@ a:link{color:var(--lblue);}
 a:visited{color:var(--dblue);}
 a:focus{color:var(--dblue);}
 
+.card:hover{
+  
+  transition:  ease-out;
+  transition-duration: 500ms;
+  scale:1.05;
+  }
+
 
 
 
