@@ -41,7 +41,7 @@ export default function CardsWrapper({reviews, category}){
            { 
             position:"absolute",
             top:"100px",
-            left:isReviewSideBarCollapsed? "80px" : "250px",
+            left:isReviewSideBarCollapsed? "80px" : "255px",
             display:"flex",
             flexDirection:"row",
             flexWrap:"wrap",
@@ -55,7 +55,7 @@ export default function CardsWrapper({reviews, category}){
             display:"flex",
             flexDirection:"row",
             flexWrap:"wrap",
-            left:isReviewSideBarCollapsed? "80px" : "250px",
+            left:isReviewSideBarCollapsed? "80px" : "255px",
             transition:"ease 1s",
            }
            }

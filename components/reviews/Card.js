@@ -21,7 +21,7 @@ export default function  Card  ({ review }) {
              diplayState=== "mob" ?  // mon
              {
                width:fortyFiveViewUnits,
-               height:"300px",
+               height:"350px",
                backgroundColor:" #fff",
                overflow: "hidden",
                transition:" all .2s ease-in-out",
@@ -36,7 +36,7 @@ export default function  Card  ({ review }) {
             height:"400px",
             overflow: "hidden",
             transition:" all .2s ease-in-out",
-            boxShadow: "0 3px 30px rgba(0, 0, 0, 0.6)",
+            boxShadow: "0 3px 30px rgba(0, 0, 0, 0.6)",     
              }
              :
              diplayState === "desk" ?
@@ -79,17 +79,17 @@ export default function  Card  ({ review }) {
             />
          </div>      
          {       
-       diplayState=== "mob" ?  // mon
+       diplayState=== "mob" ?  
        <div className="card-body" 
-              style={{lineHeight:"15px"}} 
+              style={{lineHeight:"20px"}} 
               >
                <h2 
-               style={{textAlign:"center",}} 
-               >{review.data.name.slice(0,15)+"..."}
+               style={{margin:"5px"}} 
+               >{review.data.name.slice(0,19)+"..."}
                </h2>
-               <p style={{marginLeft:"5px",height:"45px"}}>{review.data.intro.slice(0,100)+"..."}</p>
-               <h3 style={{marginLeft:"7px"}}>{review.data.price+" $"}</h3>
-             <div 
+               <p style={{ marginLeft:"5px",height:"25px" ,lineHeight:"15px", overflowWrap:" break-word"}}>{review.data.intro.slice(0,50)+"..."}</p>
+               <h3 style={{paddingTop:"10px",textAlign:"center"}}>{review.data.price+" $"}</h3>
+               <div className="cat-tag"
                style={{
                 height:"20px",
                 width:"100px",
@@ -97,22 +97,32 @@ export default function  Card  ({ review }) {
                 borderRadius:"10px",
                 color:"#DBE2EF",
                 marginLeft:"5px",
-              
+                textAlign:"center",
+                position:"relative",
+                left:"15%"
+                
                 }}
                >{review.data.category}
             </div>
-        </div>
+      </div>
             :
-       diplayState=== "tab" ?  // mon
-       <div className="card-body" 
-              style={{lineHeight:"15px"}} 
-              >
+       diplayState=== "tab" ?  
+       <div className="card-body" style={{textAlign:"center"}} >
                <h2 
-               style={{textAlign:"center",}} 
-               >{review.data.name.slice(0,15)+"..."}
+                 style={{textAlign:"center",}} 
+               >
+               {review.data.name.slice(0,20)+"..."}
                </h2>
-               <p style={{marginLeft:"5px",height:"45px"}}>{review.data.intro.slice(0,100)+"..."}</p>
-               <h3 style={{marginLeft:"7px"}}>{review.data.price+" $"}</h3>
+               <p 
+                 style={{height:"45px"}}
+               >
+                 {review.data.intro.slice(0,100)+"..."}
+               </p>
+               <h3 
+                 style={{marginLeft:"7px"}}
+               >
+                 {review.data.price+" $"}
+               </h3>
              <div 
                style={{
                 height:"20px",
@@ -120,14 +130,16 @@ export default function  Card  ({ review }) {
                 background:"#3f72af",
                 borderRadius:"10px",
                 color:"#DBE2EF",
-                marginLeft:"5px",
-              
+                textAlign:"center",
+                  position:"relative",     
+                  left:"35%"       
                 }}
-               >{review.data.category}
+               >
+               {review.data.category}
             </div>
         </div>
             :
-       diplayState=== "desk" ?  // mon
+       diplayState=== "desk" ?  
        <div className="card-body" 
         style={{lineHeight:"15px"}} 
        >
@@ -147,7 +159,7 @@ export default function  Card  ({ review }) {
             </div>
        </div>
             :
-        <div className="card-body" 
+       <div className="card-body" 
               style={{lineHeight:"15px"}} 
               >
                <h2 
