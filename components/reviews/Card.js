@@ -88,7 +88,7 @@ export default function  Card  ({ review }) {
                >{review.data.name.slice(0,19)+"..."}
                </h2>
                <p style={{ marginLeft:"5px",height:"25px" ,lineHeight:"15px", overflowWrap:" break-word"}}>{review.data.intro.slice(0,50)+"..."}</p>
-               <h3 style={{paddingTop:"10px",textAlign:"center"}}>{review.data.price+" $"}</h3>
+               <h3 style={{paddingTop:"20px",textAlign:"center"}}>{review.data.price+" $"}</h3>
                <div className="cat-tag"
                style={{
                 height:"20px",
@@ -99,8 +99,8 @@ export default function  Card  ({ review }) {
                 marginLeft:"5px",
                 textAlign:"center",
                 position:"relative",
-                left:"15%"
-                
+                left:"15%",
+                margin:"-10px",
                 }}
                >{review.data.category}
             </div>

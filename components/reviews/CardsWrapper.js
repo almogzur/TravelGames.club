@@ -19,11 +19,12 @@ export default function CardsWrapper({reviews, category}){
            {
             position:"absolute",
             top:"250px",
+            left:"7px",
             transition:"ease 1s",
             display:"flex",
             flexDirection:"row",
             flexWrap:"wrap",
-            justifyContent:"center",
+            
            } 
            :
            diplayState === "tab" ?
