@@ -85,7 +85,7 @@ export default function Reviews({ reviews }) {
         </Head>
         <Header/>      
        {
-        diplayState=== "mob" ?  // mon
+        diplayState=== "mob" ?  
         <TopBar 
          key={"mob"}
          reviews={reviews}

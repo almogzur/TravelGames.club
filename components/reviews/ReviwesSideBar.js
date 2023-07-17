@@ -108,7 +108,7 @@ export default function ReviewsSidebar({
                isCollapsed={isCollapsed}
     
            />
-             <SubMenu label={isCollapsed?  <CircumIcon name="grid_4-1"/>: "Categorys"}>
+           <SubMenu label={isCollapsed?  <CircumIcon name="grid_4-1"/>: "Categorys"}>
                <MenuItem onClick={(e)=>click(e)}
            >{ "ALL" }
               </MenuItem>
@@ -130,10 +130,8 @@ export default function ReviewsSidebar({
                <CircumIcon name="maximize_1" />   
                :
                <CircumIcon name="minimize_1" />  
-               }
-          
+               }      
            </MenuItem>
-           
            </Menu>
       </Sidebar>
   

@@ -22,7 +22,7 @@ export default function  Card  ({ review }) {
              {
                width:fortyFiveViewUnits,
                height:"350px",
-               backgroundColor:" #fff",
+               backgroundColor:" #fefefe",
                overflow: "hidden",
                transition:" all .2s ease-in-out",
                boxShadow: "0 3px 30px rgba(0, 0, 0, 0.6)",
@@ -36,7 +36,9 @@ export default function  Card  ({ review }) {
             height:"400px",
             overflow: "hidden",
             transition:" all .2s ease-in-out",
-            boxShadow: "0 3px 30px rgba(0, 0, 0, 0.6)",     
+            boxShadow: "0 3px 30px rgba(0, 0, 0, 0.6)",   
+            backgroundColor:" #fefefe",
+
              }
              :
              diplayState === "desk" ?
@@ -44,7 +46,7 @@ export default function  Card  ({ review }) {
             margin:"7px",
             width:"250px",
             height:"400px",
-            backgroundColor:" #fff",
+            backgroundColor:" #fefefe",
             overflow: "hidden",
             transition:" all .2s ease-in-out",
             boxShadow: "0 3px 30px rgba(0, 0, 0, 0.6)",
@@ -55,7 +57,7 @@ export default function  Card  ({ review }) {
             margin:"10px",
             width:"250px",
             height:"400px",
-            backgroundColor:" #fff",
+            backgroundColor:" #fefefe",
             overflow: "hidden",
             transition:" all .2s ease-in-out",
             boxShadow: "0 3px 30px rgba(0, 0, 0, 0.6)",

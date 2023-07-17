@@ -5,6 +5,7 @@ import Image from 'next/image';
 import React ,{  useContext, useEffect, useState } from 'react';
 import { SubMenu } from 'react-pro-sidebar';
 import { SerchBarlocatonContaxt } from "../../util/Context/Context"
+import CircumIcon from '@klarr-agency/circum-icons-react'
 
 
 export default function SearchComponent({
@@ -34,7 +35,7 @@ export default function SearchComponent({
         item.data.name.toLowerCase().includes(value.toLowerCase())
       );
         console.log(searchResults)
-      setSearchResults(searchResults);
+         setSearchResults(searchResults);
     };
   
     return (
@@ -61,15 +62,15 @@ export default function SearchComponent({
        
      { 
        searchTerm === ""  ? null :
-      <SubMenu open={isSerchOpen} onClick={()=>setIsSerchOpen(!isSerchOpen)} label={isCollapsed ? "Result" :" Serch Results"}>
+      <SubMenu open={isSerchOpen} onClick={()=>setIsSerchOpen(!isSerchOpen)} label={isCollapsed ? <CircumIcon name="search"/> :" Serch Results"}>
         { 
          searchResults.map(
             (item) => 
             <MenuItem 
              key={item.name}
-             style={{padding:"20px" ,color:"red"}}
+             style={{padding:"20px" ,}}
             >  
-            {item.name.replaceAll("-"," ")}
+            <Link href={`/reviews/${item.name}`}>{item.name.replaceAll("-"," ")}</Link>
             </MenuItem>
            )
         }
@@ -79,17 +80,20 @@ export default function SearchComponent({
         </>
         :  // else return this div 
        location === "topbar" ?
-       <>
+
+       <div  className='serch-wrapper'
+       
+       >
         <input 
           className='serch-bar'
           type="text"
           value={searchTerm}
           onChange={handleSearch}
-          placeholder="Search..."
+          placeholder={"Search..."}
           style={{
             width:"250px",
             height:"55px"
-       }}
+          }}
         />
      
           {
@@ -98,22 +102,30 @@ export default function SearchComponent({
             :
             <div className='serch-result-item' 
              key={item.name}
+              style={{zIndex:"6",height:"30px",width:"250px"}} 
+             
             > 
-              
             <Link 
               href={`/reviews/${item.name}`} 
-            >{[<Image key={item.name} src={item.data.mainImg} height={25} width={25} alt=""/>,item.name]}
-             {}
+            >
+             {[
+             <Image key={item.name} 
+              src={item.data.mainImg} 
+              height={40} 
+              width={40} 
+              alt=""
+            />,
+              item.name
+             ]}
             </Link>
             <br/>
+
             </div>
                
           )
-          )}
-   
-
-       </>
-       
+          )
+          }
+       </div>      
         :
         null
     );
