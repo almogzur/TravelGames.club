@@ -1,7 +1,7 @@
 "use client"
 import { Sidebar, Menu, MenuItem, SubMenu } from 'react-pro-sidebar';
 import { useEffect, useState , useContext } from 'react';
-import { PageWidthContext } from '../../util/Context/Context';
+import { PageWidthContext } from '../../context/context';
 import CircumIcon from '@klarr-agency/circum-icons-react'
 import Serch from '../Global/serch'
 

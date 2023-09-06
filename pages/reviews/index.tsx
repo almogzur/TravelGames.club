@@ -2,7 +2,7 @@
 import React ,{  useContext, useEffect, useState } from 'react';
 import { builder } from '@builder.io/react';
 import { getLocalStorageItem } from '../../util/localstoreg';
-import { IsReviewSideBarCollapsedContext,PageWidthContext } from '../../util/Context/Context';
+import { IsReviewSideBarCollapsedContext,PageWidthContext } from '../../context/context';
 import CardsWrapper from '../../components/reviews/CardsWrapper';
 import Head from 'next/head';
 import ReviewsSideBar from "../../components/reviews/ReviwesSideBar"

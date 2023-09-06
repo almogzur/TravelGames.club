@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import CircumIcon from '@klarr-agency/circum-icons-react'
-import { PageWidthContext } from "../../util/Context/Context";
+import { PageWidthContext } from "../../context/context";
 import { useEffect, useState , useContext } from 'react';
 
 export default function  Card  ({ review }) {

@@ -1,6 +1,6 @@
 import { useState, useEffect,useContext  } from "react";
 import Link from "next/link";
-import {   PageWidthContext } from "../../util/Context/Context"
+import {   PageWidthContext } from "../../context/context"
 
 export default function ProfileTobBar({}){
     

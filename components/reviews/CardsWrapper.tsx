@@ -1,6 +1,6 @@
 "use client"
 import { useEffect, useContext } from "react"
-import { IsReviewSideBarCollapsedContext ,  PageWidthContext } from "../../util/Context/Context"
+import { IsReviewSideBarCollapsedContext ,  PageWidthContext } from "../../context/context"
 import Card from './Card'
 
 export default function CardsWrapper({reviews, category}){

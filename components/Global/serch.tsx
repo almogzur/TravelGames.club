@@ -4,7 +4,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import React ,{  useContext, useEffect, useState } from 'react';
 import { SubMenu } from 'react-pro-sidebar';
-import { SerchBarlocatonContaxt } from "../../util/Context/Context"
+import { SerchBarlocatonContaxt } from "../../context/context"
 import CircumIcon from '@klarr-agency/circum-icons-react'
 
 
@@ -12,12 +12,12 @@ export default function SearchComponent({
     reviews , 
     MenuItem ,
     isCollapsed ,
-   }) 
+   }:any) 
    {
     const [searchTerm, setSearchTerm] = useState('');
     const [searchResults, setSearchResults] = useState([]);
     const [isSerchOpen , setIsSerchOpen ] = useState(true)
-    const [location , setLocation] =useState(SerchBarlocatonContaxt)
+    const [location , setLocation] =useState<unknown>(SerchBarlocatonContaxt)
 
     // ceck to see wher component is render
     useEffect(()=>{

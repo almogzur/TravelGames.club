@@ -2,7 +2,7 @@ import { authOptions } from '../api/auth/[...nextauth]'
 import { getServerSession } from "next-auth/next"
 import { useState , useContext , useEffect} from 'react';
 
-import { PageWidthContext } from "../../util/Context/Context"
+import { PageWidthContext } from "../../context/context"
 import ProfileHeader from "../../components/profile/profileHader"
 import Head from "next/head"
 import ProfileSideBar from '../../components/profile/ProfileSideBar'

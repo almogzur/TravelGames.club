@@ -1,5 +1,5 @@
 import { useEffect , useContext , useState } from "react";
-import {PageWidthContext} from "../../util/Context/Context"
+import {PageWidthContext} from "../../context/context"
 
 function CustomH1({category}) { 
 

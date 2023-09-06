@@ -1,6 +1,6 @@
 import { useState, useEffect,useContext } from 'react';
 import { Sidebar, Menu, MenuItem, SubMenu } from 'react-pro-sidebar';
-import {   PageWidthContext } from "../../util/Context/Context"
+import {   PageWidthContext } from "../../context/context"
 import CircumIcon from '@klarr-agency/circum-icons-react'
 
 // in the project all styles in hendeld in css models exept this component 
