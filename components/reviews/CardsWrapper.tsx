@@ -1,16 +1,15 @@
 "use client"
-import { useEffect, useContext } from "react"
+import { useEffect, useContext, Key } from "react"
 import { IsReviewSideBarCollapsedContext ,  PageWidthContext } from "../../context/context"
 import Card from './Card'
+import { Props, ScriptProps } from "next/script"
 
-export default function CardsWrapper({reviews, category}){
+export default function CardsWrapper({reviews, category}:any){
 
   const [isReviewSideBarCollapsed, setIsReviewSideBarCollapsed] = useContext(IsReviewSideBarCollapsedContext)
   const [diplayState,setDisplaystate] = useContext(PageWidthContext) 
 
-    useEffect(()=>{
-       
-    },[])
+
 
  return (
        <div className="cards-wrapper"
@@ -62,7 +61,7 @@ export default function CardsWrapper({reviews, category}){
            }
           >     
           {
-            reviews.map((review,i)=>{
+            reviews.map((review: any,i: Key | null | undefined)=>{
             return <Card  key={i} review={review}  />
           })
           }

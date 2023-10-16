@@ -19,7 +19,9 @@
         "@/components/*": ["components/*"],
         "@/util/*":["util/*"],
         "@styles/*":["styles/*"],
-        "@context/*":["context/*"]
+        "@context/*":["context/*"],
+        "@api/*":["api/*"]
+        
 
       }
       

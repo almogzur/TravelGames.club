@@ -2,7 +2,7 @@
 import { useState, useEffect } from 'react';
 import { setLocalStorageItem, getLocalStorageItem } from '../localstoreg' 
 
-const useLocalStorageState = (key, initialValue) => {
+const useLocalStorageState = (key: number, initialValue: string) => {
 
   const [category, setCategory] = useState(initialValue);
 

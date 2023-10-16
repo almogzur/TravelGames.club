@@ -13,7 +13,7 @@ export default function ProfileControls() {
   session? console.log(session):null
  },[session])
 
-return( 
+ return( 
    session? 
    <>
     <Link 
@@ -28,7 +28,7 @@ return(
       >
        <span style={{marginBottom:"3px" , }}>Sign Out</span>
         <Image 
-         src={session.user.image} 
+         src={session?.user?.image as string} 
          height={30}
          width={30} 
          alt=""

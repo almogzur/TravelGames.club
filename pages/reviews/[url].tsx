@@ -1,7 +1,7 @@
 // pages/collections/[collection].jsx
 import { builder } from '@builder.io/react';
-import ReviewPage from '../../components/reviews/reviwepage/ReviewPage.js'
-import Header from "../../components/Global/Header"
+import ReviewPage from 'components/reviews/reviwepage/ReviewPage'
+import Header from "components/Global/Header"
 import Head from 'next/head';
 
 builder.init(`${process.env.BKEY}`);
@@ -9,7 +9,7 @@ builder.init(`${process.env.BKEY}`);
 // url name is passed to static props as the name of the file as key 
 //and get the vlau from Link review 
 
-export async function getStaticProps({ params }) {
+export async function getStaticProps({ params }:any) {
 
   const reviewDetails = await builder.get('review',{
     query: {
@@ -34,7 +34,7 @@ export  async function getStaticPaths() {
   }
 }
   
-export default  function Page({ reviewDetails }) {
+export default  function Page({ reviewDetails }: any ) {
    if(!reviewDetails){
   <div>Loading...</div>
    }else{
@@ -43,7 +43,8 @@ export default  function Page({ reviewDetails }) {
       <Head>
          <meta name="viewport" content="initial-scale=1.0, width=device-width"/>
       </Head>
-     <Header/>
+      <Header/>
+        
      <ReviewPage review={reviewDetails}/>
      </>
     )

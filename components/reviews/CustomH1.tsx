@@ -9,17 +9,17 @@ function CustomH1({category}) {
       //console.log(category , "profile h1")
    })
 
-      const handelText = (Cat) => {
+      const handelText = (Cat: string) => {
      switch(Cat){
-      case "TGA" :  return "Travel Gear and Accessories" ; 
+      case "TGA" :   "Travel Gear and Accessories" 
       break;
-      case "TG" : return  "Tech and Gadgets" ; 
+      case "TG" :   "Tech and Gadgets" 
       break;
-      case "OAE" : return   "Outdoor and Adventure Equipment" ; 
+      case "OAE" :    "Outdoor and Adventure Equipment" 
       break; 
-      case "TBG" : return   "Travel Books and Guides"
+      case "TBG" :    "Travel Books and Guides"
       break;
-      default : return "All Reviews"
+      default :  "All Reviews"
      }
 
       }

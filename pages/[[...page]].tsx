@@ -6,12 +6,13 @@ import Footer from '../components/Global/Footer'
 import { useRouter } from 'next/router';
 import { BuilderComponent, builder, useIsPreviewing} from '@builder.io/react';
 import useLocalStorageState from '../util/hooks/useLocalStorageStateHook'
+import { AppProps } from 'next/app';
 
 
 builder.init(`${process.env.BKEY}`);
 
 // page data 
-export async function getStaticProps({ params }) {
+export async function getStaticProps({ params }: any) {
   // Fetch the first page from Builder that matches the current URL.
   // Use the `userAttributes` field for targeting content.
   // For more, see https://www.builder.io/c/docs/targeting-with-builder

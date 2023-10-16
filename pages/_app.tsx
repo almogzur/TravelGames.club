@@ -1,34 +1,38 @@
-import { useEffect, useState } from 'react'
+import type { AppProps } from 'next/app'
+
 //Global 
-import '../styles/footer.css'
-import '../styles/header.css'
-import '../styles/glob.css'
+import 'styles/footer.css'
+import 'styles/header.css'
+import 'styles/glob.css'
 // Profile
-import '../styles/Profile/profilepage.css'
+import 'styles/Profile/profilepage.css'
 //ReviewPage 
-import '../styles/Reviews/ReviewPage/extebdedcaroysel.css'
-import '../styles/Reviews/ReviewPage/imegelayout.css'
-import '../styles/Reviews/ReviewPage/reviewpage.css'
+import 'styles/Reviews/ReviewPage/extebdedcaroysel.css'
+import 'styles/Reviews/ReviewPage/imegelayout.css'
+import 'styles/Reviews/ReviewPage/reviewpage.css'
 // Context
 import { SessionProvider } from "next-auth/react"
-import { FavoritesContext , IsReviewSideBarCollapsedContext , SerchBarlocatonContaxt , PageWidthContext  } from '../util/Context/Context'
+import {   IsReviewSideBarCollapsedContext , SerchBarlocatonContaxt , PageWidthContext  } from 'context/context'
 import { useMediaQuery } from 'usehooks-ts'
+import { useState, useEffect } from 'react'
 
-function MyApp({ Component, pageProps : { session , ...pageProps } }) {  
+function MyApp(
+  { Component , pageProps : { session , ...pageProps } } :AppProps ) {  
      // replasing css media quarys widh in js styled 
       const xl = useMediaQuery('(max-width: 1200px)')
       const md = useMediaQuery('(max-width: 900px)')
       const sm = useMediaQuery('(max-width: 600px)')
+
       const [isReviewSideBarCollapsed, setIsReviewSideBarCollapsed] = useState(false)
       const [serchBarLocation , setSerchBarLocation] = useState('')
-      const [diplayState,setDisplaystate] = useState(null)
+      const [diplayState,setDisplaystate] = useState("")
        
        useEffect(()=>{
         
          xl&&md&&sm ?
          setDisplaystate("mob")
          :
-         xl&md?
+         xl&&md?
          setDisplaystate("tab")
          :
          xl?
@@ -36,13 +40,14 @@ function MyApp({ Component, pageProps : { session , ...pageProps } }) {
          :
          setDisplaystate("deskandup")
        },[md, sm, xl])
+33
 
       
       return (
         <SessionProvider session={session}>
-        <SerchBarlocatonContaxt.Provider value={[serchBarLocation , setSerchBarLocation]}>
-        <IsReviewSideBarCollapsedContext.Provider value={[isReviewSideBarCollapsed, setIsReviewSideBarCollapsed]}>
-        <PageWidthContext.Provider value={[diplayState,setDisplaystate]} >
+        <SerchBarlocatonContaxt.Provider value={[serchBarLocation, setSerchBarLocation] as any}>
+        <IsReviewSideBarCollapsedContext.Provider value={[isReviewSideBarCollapsed, setIsReviewSideBarCollapsed] as any }>
+        <PageWidthContext.Provider value={[diplayState,setDisplaystate] as any} >
            <Component {...pageProps} />  
          </PageWidthContext.Provider>
         </IsReviewSideBarCollapsedContext.Provider>

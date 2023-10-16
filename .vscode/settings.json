@@ -1,3 +1,4 @@
 {
-    "editor.fontFamily": "CascadiaCode"
+    "editor.fontFamily": "CascadiaCode",
+    "editor.fontSize": 16
 }

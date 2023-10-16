@@ -1,13 +1,13 @@
 // pages/your-page.jsx
 import React ,{  useContext, useEffect, useState } from 'react';
 import { builder } from '@builder.io/react';
-import { getLocalStorageItem } from '../../util/localstoreg';
-import { IsReviewSideBarCollapsedContext,PageWidthContext } from '../../context/context';
-import CardsWrapper from '../../components/reviews/CardsWrapper';
+import { getLocalStorageItem } from 'util/localstoreg';
+import { IsReviewSideBarCollapsedContext,PageWidthContext } from 'context/context';
+import CardsWrapper from 'components/reviews/CardsWrapper';
 import Head from 'next/head';
-import ReviewsSideBar from "../../components/reviews/ReviwesSideBar"
-import Header from '../../components/Global/Header'
-import TopBar from '../../components/reviews/TopBar';
+import ReviewsSideBar from "components/reviews/ReviwesSideBar"
+import Header from 'components/Global/Header'
+import TopBar from 'components/reviews/TopBar';
 
 builder.init(`${process.env.BKEY}`);
 
@@ -28,7 +28,7 @@ export async function getStaticProps() {
   
 }
 
-export default function Reviews({ reviews }) {
+export default function Reviews({ reviews }: any) {
   const [diplayState,setDisplaystate] = useContext(PageWidthContext) 
   const [ filterdReviews , setFilterdReviews ] = useState({})
   const [ category , setCategory ] = useState("")
@@ -48,11 +48,11 @@ export default function Reviews({ reviews }) {
 
   useEffect(()=>{
   //  console.log( "filtring process")
-    const sortByCategoty = (Obj) => { 
-    let  arr = []
-    if(!category ){return Obj}
-    else if(category !== false){
-       Obj.map(
+    const sortByCategoty = (array:Array<any>) => { 
+    let  arr : any = []
+    if(!category ){return array}
+    else if(category){
+       array.map(
          (review)=>{
     //console.log(review.data.category)
             if(review.data.category === category){
@@ -103,7 +103,6 @@ export default function Reviews({ reviews }) {
         <ReviewsSideBar      
            reviews={reviews}
            setCategory={setCategory}
-           defaultCollapsed={false}
            isCollapsed={ isReviewSideBarCollapsed }
            setIsCollapsed={setIsReviewSideBarCollapsed}       
         />
@@ -111,13 +110,12 @@ export default function Reviews({ reviews }) {
         <ReviewsSideBar  
            reviews={reviews}
            setCategory={setCategory}
-           defaultCollapsed={false}
            isCollapsed={ isReviewSideBarCollapsed }
            setIsCollapsed={setIsReviewSideBarCollapsed}       
         />
        }
         <CardsWrapper 
-         reviews={filterdReviews.length > 0 ? filterdReviews : reviews}
+         reviews={Object.keys(filterdReviews).length > 0 ? filterdReviews : reviews}
          category={category} 
          />
     </>

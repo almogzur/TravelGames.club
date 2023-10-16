@@ -2,7 +2,7 @@
 import { useMediaQuery } from 'usehooks-ts';
 import Link from 'next/link';
 import Image from 'next/image';
-import React ,{  useContext, useEffect, useState } from 'react';
+import React ,{  ReactEventHandler, useContext, useEffect, useState } from 'react';
 import { SubMenu } from 'react-pro-sidebar';
 import { SerchBarlocatonContaxt } from "../../context/context"
 import CircumIcon from '@klarr-agency/circum-icons-react'
@@ -25,7 +25,7 @@ export default function SearchComponent({
       MenuItem ? setLocation("sidebar") : setLocation("topbar")
     }, [MenuItem, location])
     
-    const handleSearch = (event) => {
+    const handleSearch = (event:any) => {
 
       const { value } = event.target;
       setSearchTerm(value);
