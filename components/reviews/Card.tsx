@@ -1,12 +1,13 @@
 import Image from "next/image";
 import Link from "next/link";
-import CircumIcon from '@klarr-agency/circum-icons-react'
-import { PageWidthContext } from "../../context/context";
+//import CircumIcon from '@klarr-agency/circum-icons-react'
+import type { PageWidthT } from "context/context";
+import { PageWidthC , } from "context/context";
 import { useEffect, useState , useContext } from 'react';
 
 export default function  Card  ({ review }) {
    
-   const [diplayState,setDisplaystate]= useContext(PageWidthContext) 
+   const [ diplayState, setDisplaystate ] = useContext<PageWidthT>({width:""}) 
    const [fortyFiveViewUnits,setFortyFiveViewUnits] = useState(0)
 
     useEffect(()=>{

@@ -1,13 +1,22 @@
-import React, { useEffect } from "react";
+import React from "react";
 
+export type SideBarStatT {
+    status:boolean,
+}
+export type SerchBarLocT {
+    status:Number
+}
+export type PageWidthT { 
+    width:String
+}
 //const FavoritesContext = React.createContext(null)
-const IsReviewSideBarCollapsedContext = React.createContext(false)
-const SerchBarlocatonContaxt = React.createContext<string>("")
-const PageWidthContext = React.createContext(null)
+const IsRevSideBColl = React.createContext<SerchBarLocT|undefined>(undefined)
+const SerchBarLocC = React.createContext<PageWidthT|undefined>(undefined)
+const PageWidthC = React.createContext<PageWidthT|undefined>(undefined)
 
 export{
    // FavoritesContext,
-    IsReviewSideBarCollapsedContext,
-    SerchBarlocatonContaxt,
-    PageWidthContext,
+   IsRevSideBColl,
+   SerchBarLocC,
+   PageWidthC,
 }

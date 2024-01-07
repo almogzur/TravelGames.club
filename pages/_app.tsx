@@ -12,7 +12,7 @@ import 'styles/Reviews/ReviewPage/imegelayout.css'
 import 'styles/Reviews/ReviewPage/reviewpage.css'
 // Context
 import { SessionProvider } from "next-auth/react"
-import {   IsReviewSideBarCollapsedContext , SerchBarlocatonContaxt , PageWidthContext  } from 'context/context'
+import {   IsRevSideBColl , SerchBarLocC , PageWidthC  } from 'context/context'
 import { useMediaQuery } from 'usehooks-ts'
 import { useState, useEffect } from 'react'
 
@@ -45,13 +45,13 @@ function MyApp(
       
       return (
         <SessionProvider session={session}>
-        <SerchBarlocatonContaxt.Provider value={[serchBarLocation, setSerchBarLocation] as any}>
-        <IsReviewSideBarCollapsedContext.Provider value={[isReviewSideBarCollapsed, setIsReviewSideBarCollapsed] as any }>
-        <PageWidthContext.Provider value={[diplayState,setDisplaystate] as any} >
+        <SerchBarLocC.Provider value={[serchBarLocation, setSerchBarLocation] as any}>
+        <IsRevSideBColl.Provider value={[isReviewSideBarCollapsed, setIsReviewSideBarCollapsed] as any }>
+        <PageWidthC.Provider value={[diplayState,setDisplaystate] as any} >
            <Component {...pageProps} />  
-         </PageWidthContext.Provider>
-        </IsReviewSideBarCollapsedContext.Provider>
-        </SerchBarlocatonContaxt.Provider>
+         </PageWidthC.Provider>
+        </IsRevSideBColl.Provider>
+        </SerchBarLocC.Provider>
         </SessionProvider>
          )
     }

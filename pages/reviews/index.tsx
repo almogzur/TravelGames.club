@@ -8,6 +8,7 @@ import Head from 'next/head';
 import ReviewsSideBar from "components/reviews/ReviwesSideBar"
 import Header from 'components/Global/Header'
 import TopBar from 'components/reviews/TopBar';
+import type { SideBarStatT } from 'context/context';
 
 builder.init(`${process.env.BKEY}`);
 
@@ -29,10 +30,10 @@ export async function getStaticProps() {
 }
 
 export default function Reviews({ reviews }: any) {
-  const [diplayState,setDisplaystate] = useContext(PageWidthContext) 
+  const [diplayState , setDisplaystate] : any = useContext(PageWidthContext) 
   const [ filterdReviews , setFilterdReviews ] = useState({})
   const [ category , setCategory ] = useState("")
-  const [isReviewSideBarCollapsed, setIsReviewSideBarCollapsed]= useContext(IsReviewSideBarCollapsedContext)
+  const [isReviewSideBarCollapsed , setIsReviewSideBarCollapsed ]: any= useContext(IsReviewSideBarCollapsedContext)
 
  // local storeg
   useEffect(()=>{
