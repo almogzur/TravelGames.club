@@ -2,8 +2,6 @@
 import { Sidebar, Menu, MenuItem, SubMenu } from 'react-pro-sidebar';
 import { useEffect, useState , useContext, ComponentProps, MouseEvent } from 'react';
 import { PageWidthC } from '../../context/context';
-import * as CircumIcon from '@klarr-agency/circum-icons-react' ;
-
 import Serch from '../Global/serch'
 import { AppProps } from 'next/dist/shared/lib/router/router';
 
@@ -12,7 +10,7 @@ export default function ReviewsSidebar({
     ,isCollapsed
     ,setIsCollapsed 
     ,reviews
-     }){
+     }:any){
 
     const [diplayState,setDisplaystate]:any = useContext(PageWidthC) 
 

@@ -2,7 +2,7 @@
 import { useEffect, useContext, Key } from "react"
 import { IsRevSideBColl ,  PageWidthC } from "context/context"
 import Card from './Card'
-import { Props, ScriptProps } from "next/script"
+
 
 export default function CardsWrapper({reviews, category}:any){
 
