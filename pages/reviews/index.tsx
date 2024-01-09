@@ -2,14 +2,12 @@
 import React ,{  useContext, useEffect, useState } from 'react';
 import { builder } from '@builder.io/react';
 import { getLocalStorageItem } from 'util/localstoreg';
-import { IsReviewSideBarCollapsedContext,PageWidthContext } from 'context/context';
+import { IsRevSideBColl,PageWidthC } from 'context/context';
 import CardsWrapper from 'components/reviews/CardsWrapper';
 import Head from 'next/head';
 import ReviewsSideBar from "components/reviews/ReviwesSideBar"
 import Header from 'components/Global/Header'
 import TopBar from 'components/reviews/TopBar';
-import type { SideBarStatT } from 'context/context';
-
 builder.init(`${process.env.BKEY}`);
 
 export async function getStaticProps() {
@@ -29,11 +27,11 @@ export async function getStaticProps() {
   
 }
 
-export default function Reviews({ reviews }: any) {
-  const [diplayState , setDisplaystate] : any = useContext(PageWidthContext) 
+export default function Reviews({ reviews : [] }) {
+  const [diplayState , setDisplaystate] : any = useContext(PageWidthC) 
   const [ filterdReviews , setFilterdReviews ] = useState({})
   const [ category , setCategory ] = useState("")
-  const [isReviewSideBarCollapsed , setIsReviewSideBarCollapsed ]: any= useContext(IsReviewSideBarCollapsedContext)
+  const [isReviewSideBarCollapsed , setIsReviewSideBarCollapsed ]: any= useContext(IsRevSideBColl)
 
  // local storeg
   useEffect(()=>{
@@ -49,7 +47,7 @@ export default function Reviews({ reviews }: any) {
 
   useEffect(()=>{
   //  console.log( "filtring process")
-    const sortByCategoty = (array:Array<any>) => { 
+    const sortByCategoty = (array:[]) => { 
     let  arr : any = []
     if(!category ){return array}
     else if(category){

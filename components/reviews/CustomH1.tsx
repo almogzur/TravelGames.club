@@ -1,9 +1,9 @@
 import { useEffect , useContext , useState } from "react";
-import {PageWidthContext} from "../../context/context"
+import {PageWidthC} from "../../context/context"
 
 function CustomH1({category}) { 
 
-  const [diplayState,setDisplaystate] = useContext(PageWidthContext) 
+  const [diplayState,setDisplaystate]:any = useContext(PageWidthC) 
 
   useEffect(()=>{
       //console.log(category , "profile h1")
@@ -11,15 +11,15 @@ function CustomH1({category}) {
 
       const handelText = (Cat: string) => {
      switch(Cat){
-      case "TGA" :   "Travel Gear and Accessories" 
+      case "TGA" :  return "Travel Gear and Accessories" 
       break;
-      case "TG" :   "Tech and Gadgets" 
+      case "TG" : return    "Tech and Gadgets" 
       break;
-      case "OAE" :    "Outdoor and Adventure Equipment" 
+      case "OAE" : return    "Outdoor and Adventure Equipment" 
       break; 
-      case "TBG" :    "Travel Books and Guides"
+      case "TBG" : return   "Travel Books and Guides"
       break;
-      default :  "All Reviews"
+      default : return  "All Reviews"
      }
 
       }

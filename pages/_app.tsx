@@ -45,9 +45,9 @@ function MyApp(
       
       return (
         <SessionProvider session={session}>
-        <SerchBarLocC.Provider value={[serchBarLocation, setSerchBarLocation] as any}>
-        <IsRevSideBColl.Provider value={[isReviewSideBarCollapsed, setIsReviewSideBarCollapsed] as any }>
-        <PageWidthC.Provider value={[diplayState,setDisplaystate] as any} >
+        <SerchBarLocC.Provider value ={ [ serchBarLocation, setSerchBarLocation] as any}>
+        <IsRevSideBColl.Provider value={[isReviewSideBarCollapsed, setIsReviewSideBarCollapsed] as any  }>
+        <PageWidthC.Provider value={[diplayState,setDisplaystate] as any } >
            <Component {...pageProps} />  
          </PageWidthC.Provider>
         </IsRevSideBColl.Provider>

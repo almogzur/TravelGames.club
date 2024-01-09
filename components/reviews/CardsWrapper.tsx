@@ -1,13 +1,13 @@
 "use client"
 import { useEffect, useContext, Key } from "react"
-import { IsReviewSideBarCollapsedContext ,  PageWidthContext } from "../../context/context"
+import { IsRevSideBColl ,  PageWidthC } from "context/context"
 import Card from './Card'
 import { Props, ScriptProps } from "next/script"
 
 export default function CardsWrapper({reviews, category}:any){
 
-  const [isReviewSideBarCollapsed, setIsReviewSideBarCollapsed] = useContext(IsReviewSideBarCollapsedContext)
-  const [diplayState,setDisplaystate] = useContext(PageWidthContext) 
+  const [isReviewSideBarCollapsed, setIsReviewSideBarCollapsed] : any = useContext(IsRevSideBColl)
+  const [diplayState,setDisplaystate] : any = useContext(PageWidthC) 
 
 
 

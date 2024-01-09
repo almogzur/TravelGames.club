@@ -1,14 +1,14 @@
 import Image from "next/image";
 import Link from "next/link";
 //import CircumIcon from '@klarr-agency/circum-icons-react'
-import type { PageWidthT } from "context/context";
 import { PageWidthC , } from "context/context";
 import { useEffect, useState , useContext } from 'react';
 
-export default function  Card  ({ review }) {
+export default function  Card  ({ review } :any) {
    
-   const [ diplayState, setDisplaystate ] = useContext<PageWidthT>({width:""}) 
-   const [fortyFiveViewUnits,setFortyFiveViewUnits] = useState(0)
+   const [ diplayState , setDisplaystate ] : any   = useContext(PageWidthC) 
+
+   const [fortyFiveViewUnits,setFortyFiveViewUnits] = useState("")
 
     useEffect(()=>{
       const getFortyFiveVw = () => {
@@ -90,7 +90,7 @@ export default function  Card  ({ review }) {
                style={{margin:"5px"}} 
                >{review.data.name.slice(0,19)+"..."}
                </h2>
-               <p style={{ marginLeft:"5px",height:"25px" ,lineHeight:"15px", overflowWrap:" break-word"}}>{review.data.intro.slice(0,50)+"..."}</p>
+               <p style={{ marginLeft:"5px",height:"25px" ,lineHeight:"15px"}}>{review.data.intro.slice(0,50)+"..."}</p>
                <h3 style={{paddingTop:"20px",textAlign:"center"}}>{review.data.price+" $"}</h3>
                <div className="cat-tag"
                style={{

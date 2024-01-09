@@ -1,20 +1,22 @@
 "use client"
 import { Sidebar, Menu, MenuItem, SubMenu } from 'react-pro-sidebar';
-import { useEffect, useState , useContext } from 'react';
-import { PageWidthContext } from '../../context/context';
-import CircumIcon from '@klarr-agency/circum-icons-react'
+import { useEffect, useState , useContext, ComponentProps, MouseEvent } from 'react';
+import { PageWidthC } from '../../context/context';
+import * as Circum from '@klarr-agency/circum-icons-react' ;
+
 import Serch from '../Global/serch'
+import { AppProps } from 'next/dist/shared/lib/router/router';
 
 export default function ReviewsSidebar({
      setCategory
     ,isCollapsed
     ,setIsCollapsed 
     ,reviews
-     }){
+     }:ComponentProps<any>){
 
-    const [diplayState,setDisplaystate] = useContext(PageWidthContext) 
+    const [diplayState,setDisplaystate]:any = useContext(PageWidthC) 
 
-    const click = (e)=>{
+    const click = (e:)=>{
 
     switch(e.target.innerText){
        case "TGA" : 
@@ -82,9 +84,9 @@ export default function ReviewsSidebar({
          </SubMenu>
          <MenuItem onClick={()=>setIsCollapsed(!isCollapsed)}>{
             isCollapsed ? 
-             <CircumIcon name="maximize_1" />   
+             <Circum name="maximize_1" />   
              :
-             <CircumIcon name="minimize_1" />  
+             <Circum name="minimize_1" />  
              }
          </MenuItem>
          </Menu>

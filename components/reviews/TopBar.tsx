@@ -5,14 +5,14 @@ import {useState , useEffect , useContext} from "react"
 import Serch from '../Global/serch'
 import CircumIcon from '@klarr-agency/circum-icons-react'
 import CustomH1 from '../../components/reviews/CustomH1'
-import { PageWidthContext } from "../../context/context";
+import { PageWidthC } from "../../context/context";
 
 export default function ReviewsTopBar({
     reviews,
     category 
-    })
+    }:any)
     {
-      const [diplayState,setDisplaystate] = useContext(PageWidthContext) 
+      const [diplayState,setDisplaystate] :any = useContext(PageWidthC) 
     
     return ( 
       
