@@ -6,7 +6,7 @@ import { useEffect, useState , useContext } from 'react';
 
 export default function  Card  ({ review } :any) {
    
-   const [ diplayState , setDisplaystate ] : any   = useContext(PageWidthC) 
+   const [ diplayState , setDisplaystate ] : any = useContext(PageWidthC) 
 
    const [fortyFiveViewUnits,setFortyFiveViewUnits] = useState("")
 
@@ -19,7 +19,7 @@ export default function  Card  ({ review } :any) {
    },[])
 
    const cardStyle =  
-             diplayState=== "mob" ?  // mon
+             diplayState === "mob" ?  // mon
              {
                width:fortyFiveViewUnits,
                height:"350px",

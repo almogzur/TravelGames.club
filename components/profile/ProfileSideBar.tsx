@@ -1,13 +1,12 @@
 import { useState, useEffect,useContext } from 'react';
 import { Sidebar, Menu, MenuItem, SubMenu } from 'react-pro-sidebar';
-import {   PageWidthContext } from "../../context/context"
-import CircumIcon from '@klarr-agency/circum-icons-react'
+import {   PageWidthC } from "context/context"
 
 // in the project all styles in hendeld in css models exept this component 
 
-export default function ProfileSidebar({isCollapsed,setIsCollapsed}) {
+export default function ProfileSidebar({isCollapsed,setIsCollapsed}:any) {
 
-  const {xl,md,sm} = useContext(PageWidthContext) 
+  const {xl,md,sm} = useContext(PageWidthC) 
 
 
   useEffect(()=>{},[])
@@ -27,7 +26,7 @@ export default function ProfileSidebar({isCollapsed,setIsCollapsed}) {
           height:"100vh"
            
            }} >
-      <SubMenu label={  !isCollapsed? [  "Favorites Reviews", <CircumIcon size={25} key={1} name="star"/>] :<CircumIcon name="star"/>}>
+      <SubMenu label={  !isCollapsed? [  "Favorites Reviews", "Star"] :"Star"}>
 
         <MenuItem > Link1  </MenuItem>
         <MenuItem> Link2 </MenuItem>

@@ -1,11 +1,11 @@
-import {   PageWidthContext } from "../../context/context"
+import {   PageWidthC } from "../../context/context"
 import { useContext } from "react"
 import { useSession, signIn, signOut } from "next-auth/react"
 
 
 function ProfileHeader ({isCollapsed}) {
 
-   const {xl,md,sm} = useContext(PageWidthContext) 
+   const {xl,md,sm} = useContext(PageWidthC) 
 
    const style = { 
       width:"100%",

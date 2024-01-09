@@ -1,10 +1,10 @@
 import { useState, useEffect,useContext  } from "react";
 import Link from "next/link";
-import {   PageWidthContext } from "../../context/context"
+import {   PageWidthC } from "context/context"
 
 export default function ProfileTobBar({}){
     
-  const {xl,md,sm} = useContext(PageWidthContext) 
+  const {xl,md,sm}:any = useContext(PageWidthC) 
 
     return (
         xl && md && sm ?   // mob

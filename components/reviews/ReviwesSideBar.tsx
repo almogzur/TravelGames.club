@@ -61,7 +61,7 @@ export default function ReviewsSidebar({
              isCollapsed={isCollapsed}
              inSideBar={diplayState !== "mob" || diplayState !== "tab" ? true :false}
          />
-         <SubMenu label={isCollapsed?  <CircumIcon name="grid_4-1"/>: "Categorys"}>
+         <SubMenu label={isCollapsed?  "Categorys Icon": "Categorys"}>
              <MenuItem onClick={(e)=>click(e)}
          >{ "ALL" }
              </MenuItem>
@@ -88,7 +88,7 @@ export default function ReviewsSidebar({
       : 
       <Sidebar 
         collapsed={isCollapsed}
-        onBackdropClick={() => setToggled(false)}
+      
         
         >
         <Menu   
@@ -103,7 +103,7 @@ export default function ReviewsSidebar({
                isCollapsed={isCollapsed}
     
            />
-           <SubMenu label={isCollapsed?  <CircumIcon name="grid_4-1"/>: "Categorys"}>
+           <SubMenu label={isCollapsed?  "CategorysIcon": "Categorys"}>
                <MenuItem onClick={(e)=>click(e)}
            >{ "ALL" }
               </MenuItem>

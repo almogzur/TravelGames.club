@@ -1,13 +1,13 @@
 // pages/your-page.jsx
-import React ,{  useContext, useEffect, useState } from 'react';
-import { builder } from '@builder.io/react';
-import { getLocalStorageItem } from 'util/localstoreg';
-import { IsRevSideBColl,PageWidthC } from 'context/context';
-import CardsWrapper from 'components/reviews/CardsWrapper';
 import Head from 'next/head';
+import React ,{  useContext, useEffect, useState } from 'react';
+import CardsWrapper from 'components/reviews/CardsWrapper';
 import ReviewsSideBar from "components/reviews/ReviwesSideBar"
 import Header from 'components/Global/Header'
 import TopBar from 'components/reviews/TopBar';
+import { builder } from '@builder.io/react';
+import { getLocalStorageItem } from 'util/localstoreg';
+import { IsRevSideBColl,PageWidthC } from 'context/context';
 builder.init(`${process.env.BKEY}`);
 
 export async function getStaticProps() {
