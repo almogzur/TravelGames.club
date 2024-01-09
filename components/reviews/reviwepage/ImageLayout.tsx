@@ -1,11 +1,11 @@
 import Image from "next/image"
 import { useState } from "react"
 
- const ImageLayout = ({mainPhoto}) =>{
+ const ImageLayout = ({mainPhoto}:any) =>{
 
 const [isClick , setIsClick] = useState(0)
 
-const clickHendler = (e) =>{
+const clickHendler = (e:any) =>{
       console.log(e)
 }
 

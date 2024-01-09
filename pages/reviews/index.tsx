@@ -16,22 +16,39 @@ export async function getStaticProps() {
     options: { includeRefs: true },
     // For performance, don't pull the `blocks` (the full blog entry content)
     // when listing
-    omit: "data.blocks",
+
   })
   return {
     props: {
-      reviews: reviews || null,
+      reviews: reviews  || null,
     },
     revalidate: 5,
   };
   
 }
 
-export default function Reviews({ reviews : [] }) {
+export default function Reviews({ reviews }:any) {
   const [diplayState , setDisplaystate] : any = useContext(PageWidthC) 
   const [ filterdReviews , setFilterdReviews ] = useState({})
   const [ category , setCategory ] = useState("")
   const [isReviewSideBarCollapsed , setIsReviewSideBarCollapsed ]: any= useContext(IsRevSideBColl)
+
+  const sortByCategoty = (array : any[]) => { 
+    let  arr : any[] = []
+      if(!category ){
+        return array
+      }
+    else if(category){
+       array.map(
+         (review:any)=>{
+      //console.log(review.data.category)
+            if(review.data.category === category){
+              arr.push(review)
+             }
+             })
+             }
+    return arr
+  }
 
  // local storeg
   useEffect(()=>{
@@ -47,20 +64,7 @@ export default function Reviews({ reviews : [] }) {
 
   useEffect(()=>{
   //  console.log( "filtring process")
-    const sortByCategoty = (array:[]) => { 
-    let  arr : any = []
-    if(!category ){return array}
-    else if(category){
-       array.map(
-         (review)=>{
-    //console.log(review.data.category)
-            if(review.data.category === category){
-              arr.push(review)
-             }
-             })
-             }
-    return arr
-  }
+
     const sorted = sortByCategoty(reviews)
     setFilterdReviews(sorted)
   },[ category, reviews ])

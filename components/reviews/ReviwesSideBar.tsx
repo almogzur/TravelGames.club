@@ -2,7 +2,7 @@
 import { Sidebar, Menu, MenuItem, SubMenu } from 'react-pro-sidebar';
 import { useEffect, useState , useContext, ComponentProps, MouseEvent } from 'react';
 import { PageWidthC } from '../../context/context';
-import * as Circum from '@klarr-agency/circum-icons-react' ;
+import * as CircumIcon from '@klarr-agency/circum-icons-react' ;
 
 import Serch from '../Global/serch'
 import { AppProps } from 'next/dist/shared/lib/router/router';
@@ -12,15 +12,15 @@ export default function ReviewsSidebar({
     ,isCollapsed
     ,setIsCollapsed 
     ,reviews
-     }:ComponentProps<any>){
+     }){
 
     const [diplayState,setDisplaystate]:any = useContext(PageWidthC) 
 
-    const click = (e:)=>{
+    const click = (e:any)=>{
 
     switch(e.target.innerText){
-       case "TGA" : 
-       case "Travel Gear and Accessories" : setCategory("TGA") ; 
+       case "TGA" :
+       case  "Travel Gear and Accessories" :  setCategory("TGA") ; 
         break;
        case "TG" :
        case "Tech and Gadgets" : setCategory("TG") ;
@@ -37,7 +37,7 @@ export default function ReviewsSidebar({
     }
     }
 
-     useEffect(()=>{})
+
 
      return (
       diplayState=== "mob" ?  
@@ -49,7 +49,7 @@ export default function ReviewsSidebar({
       diplayState === "desk" ?
       <Sidebar 
       collapsed={isCollapsed}
-      onBackdropClick={() => setToggled(false)}
+   
       >
       <Menu   
         rootStyles={{
@@ -82,17 +82,12 @@ export default function ReviewsSidebar({
          >{ isCollapsed ? "TBG" : "Travel Books and Guides" }
              </MenuItem>
          </SubMenu>
-         <MenuItem onClick={()=>setIsCollapsed(!isCollapsed)}>{
-            isCollapsed ? 
-             <Circum name="maximize_1" />   
-             :
-             <Circum name="minimize_1" />  
-             }
+         <MenuItem onClick={()=>setIsCollapsed(!isCollapsed)}>
+
          </MenuItem>
          </Menu>
       </Sidebar>
       : 
-      
       <Sidebar 
         collapsed={isCollapsed}
         onBackdropClick={() => setToggled(false)}
@@ -127,12 +122,7 @@ export default function ReviewsSidebar({
            >{ isCollapsed ? "TBG" : "Travel Books and Guides" }
               </MenuItem>
            </SubMenu>
-           <MenuItem onClick={()=>setIsCollapsed(!isCollapsed)}>{
-              isCollapsed ? 
-               <CircumIcon name="maximize_1" />   
-               :
-               <CircumIcon name="minimize_1" />  
-               }      
+           <MenuItem onClick={()=>setIsCollapsed(!isCollapsed)}>
            </MenuItem>
            </Menu>
       </Sidebar>

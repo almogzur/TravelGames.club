@@ -2,7 +2,7 @@ import CircumIcon from "@klarr-agency/circum-icons-react"; // React
 import ImageLayout from './ImageLayout'
 import { useContext, useState } from "react";
 import Link from "next/link";
-import {PageWidthContext} from "context/context"
+import {PageWidthC} from "context/context"
 
 import Carousel from "./Carousel";
 import { useMediaQuery } from "usehooks-ts";
@@ -33,7 +33,7 @@ export default function ProdactPage({ review }:any ) {
  const photos = data.photos[0]
  const [ mainPhoto , setMainPhoto ] = useState(data.mainImg)
  
- const pageWidth = useContext(PageWidthContext) 
+ const pageWidth = useContext(PageWidthC) 
 
  const xl = useMediaQuery('(max-width: 1200px)')
  const md = useMediaQuery('(max-width: 900px)')
