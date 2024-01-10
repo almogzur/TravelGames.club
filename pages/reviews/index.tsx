@@ -33,6 +33,23 @@ export default function Reviews({ reviews }:any) {
   const [ category , setCategory ] = useState("")
   const [isReviewSideBarCollapsed , setIsReviewSideBarCollapsed ]: any= useContext(IsRevSideBColl)
 
+
+ // local storeg
+  useEffect(()=>{
+     // on page navigate get back the category from local storeg and
+     // use it as state this works across all components LocalStoreg is in the Global Scoop
+     const storedState = getLocalStorageItem('category');
+     if (storedState) {
+      setCategory(storedState);
+    }
+  },[])
+
+// reviers filter 
+
+
+
+  useEffect(()=>{
+  //  console.log( "filtring process")
   const sortByCategoty = (array : any[]) => { 
     let  arr : any[] = []
       if(!category ){
@@ -49,25 +66,9 @@ export default function Reviews({ reviews }:any) {
              }
     return arr
   }
-
- // local storeg
-  useEffect(()=>{
-     // on page navigate get back the category from local storeg and
-     // use it as state this works across all components LocalStoreg is in the Global Scoop
-     const storedState = getLocalStorageItem('category');
-     if (storedState) {
-      setCategory(storedState);
-    }
-  },[])
-
-// reviers filter 
-
-  useEffect(()=>{
-  //  console.log( "filtring process")
-
     const sorted = sortByCategoty(reviews)
     setFilterdReviews(sorted)
-  },[ category, reviews ])
+  },[category, reviews])
 
 
   useEffect(()=>{
