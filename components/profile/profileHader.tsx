@@ -13,7 +13,7 @@ function ProfileHeader ({isCollapsed}:any) {
       left: isCollapsed ? 80 : 250,
       textAlign:"center"
    }
-    const { data: session } = useSession()
+    const { data: session }:any= useSession()
          return (
          xl && md && sm ? 
           <div className="welcome" style={style}>
