@@ -2,7 +2,7 @@ import { authOptions } from 'pages/api/auth/[...nextauth]'
 import { getServerSession } from "next-auth/next"
 import { useState, useContext, useEffect } from 'react';
 
-import { PageWidthContext } from "context/context"
+import { PageWidthC } from "context/context"
 import ProfileHeader from "components/profile/profileHader"
 import Head from "next/head"
 import ProfileSideBar from 'components/profile/ProfileSideBar'
@@ -34,7 +34,7 @@ function ProfilePage({ session, reviews }: any) {
   const [profileIsCollapsed, setProfileIsCollapsed] = useState(false)
 
 
-  const { xl, md, sm }: any = useContext(PageWidthContext)
+  const { xl, md, sm }: any = useContext(PageWidthC)
 
   return (
     <>

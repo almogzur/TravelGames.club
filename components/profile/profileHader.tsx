@@ -3,11 +3,11 @@ import { useContext } from "react"
 import { useSession, signIn, signOut } from "next-auth/react"
 
 
-function ProfileHeader ({isCollapsed}) {
+function ProfileHeader ({isCollapsed}:any) {
 
-   const {xl,md,sm} = useContext(PageWidthC) 
+   const {xl,md,sm}:any = useContext(PageWidthC) 
 
-   const style = { 
+   const style : React.CSSProperties = { 
       width:"100%",
       position:"absolute",
       left: isCollapsed ? 80 : 250,
