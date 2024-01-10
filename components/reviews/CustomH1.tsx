@@ -1,7 +1,7 @@
 import { useEffect , useContext , useState } from "react";
 import {PageWidthC} from "../../context/context"
 
-function CustomH1({category}) { 
+function CustomH1({category}:any) { 
 
   const [diplayState,setDisplaystate]:any = useContext(PageWidthC) 
 
