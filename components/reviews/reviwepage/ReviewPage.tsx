@@ -1,9 +1,7 @@
-import CircumIcon from "@klarr-agency/circum-icons-react"; // React
 import ImageLayout from './ImageLayout'
 import { useContext, useState } from "react";
 import Link from "next/link";
 import {PageWidthC} from "context/context"
-
 import Carousel from "./Carousel";
 import { useMediaQuery } from "usehooks-ts";
 

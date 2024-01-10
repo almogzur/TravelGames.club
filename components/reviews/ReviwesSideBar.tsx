@@ -2,8 +2,7 @@
 import { Sidebar, Menu, MenuItem, SubMenu } from 'react-pro-sidebar';
 import { useEffect, useState , useContext, ComponentProps, MouseEvent } from 'react';
 import { PageWidthC } from '../../context/context';
-import Serch from '../Global/serch'
-import { AppProps } from 'next/dist/shared/lib/router/router';
+import Serch from 'components/Global/serch'
 
 export default function ReviewsSidebar({
      setCategory
