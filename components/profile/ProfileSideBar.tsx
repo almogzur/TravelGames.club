@@ -1,6 +1,8 @@
 import { useState, useEffect,useContext } from 'react';
 import { Sidebar, Menu, MenuItem, SubMenu } from 'react-pro-sidebar';
 import {   PageWidthC } from "context/context"
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome' // package
+import { faBookBookmark, faCubesStacked, faRankingStar, faShop } from '@fortawesome/free-solid-svg-icons' // icons 
 
 // in the project all styles in hendeld in css models exept this component 
 
@@ -33,7 +35,7 @@ export default function ProfileSidebar({isCollapsed,setIsCollapsed}:any) {
       </SubMenu>
       { PagewidthIsLessThen? null :
       <MenuItem onClick={()=>setIsCollapsed(!isCollapsed)}>
-        {!isCollapsed ? ["Close SideBar", <CircumIcon key={2} size={25} name="minimize_1" />]:<CircumIcon name="maximize_1" />}
+        {!isCollapsed ? ["Close SideBar", <FontAwesomeIcon key={2}  icon={faShop} />]:<FontAwesomeIcon icon={faBookBookmark} />}
        </MenuItem>
        }
     </Menu>
@@ -50,7 +52,7 @@ export default function ProfileSidebar({isCollapsed,setIsCollapsed}:any) {
             height:"100vh"
              
              }} >
-        <SubMenu label={  !isCollapsed? [  "Favorites Reviews", <CircumIcon size={25} key={1} name="star"/>] :<CircumIcon name="star"/>}>
+        <SubMenu label={  !isCollapsed? [  "Favorites Reviews", <FontAwesomeIcon key={2}  icon={faShop} />] :<FontAwesomeIcon icon={faBookBookmark} />}>
 
           <MenuItem > Link1  </MenuItem>
           <MenuItem> Link2 </MenuItem>
