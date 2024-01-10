@@ -1,10 +1,11 @@
 "use client"
-import { useMediaQuery } from 'usehooks-ts';
 import Link from 'next/link';
 import Image from 'next/image';
 import React ,{  ReactEventHandler, useContext, useEffect, useState } from 'react';
 import { SubMenu } from 'react-pro-sidebar';
 import { SerchBarLocC } from "context/context"
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons'
 
 export default function SearchComponent({
     reviews , 
@@ -13,7 +14,7 @@ export default function SearchComponent({
    }:any) 
    {
     const [searchTerm, setSearchTerm] = useState('');
-    const [searchResults, setSearchResults] = useState([]);
+    const [searchResults, setSearchResults] = useState<any[]>([]);
     const [isSerchOpen , setIsSerchOpen ] = useState(true)
     const [location , setLocation] : any =useContext(SerchBarLocC)
 
@@ -21,7 +22,7 @@ export default function SearchComponent({
     useEffect(()=>{
       // if the props are passed to component then we know he is in sidebar
       MenuItem ? setLocation("sidebar") : setLocation("topbar")
-    }, [MenuItem, location])
+    }, [MenuItem, location, setLocation])
     
     const handleSearch = (event:any) => {
 
@@ -29,7 +30,7 @@ export default function SearchComponent({
       setSearchTerm(value);
   
       // Perform the search logic using the JSON data
-      const searchResults = Object.values(reviews).filter((item) =>
+      const searchResults = Object.values(reviews).filter((item:any):string =>
         item.data.name.toLowerCase().includes(value.toLowerCase())
       );
         console.log(searchResults)
@@ -46,7 +47,7 @@ export default function SearchComponent({
         placeholder="Search..."
         style={
         {
-         width: isCollapsed? null: "95%",
+         width: isCollapsed? 0: "95%",
          border:"none",
          height:"50px",
          display:"flex",
@@ -60,7 +61,7 @@ export default function SearchComponent({
        
      { 
        searchTerm === ""  ? null :
-      <SubMenu open={isSerchOpen} onClick={()=>setIsSerchOpen(!isSerchOpen)} label={isCollapsed ? <CircumIcon name="search"/> :" Serch Results"}>
+      <SubMenu open={isSerchOpen} onClick={()=>setIsSerchOpen(!isSerchOpen)} label={isCollapsed ? <FontAwesomeIcon icon={faMagnifyingGlass} />:" Serch Results"}>
         { 
          searchResults.map(
             (item) => 
