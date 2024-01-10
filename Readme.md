@@ -1,1 +1,1 @@
-* Demo https://main--dreamy-cannoli-683e41.netlify.app/
+* Demo https://almogzurdemo.netlify.app
