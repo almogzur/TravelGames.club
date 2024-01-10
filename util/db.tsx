@@ -9,7 +9,7 @@ const uri = process.env.M_URI;
 const options = {};
 
 let client;
-let clientPromise;
+let clientPromise :any ;
  try{
   client = new MongoClient(uri, options);
   clientPromise = client.connect();

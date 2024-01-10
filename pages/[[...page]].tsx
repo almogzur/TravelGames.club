@@ -1,6 +1,6 @@
 import DefaultErrorPage from 'next/error';
 import Head from 'next/head';
-import React, { useContext, useEffect } from 'react';
+import React, { SetStateAction, useContext, useEffect } from 'react';
 import Header from '../components/Global/Header';
 import Footer from '../components/Global/Footer'
 import { useRouter } from 'next/router';
@@ -45,12 +45,12 @@ export async function getStaticPaths() {
   };
 }
 
-export default function Page({ page  }) {
+export default function Page({ page  }:any) {
 
   // first setup of category in local storeg 
-  const  [ category , setCategory ] = useLocalStorageState("category","false")  
+  const  [ category , setCategory ]:any= useLocalStorageState("category","false")  
   
-  const handleUpdateCategory = (value) => {
+  const handleUpdateCategory = (value:any) => {
     setCategory(value);
   };
 
