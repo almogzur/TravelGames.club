@@ -5,6 +5,7 @@ import { setLocalStorageItem, getLocalStorageItem } from '../localstoreg'
 const useLocalStorageState = (key: any, initialValue: string) => {
 
   const [category, setCategory] = useState(initialValue);
+  
 
   useEffect(() => {
     const storedValue = getLocalStorageItem(key);  
