@@ -17,7 +17,6 @@ const Header = () => {
   return (
     !widthQoury?
   <div className='headerwrapper'>
-
     <div className='headerlinkwrapper'  >
 
      <Link 
@@ -52,8 +51,6 @@ const Header = () => {
       />
       <ProfileControls/>
     </div>
-
-    
   </div>
   :
   <BurgerMenu/>
