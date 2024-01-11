@@ -1,13 +1,21 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import * as Separator from '@radix-ui/react-separator';
 import Link from 'next/link';
 import ProfileControls from '../profile/ProfileControls'
 import { useSession, signIn, signOut } from "next-auth/react"
+import BurgerMenu from './BurgerMenu';
+import { useMediaQuery } from 'usehooks-ts';
 
 const Header = () => {
   const { data: session } = useSession()
+ const widthQoury  = useMediaQuery('(min-width:290px ) and (max-width:1090px)')
 
+
+ useEffect(()=>{
+    console.log(widthQoury)
+ },[widthQoury])
   return (
+    !widthQoury?
   <div className='headerwrapper'>
 
     <div className='headerlinkwrapper'  >
@@ -47,6 +55,8 @@ const Header = () => {
 
     
   </div>
+  :
+  <BurgerMenu/>
   );
 };
 
