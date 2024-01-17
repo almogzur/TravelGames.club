@@ -5,6 +5,8 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBars } from '@fortawesome/free-solid-svg-icons';
 import 'rc-dropdown/assets/index.css';
 import { useState } from 'react';
+import Router from 'next/router';
+import ProfileControls from '../profile/ProfileControls';
 
 
   const BurgerMenu = ()=>{
@@ -42,9 +44,12 @@ import { useState } from 'react';
           key={i}
           onMouseOver={(e)=>handleMouseOver(e)}
           onMouseOut={(e)=>handleMouseOut(e)}
+          onClick={()=>Router.push("/"+item.toLowerCase())}
           >
           {item}
           <Divider/>
+          <ProfileControls/>
+
           </MenuItem>)
         })}
       </Menu>
