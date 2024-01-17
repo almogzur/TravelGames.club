@@ -4,7 +4,7 @@ import { useEffect } from "react"
 import { useSession, signIn, signOut } from "next-auth/react"
 import Link from "next/link"
 
-export default function ProfileControls({location}) {
+export default function ProfileControls({}) {
 
  const  style =  {borderRadius:"10px"}
   const { data: session } = useSession()
