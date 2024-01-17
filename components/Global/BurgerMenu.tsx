@@ -1,6 +1,5 @@
 "use client"
 import { useSession, signIn, signOut } from "next-auth/react"
-
 import Menu, { Item as MenuItem, Divider } from 'rc-menu';
 import Dropdown from 'rc-dropdown';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -8,9 +7,6 @@ import { faBars } from '@fortawesome/free-solid-svg-icons';
 import 'rc-dropdown/assets/index.css';
 import { useState } from 'react';
 import Router from 'next/router';
-
-
-
 
   const BurgerMenu = ()=>{
     let MenuItemsArray = ["Reviews","About"]
@@ -40,7 +36,8 @@ import Router from 'next/router';
 
       return<Menu>
         {MenuItemsArray.map((item,i)=>{
-          return(<MenuItem 
+          return(
+          <MenuItem 
           style={itemCss} 
           key={i}
           onMouseOver={(e: any)=>handleMouseOver(e)}
@@ -49,10 +46,10 @@ import Router from 'next/router';
           >
           {item}
           <Divider/>
-   
-
-          </MenuItem>)
-        })}
+          </MenuItem>
+          )
+        }
+        )}
         {session?.user?
                  <MenuItem
                  style={itemCss}

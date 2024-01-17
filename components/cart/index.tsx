@@ -21,5 +21,3 @@ function DefualtCart() {
 
 export default DefualtCart;
 
-
-export function CloseCart (){}
