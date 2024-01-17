@@ -49,7 +49,7 @@ const Header = () => {
         orientation="vertical"
         style={{ margin: '0 15px' }}
       />
-      <ProfileControls/>
+      <ProfileControls location={undefined}/>
     </div>
   </div>
   :
